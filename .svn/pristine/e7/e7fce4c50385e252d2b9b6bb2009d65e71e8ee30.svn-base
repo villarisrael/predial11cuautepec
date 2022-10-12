@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="Predial_7.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="Predial_7.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <connectionStrings>
+        <add name="Predial_7.Properties.Settings.predialchicoConnectionString"
+            connectionString="server=192.168.1.151;User Id=israel;password=yo;database=predialchico"
+            providerName="MySql.Data.MySqlClient" />
+    </connectionStrings>
+<startup><supportedRuntime version="v2.0.50727"/></startup><userSettings>
+        <Predial_7.Properties.Settings>
+            <setting name="letra_detalle_recibo" serializeAs="String">
+                <value>Microsoft sans serif</value>
+            </setting>
+            <setting name="tamano_letra_detalle_recibo" serializeAs="String">
+                <value>6</value>
+            </setting>
+            <setting name="columna_de_concepto" serializeAs="String">
+                <value>230</value>
+            </setting>
+            <setting name="URBANO" serializeAs="String">
+                <value>1</value>
+            </setting>
+            <setting name="RUSTICO" serializeAs="String">
+                <value>2</value>
+            </setting>
+            <setting name="EJIDAL" serializeAs="String">
+                <value>3</value>
+            </setting>
+            <setting name="Rezago_urbano" serializeAs="String">
+                <value>76</value>
+            </setting>
+            <setting name="Rezago_rustico" serializeAs="String">
+                <value>77</value>
+            </setting>
+            <setting name="Rezago_ejidal" serializeAs="String">
+                <value>78</value>
+            </setting>
+            <setting name="Recargos" serializeAs="String">
+                <value>79</value>
+            </setting>
+        </Predial_7.Properties.Settings>
+    </userSettings>
+    <applicationSettings>
+        <Predial_7.Properties.Settings>
+            <setting name="linea_inicial_de_detalle_de_recibo" serializeAs="String">
+                <value>453</value>
+            </setting>
+            <setting name="avance_de_linea_detalle_recibo" serializeAs="String">
+                <value>13</value>
+            </setting>
+            <setting name="columna_de_importe" serializeAs="String">
+                <value>600</value>
+            </setting>
+        </Predial_7.Properties.Settings>
+    </applicationSettings>
+</configuration>

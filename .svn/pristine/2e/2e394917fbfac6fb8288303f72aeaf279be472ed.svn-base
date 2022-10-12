@@ -1,0 +1,171 @@
+﻿namespace Predial_7.configuracion
+{
+    partial class Calcula_anos
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtValorFiscal = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnCalcular = new DevComponents.DotNetBar.ButtonX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.txtPagoAnual = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lbltotal = new DevComponents.DotNetBar.LabelX();
+            this.txtTotal = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblTiempo = new DevComponents.DotNetBar.LabelX();
+            this.SuspendLayout();
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.Class = "";
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(54, 30);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(75, 23);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Valor Fiscal";
+            // 
+            // txtValorFiscal
+            // 
+            // 
+            // 
+            // 
+            this.txtValorFiscal.Border.Class = "TextBoxBorder";
+            this.txtValorFiscal.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtValorFiscal.Location = new System.Drawing.Point(135, 33);
+            this.txtValorFiscal.Name = "txtValorFiscal";
+            this.txtValorFiscal.Size = new System.Drawing.Size(207, 20);
+            this.txtValorFiscal.TabIndex = 1;
+            // 
+            // btnCalcular
+            // 
+            this.btnCalcular.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCalcular.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCalcular.Location = new System.Drawing.Point(403, 70);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCalcular.TabIndex = 4;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.Class = "";
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(54, 70);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(75, 23);
+            this.labelX2.TabIndex = 0;
+            this.labelX2.Text = "Millar";
+            // 
+            // txtPagoAnual
+            // 
+            // 
+            // 
+            // 
+            this.txtPagoAnual.Border.Class = "TextBoxBorder";
+            this.txtPagoAnual.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtPagoAnual.Location = new System.Drawing.Point(135, 70);
+            this.txtPagoAnual.Name = "txtPagoAnual";
+            this.txtPagoAnual.Size = new System.Drawing.Size(207, 20);
+            this.txtPagoAnual.TabIndex = 2;
+            // 
+            // lbltotal
+            // 
+            // 
+            // 
+            // 
+            this.lbltotal.BackgroundStyle.Class = "";
+            this.lbltotal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbltotal.Location = new System.Drawing.Point(53, 112);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(75, 23);
+            this.lbltotal.TabIndex = 7;
+            this.lbltotal.Text = "Total a pagar";
+            // 
+            // txtTotal
+            // 
+            // 
+            // 
+            // 
+            this.txtTotal.Border.Class = "TextBoxBorder";
+            this.txtTotal.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTotal.Location = new System.Drawing.Point(134, 112);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(208, 20);
+            this.txtTotal.TabIndex = 3;
+            // 
+            // lblTiempo
+            // 
+            // 
+            // 
+            // 
+            this.lblTiempo.BackgroundStyle.Class = "";
+            this.lblTiempo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblTiempo.Location = new System.Drawing.Point(54, 279);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(424, 23);
+            this.lblTiempo.TabIndex = 9;
+            this.lblTiempo.Text = "Debe:";
+            // 
+            // Calcula_anos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(533, 449);
+            this.Controls.Add(this.lblTiempo);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.lbltotal);
+            this.Controls.Add(this.btnCalcular);
+            this.Controls.Add(this.txtPagoAnual);
+            this.Controls.Add(this.txtValorFiscal);
+            this.Controls.Add(this.labelX2);
+            this.Controls.Add(this.labelX1);
+            this.Name = "Calcula_anos";
+            this.Text = "Calcula Años";
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtValorFiscal;
+        private DevComponents.DotNetBar.ButtonX btnCalcular;
+        private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPagoAnual;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTotal;
+        private DevComponents.DotNetBar.LabelX lbltotal;
+        private DevComponents.DotNetBar.LabelX lblTiempo;
+    }
+}

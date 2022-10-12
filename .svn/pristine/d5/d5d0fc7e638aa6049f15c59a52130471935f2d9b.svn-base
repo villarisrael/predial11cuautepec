@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using DevComponents.DotNetBar;
+
+namespace Predial_7
+{
+    public partial class confempresas : DevComponents.DotNetBar.Office2007Form
+    {
+        public confempresas()
+        {
+            InitializeComponent();
+        }
+
+        private void confempresas_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'predialchicoDataSet.empresa' table. You can move, or remove it, as needed.
+            this.empresaTableAdapter.Fill(this.predialchicoDataSet.empresa);
+            // TODO: This line of code loads data into the 'predialchicoDataSet.tarifas' table. You can move, or remove it, as needed.
+            this.tarifasTableAdapter.Fill(this.predialchicoDataSet.tarifas);
+
+        }
+
+        private void btnactualizar_Click(object sender, EventArgs e)
+        {
+            tarifasTableAdapter.Update(this.predialchicoDataSet);
+           empresaTableAdapter.Update(this.predialchicoDataSet);
+            
+        }
+    }
+}

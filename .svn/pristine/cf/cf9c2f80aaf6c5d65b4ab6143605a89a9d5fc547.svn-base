@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using Predial_7.Resources.CODE;
+
+namespace Predial_7.caja
+{
+    public partial class CierreCaja : Form
+    {
+        public CierreCaja()
+        {
+            InitializeComponent();
+        }
+
+        private void CierreCaja_Load(object sender, EventArgs e)
+        {
+            if (VariablesCajas.Estatus == "Abierto")
+            {
+
+                lblFecha.Text = DateTime.Now.ToShortDateString();
+                lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
+
+               
+                txtMaquina.Text = VariablesCajas.Maquina;
+                txtOficina.Text = VariablesCajas.Oficina;
+                txtCaja.Text = VariablesCajas.Caja;
+            }
+            else
+            {
+                VariablesCajas.Estatus = "Cerrado";
+                MessageBox.Show("Primero necesitas abrir la caja", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //this.Close();
+            }
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Conexion_a_BD.Conectar();
+                StringBuilder cadena = new StringBuilder();
+               
+                    cadena.Append("UPDATE croape SET ");                   
+                    cadena.Append("FEC_CIE='" + Convert.ToDateTime(lblFecha.Text).ToString("yyyy-MM-dd") + "',");
+                    cadena.Append("HOR_CIE='" + lblHora.Text + "' ");   
+                    cadena.Append("WHERE COD_OFI=" + VariablesCajas.CODOFI + " ");
+                    cadena.Append("AND CAJA=" + VariablesCajas.CAJA + " ");
+                    cadena.Append("AND Maquina='" + VariablesCajas.Maquina + "'");                    
+
+                    Conexion_a_BD.insertar(cadena.ToString());
+                    Conexion_a_BD.Desconectar();
+                    MessageBox.Show("Caja Cerrada exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    VariablesCajas.Oficina = "";
+                    VariablesCajas.Caja = "";
+                    VariablesCajas.Maquina = "";
+                    VariablesCajas.Estatus = "Cerrado";
+                    VariablesCajas.CODOFI = 0;
+                    VariablesCajas.CAJA = 0;
+                    this.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Conexion_a_BD.Desconectar();
+            }
+        }
+    }
+}

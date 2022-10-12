@@ -1,0 +1,19 @@
+﻿namespace Predial_7 {
+    
+    
+    public partial class predialchicoDataSet {
+        partial class formatoreciboDataTable
+        {
+        }
+    }
+}
+
+namespace Predial_7.predialchicoDataSetTableAdapters {
+    partial class reciboesclavoTableAdapter
+    {
+    }
+    
+    
+    public partial class vusuarioTableAdapter {
+    }
+}

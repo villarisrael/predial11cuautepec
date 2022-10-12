@@ -1,0 +1,92 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using Predial_7.Resources.CODE;
+
+namespace Predial_7.Recaudacion
+{
+
+    public partial class frmrecaudacion :  DevComponents.DotNetBar.Office2007Form
+    {
+        Boolean cargar = true;
+        public string tipo = "Recaudacion";
+        public frmrecaudacion()
+        {
+            InitializeComponent();
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void frmrecaudacion_Load(object sender, EventArgs e)
+        {
+            fechaini.SelectedDate = DateTime.Now;
+            fechafin.SelectedDate = DateTime.Now;
+            fechaini.DisplayMonth = DateTime.Now;
+            fechafin.DisplayMonth = DateTime.Now;
+            cargar = true;
+           
+            Conexion_a_BD.Conectar();
+            cmboficina.ValueMember = "cod_ofi";
+            cmboficina.DisplayMember = "Nombre";
+            cmboficina.DataSource = Conexion_a_BD.Consultasql("cod_ofi, Nombre", "oficinas", "Nombre");
+            Conexion_a_BD.Desconectar();
+            cmboficina.SelectedIndex = -1;
+            cargar = false;
+        }
+
+        private void cmboficina_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cargar == false)
+            {
+            Conexion_a_BD.Conectar();
+            cmbcaja  .ValueMember = "ID_CAJA";
+            cmbcaja.DisplayMember = "Descripcion";
+            cmbcaja.DataSource = Conexion_a_BD.Consultasql("ID_CAJA, Descripcion", "Cajas where COD_OFI ='" + cmboficina.SelectedValue + "'", "Descripcion ");
+            Conexion_a_BD.Desconectar();
+            cmbcaja.SelectedIndex = -1;
+            }
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            string filtrocrystal="";
+            string encabezado1 = "";
+            string encabezado2="";
+            filtrocrystal = " {recibomaestro.fecha} >= date ('" + fechaini.SelectedDate.ToString("dd/MM/yyyy") + "') and {recibomaestro.fecha} <= date ('" + fechafin.SelectedDate.ToString("dd/MM/yyyy") + "') ";
+            encabezado1 = "DEL DIA : " + fechaini.SelectedDate.ToString("dd/MM/yyyy") + " AL DIA: " + fechafin.SelectedDate.ToString("dd/MM/yyyy");
+            if ( cmboficina.SelectedIndex == -1 && cmbcaja.SelectedIndex == -1)
+            {
+                filtrocrystal += "";
+            }
+            else
+            {
+                if (cmboficina.SelectedIndex > -1)
+                {
+                    filtrocrystal += " and {recibomaestro.ccodofi} = '" + cmboficina.SelectedValue + "' " ;
+                    encabezado2 = " OFICINA: " + cmboficina.Text;  
+                }
+
+                if (cmbcaja.SelectedIndex > -1)
+                {
+                    filtrocrystal += " and {recibomaestro.caja} = '" + cmbcaja.SelectedValue + "' ";
+                    encabezado2 += " CAJA: " + cmbcaja.Text;
+                }
+            }
+
+            Recaudacion.frmreprecaudacion reporte = new Recaudacion.frmreprecaudacion();
+            reporte.encabezado1 = encabezado1;
+            reporte.encabezado2 = encabezado2;
+            reporte.tipo = tipo;
+            reporte.filtro = filtrocrystal;
+            reporte.Show();
+        }
+    }
+}

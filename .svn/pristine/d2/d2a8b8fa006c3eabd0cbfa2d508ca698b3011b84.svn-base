@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using Predial_7.Resources.CODE;
+
+namespace Predial_7.configuracion
+{
+    public partial class Calcula_anos : Form
+    {
+       
+
+        public Calcula_anos()
+        {
+            InitializeComponent();
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            ObtenerAnos obtener= new ObtenerAnos();
+
+            //lblTiempo.Text = obtener.carcular_anos((Convert.ToDecimal(txtValorFiscal.Text)), (Convert.ToDecimal(txtPagoAnual.Text)), (Convert.ToDecimal(txtTotal.Text)));
+            lblTiempo.Text =obtener.deuda_anos((Convert.ToDouble(txtValorFiscal.Text)),(Convert.ToDouble(txtPagoAnual.Text)),(Convert.ToDouble(txtTotal.Text)));
+           
+        }
+
+      
+    }
+}

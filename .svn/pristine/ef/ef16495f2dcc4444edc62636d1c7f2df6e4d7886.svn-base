@@ -1,0 +1,87 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Predial_7.caja
+{
+    public class VariablesCajas
+    {       
+        static string _Oficina, _Caja, _Maquina, _Estatus;
+        static int _CODOFI , _CAJA;
+       
+       
+        public static string Oficina
+        {
+            get
+            {
+                return _Oficina;
+            }
+            set
+            {
+                _Oficina = value;
+            }
+        }
+
+        public static string Caja
+        {
+            get
+            {
+                return _Caja;
+            }
+            set
+            {
+                _Caja = value;
+            }
+        }
+
+        public static string Maquina
+        {
+            get
+            {
+                return _Maquina;
+            }
+            set
+            {
+                _Maquina = value;
+            }
+        }
+
+        public static string Estatus
+        {
+            get
+            {
+                return _Estatus;
+            }
+            set
+            {
+                _Estatus = value;
+            }
+        }
+
+        public static int CODOFI
+        {
+            get
+            {
+                return _CODOFI;
+            }
+            set
+            {
+                _CODOFI = value;
+            }
+        }
+
+        public static int CAJA
+        {
+            get
+            {
+                return _CAJA;
+            }
+            set
+            {
+                _CAJA = value;
+            }
+        }
+       
+    }
+}

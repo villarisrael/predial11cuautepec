@@ -1,0 +1,469 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using Predial_7.Resources.CODE;
+
+namespace Predial_7
+{
+    public partial class Principal : DevComponents.DotNetBar.Office2007Form
+    {
+        DataTable TBL_Consulta = new DataTable();
+        string estado = "";
+
+        public Principal()
+        {
+            InitializeComponent();
+        }
+
+        private void buttonItem5_Click(object sender, EventArgs e)
+        {
+            
+            if (superTabControl.Visible  == true && Dgridusuario.Visible == true)
+            {
+                if (Dgridusuario.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("No seleccionaeste un usuario");
+                }
+                string cuenta="";
+                cuenta = Dgridusuario.CurrentRow.Cells["catastral"].Value.ToString();
+                Contratos contrato = new Contratos();
+                contrato.cuenta  = cuenta;
+                contrato.Modo = "Visualizar";
+           //     contrato.MdiParent = this;
+                contrato.ShowDialog ();
+            //    superTabControl.Visible = false;                             
+                return;
+
+            }
+            if (superTabControl.Visible == false)
+            {
+                // MessageBox.Show("Presiona la pestaña de padron de usuarios");
+                ribbonTabItem1_Click(sender,e);
+                return;
+                
+            }
+        }
+
+        private void buttonItem16_Click(object sender, EventArgs e)
+        {
+           confempresas xform= new confempresas();
+            xform.MdiParent =this;
+            xform.Show();
+        }
+
+        private void btncalculadora_Click(object sender, EventArgs e)
+        {
+            frmcalculadora xform = new frmcalculadora();
+            xform.MdiParent = this;
+            xform.Show();
+        }
+
+        private void ribbonTabItem1_Click(object sender, EventArgs e)
+        {
+            
+            superTabControl.Visible = true;
+            Conexion_a_BD.Conectar();
+            DataTable tablausuario = new DataTable();
+
+            tablausuario = Conexion_a_BD.Consultasqlpagina("catastral, Nombre,Calle,numext", "vusuario", "cuenta", "0,30");
+            this.Dgridusuario.DataSource  = tablausuario;
+            Conexion_a_BD.Desconectar();
+            Dgridusuario.Visible = true;
+
+        }
+
+        private void ribbonTabItem3_Click(object sender, EventArgs e)
+        {
+            superTabControl.Visible = false;
+        }
+
+        private void ribbonTabItem4_Click(object sender, EventArgs e)
+        {
+            superTabControl.Visible = false;
+        }
+
+        private void buttonItem7_Click(object sender, EventArgs e)
+        {
+           // superTabControl.Visible = false;          
+
+            Contratos contrato = new Contratos();
+            //contrato.MdiParent = this;      
+            contrato.Show();
+        }
+
+        private void btnmodifcar_Click(object sender, EventArgs e)
+        {
+            if (superTabControl.Visible == true && Dgridusuario.Visible == true)
+            {
+                if (Dgridusuario.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("No seleccionaeste un usuario");
+                }
+                string cuenta = "";
+                cuenta = Dgridusuario.CurrentRow.Cells["catastral"].Value.ToString();
+                Contratos contrato = new Contratos();
+                contrato.cuenta = cuenta;
+                contrato.Modo = "Modificar";
+           //     contrato.MdiParent = this;
+                contrato.ShowDialog ();
+            //    superTabControl.Visible = false;                
+                return;
+
+            }
+            if (superTabControl.Visible == false)
+            {
+                // MessageBox.Show("Presiona la pestaña de padron de usuarios");
+                ribbonTabItem1_Click(sender, e);
+                return;
+
+            }
+        }
+
+        private void btnrestaurar_Click(object sender, EventArgs e)
+        {
+            
+                // MessageBox.Show("Presiona la pestaña de padron de usuarios");
+                ribbonTabItem1_Click(sender, e);
+                return;
+
+            
+        }
+
+        private void btnCatalogos_Click(object sender, EventArgs e)
+        {
+            Catalogos.Catalogos catalogos = new Catalogos.Catalogos();
+            catalogos.MdiParent = this;
+            catalogos.Show();
+        }
+
+        private void ribbonTabItem5_Click(object sender, EventArgs e)
+        {
+            superTabControl.Visible = false;
+        }
+
+        private void ribbonTabItem6_Click(object sender, EventArgs e)
+        {
+            superTabControl.Visible = false;
+        }
+
+        private void btnCalculaAnos_Click(object sender, EventArgs e)
+        {
+            superTabControl.Visible = false;
+
+          //  configuracion.Calcula_anos c_anos = new configuracion.Calcula_anos();
+            //c_anos.MdiParent = this;      
+         //   c_anos.Show();
+
+        }
+
+        private void btncaja_Click(object sender, EventArgs e)
+        {
+            Conexion_a_BD.Conectar();
+
+            TBL_Consulta = Conexion_a_BD.Consultasql("STATUSA", "croape WHERE MAQUINA= '" + System.Environment.MachineName.ToString() + "' AND FEC_APE='" + DateTime.Now.ToString("yyyy-MM-dd") + "'");
+            Conexion_a_BD.Desconectar();
+            var results = from myRow in TBL_Consulta.AsEnumerable() select myRow;
+            try
+            {
+                DataView view = results.AsDataView();
+                estado = view[0]["STATUSA"].ToString();
+
+
+            }
+            catch (Exception x)
+            {
+            }
+
+            if (estado == "C" || estado == "")
+            {
+                caja.AperturaCaja Apertura = new caja.AperturaCaja();
+                Apertura.MdiParent = this;
+                Apertura.Show();
+            }
+            else
+            {
+                MessageBox.Show("Ya existe una caja abirta, necesita cerrarla para poder abrir otra.");
+            }
+
+        }
+
+        private void btncierre_Click(object sender, EventArgs e)
+        {
+            Facturacion.frmcierre frmc = new Facturacion.frmcierre();
+            frmc.MdiParent = this;
+            frmc.Show();
+        }
+
+        private void btnlistado_Click(object sender, EventArgs e)
+        {
+            Reportes.frmlistado lis  = new Reportes.frmlistado ();
+        
+            lis.Show();
+        }
+
+        private void buttonItem13_Click(object sender, EventArgs e)
+        {
+            Reportes.frmrequerimiento reque = new Reportes.frmrequerimiento();
+            reque.Show();
+
+        }
+
+        private void buttonItem6_Click(object sender, EventArgs e)
+        {
+            Reportes.frmaviso avi = new Reportes.frmaviso();
+            avi.Show();
+        }
+
+        private void buttonItem8_Click(object sender, EventArgs e)
+        {
+            if (superTabControl.Visible == true && Dgridusuario.Visible == true)
+            {
+                if (Dgridusuario.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("No seleccionaeste un usuario");
+                }
+                string cuenta = "";
+                cuenta = Dgridusuario.CurrentRow.Cells["catastral"].Value.ToString();
+                PadronUsuarios.CambioTarifa CambioTarifa = new PadronUsuarios.CambioTarifa();
+                CambioTarifa.cuenta = cuenta;
+                CambioTarifa.Modo = "Insertar";
+           //     CambioTarifa.MdiParent = this;
+                CambioTarifa.ShowDialog ();
+             //   superTabControl.Visible = false;              
+                return;
+
+            }
+            if (superTabControl.Visible == false)
+            {
+                ribbonTabItem1_Click(sender, e);
+                return;
+            }        
+        }
+
+        private void buttonItem10_Click(object sender, EventArgs e)
+        {
+            if (superTabControl.Visible == true && Dgridusuario.Visible == true)
+            {
+                if (Dgridusuario.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("No seleccionaeste un usuario");
+                }
+                string cuenta = "";
+                cuenta = Dgridusuario.CurrentRow.Cells["catastral"].Value.ToString();
+                PadronUsuarios.Traslado Traslado = new PadronUsuarios.Traslado();
+                Traslado.cuenta = cuenta;
+                Traslado.Modo = "Insertar";
+              //  Traslado.MdiParent = this;
+                Traslado.ShowDialog ();
+           //     superTabControl.Visible = false;                
+                return;
+
+            }
+            if (superTabControl.Visible == false)
+            {
+                ribbonTabItem1_Click(sender, e);
+                return;
+            }        
+
+        }
+
+        private void buttonItem11_Click(object sender, EventArgs e)
+        {
+            if (superTabControl.Visible == true && Dgridusuario.Visible == true)
+            {
+                if (Dgridusuario.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("No seleccionaeste un usuario");
+                }
+                string cuenta = "";
+                cuenta = Dgridusuario.CurrentRow.Cells["catastral"].Value.ToString();
+                PadronUsuarios.CambioValorCatastral CVC = new PadronUsuarios.CambioValorCatastral();
+                CVC.cuenta = cuenta;
+                CVC.Modo = "Insertar";
+           //     CVC.MdiParent = this;
+                CVC.ShowDialog ();
+             //   superTabControl.Visible = false;               
+                return;
+
+            }
+            if (superTabControl.Visible == false)
+            {
+                ribbonTabItem1_Click(sender, e);
+                return;
+            }        
+
+        }
+
+        private void buttonItem9_Click(object sender, EventArgs e)
+        {
+            if (superTabControl.Visible == true && Dgridusuario.Visible == true)
+            {
+                if (Dgridusuario.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("No seleccionaeste un usuario");
+                }
+                string cuenta = "";
+                cuenta = Dgridusuario.CurrentRow.Cells["catastral"].Value.ToString();
+                PadronUsuarios.BajaUsuario Baja = new PadronUsuarios.BajaUsuario();
+                Baja.cuenta = cuenta;
+                Baja.Modo = "Baja";
+                //     CVC.MdiParent = this;
+                Baja.ShowDialog();
+                //   superTabControl.Visible = false;               
+                return;
+            }
+            if (superTabControl.Visible == false)
+            {
+                ribbonTabItem1_Click(sender, e);
+                return;
+            }
+
+        }
+
+        private void buttonItem12_Click(object sender, EventArgs e)
+        {
+            if (superTabControl.Visible == true && Dgridusuario.Visible == true)
+            {
+                if (Dgridusuario.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("No seleccionaeste un usuario");
+                }
+                string mens = "";                
+                mens = "Introduzca el campo: " + Dgridusuario.Columns[ Dgridusuario.CurrentCell.ColumnIndex ].Name ;
+ 
+                Predial_7.PadronUsuarios.BuscarUsuario BUsuarios = new PadronUsuarios.BuscarUsuario(Dgridusuario.Columns[Dgridusuario.CurrentCell.ColumnIndex ].DataPropertyName , mens, Dgridusuario[Dgridusuario.CurrentCell.ColumnIndex , Dgridusuario.CurrentRow.Index ].Value, Dgridusuario  ) ;
+                BUsuarios.Show();
+                // return;
+
+            }
+            if (superTabControl.Visible == false)
+            {
+                // MessageBox.Show("Presiona la pestaña de padron de usuarios");
+                ribbonTabItem1_Click(sender, e);
+                return;
+
+            }
+        }
+
+        private void buttonItem4_Click(object sender, EventArgs e)
+        {
+            configuracion.CajasOficinas CajasOfices = new configuracion.CajasOficinas();
+            CajasOfices.MdiParent = this;
+            CajasOfices.Show();
+            
+        }
+
+        private void buttonItem17_Click(object sender, EventArgs e)
+        {
+            Conexion_a_BD.Conectar();
+
+            TBL_Consulta = Conexion_a_BD.Consultasql("STATUSA", "croape WHERE MAQUINA= '" + System.Environment.MachineName.ToString() + "' AND FEC_APE='" + DateTime.Now.ToString("yyyy-MM-dd") + "'");
+            Conexion_a_BD.Desconectar();
+            var results = from myRow in TBL_Consulta.AsEnumerable() select myRow;
+            try
+            {
+                DataView view = results.AsDataView();
+                estado = view[0]["STATUSA"].ToString();
+
+
+            }
+            catch (Exception x)
+            {
+            }
+
+            if (estado == "A")
+            {
+                Predial_7.frmcaja x = new frmcaja();
+                x.Show();
+            }
+            else
+            {
+                MessageBox.Show("Primero debes abrir una caja");
+            }
+
+        }
+
+        private void buttonItem18_Click(object sender, EventArgs e)
+        {
+            Conexion_a_BD.Conectar();
+
+            TBL_Consulta = Conexion_a_BD.Consultasql("STATUSA", "croape WHERE MAQUINA= '" + System.Environment.MachineName.ToString() + "' AND FEC_APE='" + DateTime.Now.ToString("yyyy-MM-dd") + "'");
+            Conexion_a_BD.Desconectar();
+            var results = from myRow in TBL_Consulta.AsEnumerable() select myRow;
+            try
+            {
+                DataView view = results.AsDataView();
+                estado = view[0]["STATUSA"].ToString();
+            }
+            catch (Exception x)
+            {
+            }
+
+            if (estado == "A")
+            {
+                caja.CierreCaja Cierre = new caja.CierreCaja();
+                Cierre.MdiParent = this;
+                Cierre.Show();
+            }
+            else
+            {
+                MessageBox.Show("Primero debes abrir una caja");
+            }
+
+        }
+
+        private void buttonItem2_Click(object sender, EventArgs e)
+        {
+            Recaudacion.frmrecaudacion frmreca = new Recaudacion.frmrecaudacion();
+            frmreca.Text = "Reporte de Recaudacion";
+            frmreca.ShowDialog();
+        }
+
+        private void buttonItem1_Click(object sender, EventArgs e)
+        {
+            Recaudacion.frmrecaudacion frmreca = new Recaudacion.frmrecaudacion();
+            frmreca.Text = "Reporte de total de rubros";
+            frmreca.tipo = "Rubros";
+            frmreca.ShowDialog();
+        }
+
+        private void btnliscomunidades_Click(object sender, EventArgs e)
+        {
+            Facturacion.frmrepcomunidades  frmcom = new Facturacion.frmrepcomunidades();
+            frmcom.WindowState = FormWindowState.Maximized;
+            frmcom.ShowDialog();
+
+        }
+
+        private void btnexpediente_Click(object sender, EventArgs e)
+        {
+            if (superTabControl.Visible == true && Dgridusuario.Visible == true)
+            {
+                if (Dgridusuario.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("No seleccionaeste un usuario");
+                }
+                string cuenta = "";
+                cuenta = Dgridusuario.CurrentRow.Cells["catastral"].Value.ToString();
+                PadronUsuarios.frmexpediente  expediente = new PadronUsuarios.frmexpediente ();
+                expediente.cuenta = cuenta;
+                expediente.ShowDialog();
+                return;
+        }
+
+        }
+
+        private void buttonItem3_Click(object sender, EventArgs e)
+        {
+            Predial_7.configuracion.frmusuario usu = new Predial_7.configuracion.frmusuario();
+            usu.Show();
+        }
+               
+        
+    }
+}

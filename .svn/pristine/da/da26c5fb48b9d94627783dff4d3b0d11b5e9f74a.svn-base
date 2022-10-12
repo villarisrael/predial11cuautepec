@@ -1,0 +1,394 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+using Predial_7.Resources.CODE;
+
+namespace Predial_7.Catalogos
+{
+    public partial class Catalogos : Form
+    {
+        public Catalogos()
+        {
+            InitializeComponent();
+        }
+
+        private void Catalogos_Load(object sender, EventArgs e)
+        {
+            //Carga el gridview de Municipios
+            Conexion_a_BD.Conectar();
+            dtgMunicipios.DataSource = Conexion_a_BD.Consultasql("clave as Clave, nombre as Nombre", "municipios", "nombre");
+            Conexion_a_BD.Desconectar();
+
+            //Cargar el gridview de Comunidades
+            Conexion_a_BD.Conectar();
+            dtgComunidades.DataSource = Conexion_a_BD.Consultasql("Id_comunidad as Clave, nombre as Municipio ,comunidad as Comunidad" ,"comunidades INNER JOIN municipios ON (comunidades.NMpio=municipios.clave)", "comunidad");                                                                                
+            Conexion_a_BD.Desconectar();
+
+            //Cargar el gridview de Colonias
+            Conexion_a_BD.Conectar();
+            dtgColonias.DataSource = Conexion_a_BD.Consultasql("id_colonia as Clave,  Colonia As Colonia, cp as CP", "colonia", "Colonia");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el gridview de Calles
+            Conexion_a_BD.Conectar();
+            dtgCalles.DataSource = Conexion_a_BD.Consultasql("ID_CALLE as Clave , NOMBRE as Nombre", "calles", "NOMBRE");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el gridview de Regiones
+            Conexion_a_BD.Conectar();
+            dtgRegiones.DataSource = Conexion_a_BD.Consultasql("id_region as Clave,Region as Region ,comunidad as Comunidad", "region INNER JOIN comunidades ON (comunidades.Id_comunidad=region.id_comunidad)", "Region");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el gridview de Giros
+            Conexion_a_BD.Conectar();
+            dtgGiros.DataSource = Conexion_a_BD.Consultasql("codgir as Clave,Descripcion as Descripcion", "giro", "Descripcion");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el gridview de Sectores
+            Conexion_a_BD.Conectar();
+            dtgSectores.DataSource = Conexion_a_BD.Consultasql("claveSec as Clave,descripcion as Descripcion", "sectores", "Descripcion");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el gridview de Nivel Socieconomico
+            Conexion_a_BD.Conectar();
+            dtgNivelSE.DataSource = Conexion_a_BD.Consultasql("clave as Clave, Descripcion as Descripcion", "nivelsocioe", "Descripcion");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el gridview de Tipo Predio
+            Conexion_a_BD.Conectar();
+            dtgTPredio.DataSource = Conexion_a_BD.Consultasql("ID as Clave, Descripcion as Descripcion", "tipopredio", "Descripcion");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el gridview de Estado Predio
+            Conexion_a_BD.Conectar();
+            dtgEstadoPredio.DataSource = Conexion_a_BD.Consultasql("idEstado_Predio as Clave, Descripcion as Descripcion", "estado_predio", "Descripcion");
+            Conexion_a_BD.Desconectar();
+
+
+            //Inhabilita el boton modificar
+            btnModificar.Enabled = false;
+           
+
+            //Carga el combo de municipios
+            Conexion_a_BD.Conectar();
+            cmbMunicipio.ValueMember = "clave";
+            cmbMunicipio.DisplayMember = "nombre";
+            cmbMunicipio.DataSource = Conexion_a_BD.Consultasql("clave, nombre", "municipios", "nombre");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el combo de comunidades
+
+            Conexion_a_BD.Conectar();
+            cmbComunidad.ValueMember = "Id_comunidad";
+            cmbComunidad.DisplayMember = "Comunidad";
+            cmbComunidad.DataSource = Conexion_a_BD.Consultasql("Id_comunidad ,Comunidad", "comunidades", "Comunidad");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el combo de colonia
+
+            Conexion_a_BD.Conectar();
+            cmbColonia.ValueMember = "id_colonia";
+            cmbColonia.DisplayMember = "Colonia";
+            cmbColonia.DataSource = Conexion_a_BD.Consultasql("id_colonia ,Colonia", "colonia", "Colonia");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el combo de comunidades del modulo calles
+
+            Conexion_a_BD.Conectar();
+            cmbComu.ValueMember = "Id_comunidad";
+            cmbComu.DisplayMember = "Comunidad";
+            cmbComu.DataSource = Conexion_a_BD.Consultasql("Id_comunidad ,Comunidad", "comunidades", "Comunidad");
+            Conexion_a_BD.Desconectar();
+
+            //Carga el combo de comunidades del modulo regiones
+
+            Conexion_a_BD.Conectar();
+            cmbComunid.ValueMember = "Id_comunidad";
+            cmbComunid.DisplayMember = "Comunidad";
+            cmbComunid.DataSource = Conexion_a_BD.Consultasql("Id_comunidad ,Comunidad", "comunidades", "Comunidad");
+            Conexion_a_BD.Desconectar();
+
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string tab = tabControl1.SelectedTab.Name;
+            switch (tab)
+            {
+                case "tabMunicipios":
+                    try
+                    {
+
+                        if (txtMunicipios.Text == "")
+                        {
+                            MessageBox.Show("Debes ingresar un nombre de municipio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Conexion_a_BD.Conectar();
+                            Conexion_a_BD.insertar("Insert into municipios(nombre) values ('" + txtMunicipios.Text + "')");
+                            dtgMunicipios.DataSource = Conexion_a_BD.Consultasql("clave as Clave, nombre as Nombre", "municipios", "nombre");
+                            Conexion_a_BD.Desconectar();
+                            MessageBox.Show("Registro guardado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtMunicipios.Text = "";
+
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                        Conexion_a_BD.Desconectar();
+                    }
+                    break;
+                case "tabComunidades":
+                    try
+                    {
+
+                        if (txtComunidad.Text == "")
+                        {
+                            MessageBox.Show("Debes ingresar un nombre de la comunidad", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Conexion_a_BD.Conectar();
+                            Conexion_a_BD.insertar("Insert into comunidades( NMpio, Comunidad) values ('" +cmbMunicipio.SelectedValue + "' , '"+txtComunidad.Text+"')");
+                            dtgComunidades.DataSource = Conexion_a_BD.Consultasql("Id_comunidad as Clave, nombre as Municipio ,comunidad as Comunidad", "comunidades INNER JOIN municipios ON (comunidades.NMpio=municipios.clave)", "comunidad");
+                            Conexion_a_BD.Desconectar();
+                            MessageBox.Show("Registro guardado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtComunidad.Text = "";
+
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                        Conexion_a_BD.Desconectar();
+                    }
+                    break;
+                case "tabColonias":
+                    try
+                    {
+
+                        if (txtColonia.Text == "")
+                        {
+                            MessageBox.Show("Debes ingresar un nombre de la colonia", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Conexion_a_BD.Conectar();
+                            Conexion_a_BD.insertar("Insert into colonia( id_comunidad, Colonia, CP) values ('" + cmbComunidad.SelectedValue + "' , '" + txtColonia.Text + "','"+ txtCP.Text+"')");
+                            dtgColonias.DataSource = Conexion_a_BD.Consultasql("id_colonia as Clave, comunidad as Comunidad, Colonia As Colonia, cp as CP", "colonia INNER JOIN comunidades ON (colonia.id_comunidad=comunidades.Id_comunidad)", "Colonia");
+                            Conexion_a_BD.Desconectar();
+                            MessageBox.Show("Registro guardado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtColonia.Text = "";
+
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                        Conexion_a_BD.Desconectar();
+                    }
+                    break;
+                case "tabCalles":
+                    try
+                    {
+
+                        if (txtCalle.Text == "")
+                        {
+                            MessageBox.Show("Debes ingresar un nombre de la calle", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Conexion_a_BD.Conectar();
+                            Conexion_a_BD.insertar("Insert into calles( ID_COMUNIDAD, ID_COLONIA, NOMBRE) values ('" + cmbComu.SelectedValue + "' , '" + cmbColonia.SelectedValue + "','" + txtCalle.Text + "')");
+                            dtgCalles.DataSource = Conexion_a_BD.Consultasql("Comunidad as Comunidad, Colonia as Colonia ,ID_CALLE as Clave , NOMBRE as Nombre", "calles INNER JOIN comunidades ON (calles.ID_COMUNIDAD=comunidades.Id_comunidad) INNER JOIN colonia ON (calles.ID_COLONIA=colonia.id_colonia)", "NOMBRE");
+                            Conexion_a_BD.Desconectar();
+                            MessageBox.Show("Registro guardado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtCalle.Text = "";
+
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                        Conexion_a_BD.Desconectar();
+                    }
+                    break;
+                case "tabRegion":
+                    try
+                    {
+
+                        if (txtRegion.Text == "")
+                        {
+                            MessageBox.Show("Debes ingresar un nombre de la region", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Conexion_a_BD.Conectar();
+                            Conexion_a_BD.insertar("Insert into region( Region, id_comunidad) values ('" + txtRegion.Text + "' , '" + cmbComunid.SelectedValue + "')");
+                            dtgRegiones.DataSource = Conexion_a_BD.Consultasql("id_region as Clave,Region as Region ,comunidad as Comunidad", "region INNER JOIN comunidades ON (comunidades.Id_comunidad=region.id_comunidad)", "Region");
+                            Conexion_a_BD.Desconectar();
+                            MessageBox.Show("Registro guardado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtRegion.Text = "";
+
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                        Conexion_a_BD.Desconectar();
+                    }                   
+                    break;
+                case "tabGiro":
+                          try
+                          {
+                    
+
+                        if (txtDescripcion.Text == "")
+                        {
+                            MessageBox.Show("Debes ingresar la descripcion del giro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Conexion_a_BD.Conectar();
+                            Conexion_a_BD.insertar("Insert into giro( Descripcion) values ('" + txtDescripcion.Text + "')");
+                            dtgGiros.DataSource = Conexion_a_BD.Consultasql("codgir as Clave,Descripcion as Descripcion", "giro", "Descripcion");
+                            Conexion_a_BD.Desconectar();
+                            MessageBox.Show("Registro guardado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtDescripcion.Text = "";
+
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                        Conexion_a_BD.Desconectar();
+                    }                   
+                    break;
+                case "tabSectores":
+                    try
+                    {
+
+                        if (txtDescrip.Text == "")
+                        {
+                            MessageBox.Show("Debes ingresar la descripcion del sector", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Conexion_a_BD.Conectar();
+                            Conexion_a_BD.insertar("Insert into sectores(descripcion) values ('" + txtDescrip.Text + "')");
+                            dtgSectores.DataSource = Conexion_a_BD.Consultasql("claveSec as Clave,descripcion as Descripcion", "sectores", "Descripcion");
+                            Conexion_a_BD.Desconectar();
+                            MessageBox.Show("Registro guardado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtDescrip.Text = "";
+
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                        Conexion_a_BD.Desconectar();
+                    }                   
+                    break;
+                case "tabNivelSC":
+                    try
+                    {
+
+                        if (txtDescripSE.Text == "")
+                        {
+                            MessageBox.Show("Debes ingresar la descripcion del Nivel Socioeconómico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Conexion_a_BD.Conectar();
+                            Conexion_a_BD.insertar("Insert into nivelsocioe(Descripcion) values ('" + txtDescripSE.Text + "')");
+                            dtgNivelSE.DataSource = Conexion_a_BD.Consultasql("clave as Clave, Descripcion as Descripcion", "nivelsocioe", "Descripcion");
+                            Conexion_a_BD.Desconectar();
+                            MessageBox.Show("Registro guardado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtDescripSE.Text = "";
+
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                        Conexion_a_BD.Desconectar();
+                    }                   
+                    break;
+                case "tabTipoPredio":
+                    try
+                    {
+
+                        if (txtDescripTP.Text == "")
+                        {
+                            MessageBox.Show("Debes ingresar la descripcion del tipo de predio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Conexion_a_BD.Conectar();
+                            Conexion_a_BD.insertar("Insert into tipopredio(Descripcion) values ('" + txtDescripTP.Text + "')");
+                            dtgTPredio.DataSource = Conexion_a_BD.Consultasql("ID as Clave, Descripcion as Descripcion", "tipopredio", "Descripcion");
+                            Conexion_a_BD.Desconectar();
+                            MessageBox.Show("Registro guardado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtDescripTP.Text = "";
+
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                        Conexion_a_BD.Desconectar();
+                    }        
+                    break;
+                case "tabEstadoPredio":
+                    try
+                    {
+
+                        if (txtDescripcionEP.Text == "")
+                        {
+                            MessageBox.Show("Debes ingresar la descripcion del estado del predio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Conexion_a_BD.Conectar();
+                            Conexion_a_BD.insertar("Insert into estado_predio(Descripcion) values ('" + txtDescripcionEP.Text + "')");
+                            dtgEstadoPredio.DataSource = Conexion_a_BD.Consultasql("idEstado_Predio as Clave, Descripcion as Descripcion", "estado_predio", "Descripcion");
+                            Conexion_a_BD.Desconectar();
+                            MessageBox.Show("Registro guardado exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtDescripcionEP.Text = "";
+
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                        Conexion_a_BD.Desconectar();
+                    }
+
+                    break;
+                default:
+                    break;
+               
+
+            }
+           
+           
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
+    }
+}

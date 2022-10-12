@@ -1,0 +1,339 @@
+﻿namespace Predial_7.AccesoSistema
+{
+    partial class FrmAcceso
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAcceso));
+            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.lblNombreSistema = new DevComponents.DotNetBar.LabelX();
+            this.lblNumeroSerie = new DevComponents.DotNetBar.LabelX();
+            this.lblModo = new DevComponents.DotNetBar.LabelX();
+            this.lblNoUsuarios = new DevComponents.DotNetBar.LabelX();
+            this.lblEmpresa = new DevComponents.DotNetBar.LabelX();
+            this.lblLicencia = new DevComponents.DotNetBar.LabelX();
+            this.lblUsuario = new DevComponents.DotNetBar.LabelX();
+            this.lblPassword = new DevComponents.DotNetBar.LabelX();
+            this.txtUsuario = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
+            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
+            this.groupPanel1.SuspendLayout();
+            this.groupPanel2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupPanel1
+            // 
+            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.lblEmpresa);
+            this.groupPanel1.Controls.Add(this.lblLicencia);
+            this.groupPanel1.Controls.Add(this.lblModo);
+            this.groupPanel1.Controls.Add(this.lblNoUsuarios);
+            this.groupPanel1.Controls.Add(this.lblNumeroSerie);
+            this.groupPanel1.Controls.Add(this.lblNombreSistema);
+            this.groupPanel1.Location = new System.Drawing.Point(25, 12);
+            this.groupPanel1.Name = "groupPanel1";
+            this.groupPanel1.Size = new System.Drawing.Size(336, 201);
+            // 
+            // 
+            // 
+            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel1.Style.BackColorGradientAngle = 90;
+            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderBottomWidth = 1;
+            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderLeftWidth = 1;
+            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderRightWidth = 1;
+            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderTopWidth = 1;
+            this.groupPanel1.Style.Class = "";
+            this.groupPanel1.Style.CornerDiameter = 4;
+            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.groupPanel1.StyleMouseDown.Class = "";
+            this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.groupPanel1.StyleMouseOver.Class = "";
+            this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupPanel1.TabIndex = 0;
+            // 
+            // groupPanel2
+            // 
+            this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.txtPassword);
+            this.groupPanel2.Controls.Add(this.txtUsuario);
+            this.groupPanel2.Controls.Add(this.lblPassword);
+            this.groupPanel2.Controls.Add(this.lblUsuario);
+            this.groupPanel2.Location = new System.Drawing.Point(25, 228);
+            this.groupPanel2.Name = "groupPanel2";
+            this.groupPanel2.Size = new System.Drawing.Size(336, 85);
+            // 
+            // 
+            // 
+            this.groupPanel2.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel2.Style.BackColorGradientAngle = 90;
+            this.groupPanel2.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupPanel2.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderBottomWidth = 1;
+            this.groupPanel2.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel2.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderLeftWidth = 1;
+            this.groupPanel2.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderRightWidth = 1;
+            this.groupPanel2.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderTopWidth = 1;
+            this.groupPanel2.Style.Class = "";
+            this.groupPanel2.Style.CornerDiameter = 4;
+            this.groupPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.groupPanel2.StyleMouseDown.Class = "";
+            this.groupPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.groupPanel2.StyleMouseOver.Class = "";
+            this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupPanel2.TabIndex = 1;
+            // 
+            // lblNombreSistema
+            // 
+            this.lblNombreSistema.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lblNombreSistema.BackgroundStyle.Class = "";
+            this.lblNombreSistema.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblNombreSistema.Location = new System.Drawing.Point(125, 16);
+            this.lblNombreSistema.Name = "lblNombreSistema";
+            this.lblNombreSistema.Size = new System.Drawing.Size(75, 23);
+            this.lblNombreSistema.TabIndex = 0;
+            this.lblNombreSistema.Text = "Predial 7";
+            // 
+            // lblNumeroSerie
+            // 
+            this.lblNumeroSerie.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lblNumeroSerie.BackgroundStyle.Class = "";
+            this.lblNumeroSerie.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblNumeroSerie.Location = new System.Drawing.Point(90, 45);
+            this.lblNumeroSerie.Name = "lblNumeroSerie";
+            this.lblNumeroSerie.Size = new System.Drawing.Size(136, 23);
+            this.lblNumeroSerie.TabIndex = 1;
+            this.lblNumeroSerie.Text = "Número de Serie 2013-1";
+            // 
+            // lblModo
+            // 
+            this.lblModo.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lblModo.BackgroundStyle.Class = "";
+            this.lblModo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblModo.Location = new System.Drawing.Point(125, 103);
+            this.lblModo.Name = "lblModo";
+            this.lblModo.Size = new System.Drawing.Size(75, 23);
+            this.lblModo.TabIndex = 3;
+            this.lblModo.Text = "Modo: Intranet";
+            // 
+            // lblNoUsuarios
+            // 
+            this.lblNoUsuarios.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lblNoUsuarios.BackgroundStyle.Class = "";
+            this.lblNoUsuarios.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblNoUsuarios.Location = new System.Drawing.Point(56, 74);
+            this.lblNoUsuarios.Name = "lblNoUsuarios";
+            this.lblNoUsuarios.Size = new System.Drawing.Size(230, 23);
+            this.lblNoUsuarios.TabIndex = 2;
+            this.lblNoUsuarios.Text = "Número de Usuarios ilimitados Empresas 1";
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lblEmpresa.BackgroundStyle.Class = "";
+            this.lblEmpresa.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblEmpresa.Location = new System.Drawing.Point(31, 161);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(255, 23);
+            this.lblEmpresa.TabIndex = 5;
+            this.lblEmpresa.Text = "- -";
+            // 
+            // lblLicencia
+            // 
+            this.lblLicencia.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lblLicencia.BackgroundStyle.Class = "";
+            this.lblLicencia.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblLicencia.Location = new System.Drawing.Point(111, 132);
+            this.lblLicencia.Name = "lblLicencia";
+            this.lblLicencia.Size = new System.Drawing.Size(115, 23);
+            this.lblLicencia.TabIndex = 4;
+            this.lblLicencia.Text = "Con licencia para:";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lblUsuario.BackgroundStyle.Class = "";
+            this.lblUsuario.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblUsuario.Location = new System.Drawing.Point(31, 13);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(75, 23);
+            this.lblUsuario.TabIndex = 0;
+            this.lblUsuario.Text = "Usuario:";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lblPassword.BackgroundStyle.Class = "";
+            this.lblPassword.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblPassword.Location = new System.Drawing.Point(31, 43);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(75, 23);
+            this.lblPassword.TabIndex = 1;
+            this.lblPassword.Text = "Password:";
+            // 
+            // txtUsuario
+            // 
+            // 
+            // 
+            // 
+            this.txtUsuario.Border.Class = "TextBoxBorder";
+            this.txtUsuario.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtUsuario.Location = new System.Drawing.Point(111, 13);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(148, 20);
+            this.txtUsuario.TabIndex = 2;
+            // 
+            // txtPassword
+            // 
+            // 
+            // 
+            // 
+            this.txtPassword.Border.Class = "TextBoxBorder";
+            this.txtPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtPassword.Location = new System.Drawing.Point(111, 43);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(148, 20);
+            this.txtPassword.TabIndex = 3;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.Location = new System.Drawing.Point(59, 341);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(86, 30);
+            this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnAceptar.TabIndex = 2;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(224, 341);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 30);
+            this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // FrmAcceso
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(387, 403);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.groupPanel2);
+            this.Controls.Add(this.groupPanel1);
+            this.MaximizeBox = false;
+            this.Name = "FrmAcceso";
+            this.Text = "Predial 7";
+            this.Load += new System.EventHandler(this.FrmAcceso_Load);
+            this.groupPanel1.ResumeLayout(false);
+            this.groupPanel2.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
+        private DevComponents.DotNetBar.LabelX lblEmpresa;
+        private DevComponents.DotNetBar.LabelX lblLicencia;
+        private DevComponents.DotNetBar.LabelX lblModo;
+        private DevComponents.DotNetBar.LabelX lblNoUsuarios;
+        private DevComponents.DotNetBar.LabelX lblNumeroSerie;
+        private DevComponents.DotNetBar.LabelX lblNombreSistema;
+        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPassword;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtUsuario;
+        private DevComponents.DotNetBar.LabelX lblPassword;
+        private DevComponents.DotNetBar.LabelX lblUsuario;
+        private DevComponents.DotNetBar.ButtonX btnAceptar;
+        private DevComponents.DotNetBar.ButtonX btnCancelar;
+    }
+}

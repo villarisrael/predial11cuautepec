@@ -1,0 +1,80 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Predial10.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="linea_inicial_de_detalle_de_recibo" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">280</Value>
+    </Setting>
+    <Setting Name="avance_de_linea_detalle_recibo" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">13</Value>
+    </Setting>
+    <Setting Name="columna_de_importe" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">650</Value>
+    </Setting>
+    <Setting Name="letra_detalle_recibo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Microsoft sans serif</Value>
+    </Setting>
+    <Setting Name="tamano_letra_detalle_recibo" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">9.75</Value>
+    </Setting>
+    <Setting Name="columna_de_concepto" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="grabarencobroexpress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">si</Value>
+    </Setting>
+    <Setting Name="timbrarprueba" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SI</Value>
+    </Setting>
+    <Setting Name="Rezago_urbano" Type="System.String" Scope="User">
+      <Value Profile="(Default)">360</Value>
+    </Setting>
+    <Setting Name="Rezago_rustico" Type="System.String" Scope="User">
+      <Value Profile="(Default)">361</Value>
+    </Setting>
+    <Setting Name="Rezago_ejidal" Type="System.String" Scope="User">
+      <Value Profile="(Default)">362</Value>
+    </Setting>
+    <Setting Name="Recargos" Type="System.String" Scope="User">
+      <Value Profile="(Default)">349</Value>
+    </Setting>
+    <Setting Name="Traslado" Type="System.String" Scope="User">
+      <Value Profile="(Default)">303</Value>
+    </Setting>
+    <Setting Name="Recargosanteriores" Type="System.String" Scope="User">
+      <Value Profile="(Default)">363</Value>
+    </Setting>
+    <Setting Name="Regimenfiscal" Type="System.String" Scope="User">
+      <Value Profile="(Default)">603</Value>
+    </Setting>
+    <Setting Name="usuariomultifacturas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MCH850101BW8</Value>
+    </Setting>
+    <Setting Name="passmultifacturas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Predial@2018</Value>
+    </Setting>
+    <Setting Name="CertificadoCSD" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\\sdk2\\certificados\\lan7008173r5.cer</Value>
+    </Setting>
+    <Setting Name="keyCSD" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\\sdk2\\certificados\\lan7008173r5.key</Value>
+    </Setting>
+    <Setting Name="passCSD" Type="System.String" Scope="User">
+      <Value Profile="(Default)">62626262</Value>
+    </Setting>
+    <Setting Name="colorfactura" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Cafe</Value>
+    </Setting>
+    <Setting Name="predialchicoConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=192.168.0.16;User Id=uziel;password=uziel;database=predialchico&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=192.168.0.16;User Id=uziel;password=uziel;database=predialchico</Value>
+    </Setting>
+    <Setting Name="Predial_10_WSCancelar_v4_Cancelar_cfdi_4_0_SAT" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://pac1.multifacturas.com/cancelacion2022/index.php</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

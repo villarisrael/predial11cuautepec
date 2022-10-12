@@ -1,0 +1,130 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using DevComponents.DotNetBar;
+using Predial10.Resources.CODE;
+
+namespace Predial10
+{
+    public partial class confempresas : DevComponents.DotNetBar.Office2007Form
+    {
+        DataTable TBL_Consulta = new DataTable();
+        int fila;        
+        string ID, DESCRIPCION, BASE, COBRO, RECARGO;       
+
+        public confempresas()
+        {
+            InitializeComponent();
+        }
+
+        private void confempresas_Load(object sender, EventArgs e)
+        {            
+
+           //Carga los datos en los controles
+            try
+            {
+                Conexion_a_BD.Conectar();
+                TBL_Consulta = Conexion_a_BD.Consultasql("CNOMBRE, CADMINIS, PorcIVA, SALARIO, porctrasladodom, pdesctoene, pdesctofeb, pdesctomar, pminurb ,pminrus, pdesctopen, pdesctoinsen", "empresa");
+                Conexion_a_BD.Desconectar();
+                var resultado = from myRow in TBL_Consulta.AsEnumerable() select myRow;
+
+                DataView view = resultado.AsDataView();
+                txtnombreempresa.Text = view[0]["CNOMBRE"].ToString();
+                txtDirectorPredial.Text = view[0]["CADMINIS"].ToString();
+                DIiva.Text = view[0]["PorcIVA"].ToString();
+                DSalarioMinimo.Text = view[0]["SALARIO"].ToString();
+                DTraslado.Text = view[0]["porctrasladodom"].ToString();
+                DEnero.Text = view[0]["pdesctoene"].ToString();
+                DFebrero.Text = view[0]["pdesctofeb"].ToString();
+                DMarzo.Text = view[0]["pdesctomar"].ToString();
+                DISMprediosurbanos.Text = view[0]["pminurb"].ToString();                
+                DISMprediosrusticos.Text = view[0]["pminrus"].ToString();
+                Dinsen.Text = view[0]["pdesctoinsen"].ToString();
+                DPensionado.Text = view[0]["pdesctopen"].ToString();
+                
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+
+                //Carga el gridview de Tarifas
+                Conexion_a_BD.Conectar();
+                dtgTarifas.DataSource = Conexion_a_BD.Consultasql("idTarifas AS ID ,Descripcion AS DESCRIPCION,  porcentajebase AS BASE, porcentajecobro AS COBRO, porcentajederecargo AS RECARGO", "tarifas", "idTarifas");
+                Conexion_a_BD.Desconectar();
+                
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnactualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Conexion_a_BD.Conectar();
+                StringBuilder cadena = new StringBuilder();
+                cadena.Append("UPDATE empresa SET ");
+                cadena.Append("CNOMBRE='" + txtnombreempresa.Text + "',");
+                cadena.Append("CADMINIS='" + txtDirectorPredial.Text + "',");
+                cadena.Append("PorcIVA='" + DIiva.Text + "',");
+                cadena.Append("SALARIO='" + DSalarioMinimo.Text + "',");
+                cadena.Append("porctrasladodom='" + DTraslado.Text + "',");
+                cadena.Append("pdesctoene='" + DEnero.Text + "',");
+                cadena.Append("pdesctofeb='" + DFebrero.Text + "',");
+                cadena.Append("pdesctomar='" + DMarzo.Text + "',");
+                cadena.Append("pminurb='" + DISMprediosurbanos.Text + "',");
+                cadena.Append("pminrus='" + DISMprediosrusticos.Text + "',");
+                cadena.Append("pdesctopen='" + DPensionado.Text + "',");
+                cadena.Append("pdesctoinsen='" + Dinsen.Text + "'");
+                cadena.Append(" WHERE CODEMP='1'");
+                Conexion_a_BD.insertar(cadena.ToString());
+                Conexion_a_BD.Desconectar();
+
+                StringBuilder CadenaUpdate = new StringBuilder();
+               
+
+                for (fila = 0; fila < dtgTarifas.Rows.Count; fila++)
+                {
+                    
+                    ID = dtgTarifas.Rows[fila].Cells[0].Value.ToString();
+                    DESCRIPCION = dtgTarifas.Rows[fila].Cells[1].Value.ToString();
+                    BASE = dtgTarifas.Rows[fila].Cells[2].Value.ToString();
+                    COBRO = dtgTarifas.Rows[fila].Cells[3].Value.ToString();
+                    RECARGO = dtgTarifas.Rows[fila].Cells[4].Value.ToString();
+                   
+                    CadenaUpdate.Append("UPDATE tarifas SET ");
+                    CadenaUpdate.Append("Descripcion='" + DESCRIPCION + "',");
+                    CadenaUpdate.Append("porcentajebase='" + BASE + "',");
+                    CadenaUpdate.Append("porcentajecobro='" + COBRO + "',");                   
+                    CadenaUpdate.Append("porcentajederecargo='" + RECARGO + "'");
+                    CadenaUpdate.Append(" WHERE idTarifas='"+ ID +"';");                    
+                    
+                }
+
+                Conexion_a_BD.Conectar();
+                Conexion_a_BD.insertar(CadenaUpdate.ToString());
+                Conexion_a_BD.Desconectar();
+
+                MessageBox.Show("Configuaración guardada exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);               
+                
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Conexion_a_BD.Desconectar();
+            }
+            
+        }
+    }
+}
