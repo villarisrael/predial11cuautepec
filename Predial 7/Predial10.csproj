@@ -344,6 +344,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Facturacion_V4\ClsFactura_v4.cs" />
+    <Compile Include="Facturacion_V4\DecodificadorSAT.cs" />
     <Compile Include="frmlistadofacturas.cs">
       <SubType>Form</SubType>
     </Compile>

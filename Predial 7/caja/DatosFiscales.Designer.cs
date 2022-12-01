@@ -66,6 +66,10 @@
             this.cmbforma = new System.Windows.Forms.ComboBox();
             this.cmbmetodo = new System.Windows.Forms.ComboBox();
             this.cmbuso = new System.Windows.Forms.ComboBox();
+            this.cmbRegimenFiscal = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCPimpreso = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.SuspendLayout();
             // 
             // lblCuenta
@@ -200,7 +204,7 @@
             // 
             // 
             this.lblEmail.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblEmail.Location = new System.Drawing.Point(30, 225);
+            this.lblEmail.Location = new System.Drawing.Point(30, 255);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(56, 23);
             this.lblEmail.TabIndex = 10;
@@ -212,7 +216,7 @@
             // 
             // 
             this.lblDelegacion.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblDelegacion.Location = new System.Drawing.Point(30, 252);
+            this.lblDelegacion.Location = new System.Drawing.Point(30, 282);
             this.lblDelegacion.Name = "lblDelegacion";
             this.lblDelegacion.Size = new System.Drawing.Size(65, 23);
             this.lblDelegacion.TabIndex = 11;
@@ -225,7 +229,7 @@
             // 
             this.lblPais.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblPais.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblPais.Location = new System.Drawing.Point(30, 279);
+            this.lblPais.Location = new System.Drawing.Point(30, 309);
             this.lblPais.Name = "lblPais";
             this.lblPais.Size = new System.Drawing.Size(42, 23);
             this.lblPais.TabIndex = 12;
@@ -360,7 +364,7 @@
             // 
             this.txtEmail.Border.Class = "TextBoxBorder";
             this.txtEmail.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtEmail.Location = new System.Drawing.Point(92, 225);
+            this.txtEmail.Location = new System.Drawing.Point(92, 255);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(179, 20);
             this.txtEmail.TabIndex = 24;
@@ -372,7 +376,7 @@
             // 
             this.txtDelegacion.Border.Class = "TextBoxBorder";
             this.txtDelegacion.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtDelegacion.Location = new System.Drawing.Point(94, 252);
+            this.txtDelegacion.Location = new System.Drawing.Point(94, 282);
             this.txtDelegacion.Name = "txtDelegacion";
             this.txtDelegacion.Size = new System.Drawing.Size(179, 20);
             this.txtDelegacion.TabIndex = 25;
@@ -384,7 +388,7 @@
             // 
             this.txtPais.Border.Class = "TextBoxBorder";
             this.txtPais.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtPais.Location = new System.Drawing.Point(92, 279);
+            this.txtPais.Location = new System.Drawing.Point(92, 309);
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(179, 20);
             this.txtPais.TabIndex = 26;
@@ -395,7 +399,7 @@
             this.btnGenerar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnGenerar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnGenerar.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerar.Image")));
-            this.btnGenerar.Location = new System.Drawing.Point(210, 460);
+            this.btnGenerar.Location = new System.Drawing.Point(210, 531);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(100, 37);
             this.btnGenerar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -408,7 +412,7 @@
             this.btnGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(77, 460);
+            this.btnGuardar.Location = new System.Drawing.Point(92, 531);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(99, 37);
             this.btnGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -422,7 +426,7 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(30, 297);
+            this.labelX1.Location = new System.Drawing.Point(30, 327);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(89, 23);
             this.labelX1.TabIndex = 30;
@@ -435,7 +439,7 @@
             // 
             this.txtObservaciones.Border.Class = "TextBoxBorder";
             this.txtObservaciones.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtObservaciones.Location = new System.Drawing.Point(111, 308);
+            this.txtObservaciones.Location = new System.Drawing.Point(111, 338);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(295, 35);
@@ -446,7 +450,7 @@
             this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(326, 460);
+            this.btnCancelar.Location = new System.Drawing.Point(326, 531);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(91, 37);
             this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -457,7 +461,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 377);
+            this.label1.Location = new System.Drawing.Point(12, 407);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 33;
@@ -466,7 +470,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 406);
+            this.label2.Location = new System.Drawing.Point(12, 436);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 34;
@@ -475,7 +479,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 353);
+            this.label3.Location = new System.Drawing.Point(12, 383);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 35;
@@ -484,7 +488,7 @@
             // cmbforma
             // 
             this.cmbforma.FormattingEnabled = true;
-            this.cmbforma.Location = new System.Drawing.Point(101, 350);
+            this.cmbforma.Location = new System.Drawing.Point(101, 380);
             this.cmbforma.Name = "cmbforma";
             this.cmbforma.Size = new System.Drawing.Size(316, 21);
             this.cmbforma.TabIndex = 36;
@@ -492,7 +496,7 @@
             // cmbmetodo
             // 
             this.cmbmetodo.FormattingEnabled = true;
-            this.cmbmetodo.Location = new System.Drawing.Point(101, 377);
+            this.cmbmetodo.Location = new System.Drawing.Point(101, 407);
             this.cmbmetodo.Name = "cmbmetodo";
             this.cmbmetodo.Size = new System.Drawing.Size(316, 21);
             this.cmbmetodo.TabIndex = 37;
@@ -500,16 +504,62 @@
             // cmbuso
             // 
             this.cmbuso.FormattingEnabled = true;
-            this.cmbuso.Location = new System.Drawing.Point(101, 403);
+            this.cmbuso.Location = new System.Drawing.Point(101, 433);
             this.cmbuso.Name = "cmbuso";
             this.cmbuso.Size = new System.Drawing.Size(316, 21);
             this.cmbuso.TabIndex = 38;
+            // 
+            // cmbRegimenFiscal
+            // 
+            this.cmbRegimenFiscal.FormattingEnabled = true;
+            this.cmbRegimenFiscal.Location = new System.Drawing.Point(101, 463);
+            this.cmbRegimenFiscal.Name = "cmbRegimenFiscal";
+            this.cmbRegimenFiscal.Size = new System.Drawing.Size(316, 21);
+            this.cmbRegimenFiscal.TabIndex = 43;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 466);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Regimen Físcal";
+            // 
+            // txtCPimpreso
+            // 
+            // 
+            // 
+            // 
+            this.txtCPimpreso.Border.Class = "TextBoxBorder";
+            this.txtCPimpreso.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCPimpreso.Location = new System.Drawing.Point(104, 227);
+            this.txtCPimpreso.Name = "txtCPimpreso";
+            this.txtCPimpreso.Size = new System.Drawing.Size(100, 20);
+            this.txtCPimpreso.TabIndex = 46;
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelX2.Location = new System.Drawing.Point(30, 227);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(68, 23);
+            this.labelX2.TabIndex = 45;
+            this.labelX2.Text = "*CP Impreso:";
             // 
             // DatosFiscales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 522);
+            this.ClientSize = new System.Drawing.Size(534, 599);
+            this.Controls.Add(this.txtCPimpreso);
+            this.Controls.Add(this.labelX2);
+            this.Controls.Add(this.cmbRegimenFiscal);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbuso);
             this.Controls.Add(this.cmbmetodo);
             this.Controls.Add(this.cmbforma);
@@ -597,5 +647,9 @@
         private System.Windows.Forms.ComboBox cmbforma;
         private System.Windows.Forms.ComboBox cmbmetodo;
         private System.Windows.Forms.ComboBox cmbuso;
+        private System.Windows.Forms.ComboBox cmbRegimenFiscal;
+        private System.Windows.Forms.Label label4;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtCPimpreso;
+        private DevComponents.DotNetBar.LabelX labelX2;
     }
 }

@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 using CrystalDecisions.CrystalReports.Engine;
 using System.Diagnostics;
 using CrystalDecisions.Shared;
+using Predial10.Facturacion_V4;
 
 namespace Predial10.caja
 {
@@ -50,10 +51,10 @@ namespace Predial10.caja
                 cmbuso.SelectedValue = "G03";
 
                 //Agregar RegimenFíscal para la facturación CFDI 4.0
-                //cmbRegimenFiscal.ValueMember = "ClaveRegimenFiscal";
-                //cmbRegimenFiscal.DisplayMember = "Descripcion";
-                //cmbRegimenFiscal.DataSource = Conexion_a_BD.Consultasql("ClaveRegimenFiscal, concat(ClaveRegimenFiscal,' | ',Descripcion) as Descripcion", "regimenfiscal", "idRegimenFiscal");
-                //cmbRegimenFiscal.SelectedValue = "601";
+                cmbRegimenFiscal.ValueMember = "ClaveRegimenFiscal";
+                cmbRegimenFiscal.DisplayMember = "Descripcion";
+                cmbRegimenFiscal.DataSource = Conexion_a_BD.Consultasql("ClaveRegimenFiscal, concat(ClaveRegimenFiscal,' | ',Descripcion) as Descripcion", "regimenfiscal", "idRegimenFiscal");
+                cmbRegimenFiscal.SelectedValue = "601";
             }
             catch (Exception err)
             {
@@ -75,9 +76,24 @@ namespace Predial10.caja
                 txtEstado.Text = Datos.Rows[0]["ESTADO"].ToString();
                 txtCP.Text = Datos.Rows[0]["CP"].ToString();
                 txtRFC.Text = Datos.Rows[0]["RFC"].ToString();
+                if (txtRFC.Text == "XAXX010101000")
+                {
+                    cmbuso.SelectedValue = "S01";
+                }
+                else
+                {
+                    cmbuso.SelectedValue = "G03";
+                }
                 txtEmail.Text = Datos.Rows[0]["maildeenvio"].ToString();
                 txtDelegacion.Text = Datos.Rows[0]["DELEGACION"].ToString();
                 txtPais.Text = Datos.Rows[0]["PAIS"].ToString();
+                txtCPimpreso.Text = Datos.Rows[0]["CP_Impreso"].ToString();
+                if (Datos.Rows[0]["regimenfiscal"].ToString() != "")
+                {
+
+                    cmbRegimenFiscal.SelectedValue = Datos.Rows[0]["regimenfiscal"].ToString();
+
+                }
             }
             else
             {
@@ -169,7 +185,7 @@ namespace Predial10.caja
                 String seriefactura = Conexion_a_BD.obtenercampo("select seriefactura from empresa limit 1");
                 String numerofactura = (int.Parse((Conexion_a_BD.obtenercampo("select foliofactura from empresa limit 1"))) + 1).ToString();
                 
-                ClsFactura factu = new ClsFactura();
+                ClsFactura_v4 factu = new ClsFactura_v4();
 
                 double total = (double)Math.Round(caja.total, 2);
                 double descuento = (double)Math.Round(caja.descuento, 2);
@@ -177,7 +193,8 @@ namespace Predial10.caja
                 double subtotal = (double)Math.Round(total + descuento,2);
 
                 //Invocar a la clase facturación CFDI 4.0 15/06/2022 UMG
-                MultiFacturasSDK.MFSDK ARCHIVO = factu.construirfactura(seriefactura, numerofactura, this.cmbforma.SelectedValue.ToString(), cmbmetodo.SelectedValue.ToString(), cmbuso.SelectedValue.ToString(),  txtRFC.Text, txtNombre.Text, caja.DTpartidas1,"importeSD");
+                //MultiFacturasSDK.MFSDK ARCHIVO = factu.construirfactura(seriefactura, numerofactura, this.cmbforma.SelectedValue.ToString(), cmbmetodo.SelectedValue.ToString(), cmbuso.SelectedValue.ToString(),  txtRFC.Text, txtNombre.Text, caja.DTpartidas1,"importeSD");
+                MultiFacturasSDK.MFSDK ARCHIVO = factu.construirfacturaV4(seriefactura, numerofactura, this.cmbforma.SelectedValue.ToString(), cmbmetodo.SelectedValue.ToString(), cmbuso.SelectedValue.ToString(), txtRFC.Text, txtNombre.Text, caja.DTpartidas1, "importeSD", txtCP.Text.ToString(), cmbRegimenFiscal.SelectedValue.ToString(), false);
                 MultiFacturasSDK.SDKRespuesta respuesta = factu.timbrar(ARCHIVO);
 
                 if (!respuesta.Codigo_MF_Texto.Contains("OK"))
@@ -195,7 +212,7 @@ namespace Predial10.caja
                     cadena += "cadena='" + respuesta.Cadena + "', sello ='" + respuesta.Sello + "', sellosat='" + respuesta.SelloSAT + "', cfdi='" + respuesta.CFDI + "',";
                     cadena += " nodecertificado='" + respuesta.NoCertificado + "',descuento=" + descuento + ",rfc='" + txtRFC.Text + "',";
                     cadena += "SUBTOTAL = " + subtotal + ",IVA = 0,TOTAL = " + total + ", UUID='" + respuesta.UUID + "',formapago='" + this.cmbforma.SelectedValue.ToString() + "'";
-                    cadena += ",TIPO = 'INDIVIDUAL', ESTADO = 'A', CAJA = '" + CAJA + "', USUARIO = '', motivocancelacion = '',observacion='" + txtObservaciones.Text + "'";
+                    cadena += ",TIPO = 'INDIVIDUAL', ESTADO = 'A', CAJA = '" + CAJA + "', USUARIO = '', motivocancelacion = '', version = '4.0', observacion='" + txtObservaciones.Text + "'";
 
                     Conexion_a_BD.Ejecutar(cadena);
                     Conexion_a_BD.Ejecutar("UPDATE RECIBOMAESTRO SET FACTURADO=" + numerofactura + " WHERE RECIBOMAESTRO.serie='" +caja.serie  + "' AND  RECIBOMAESTRO.folio=" + caja.ultimofolio + " and facturado=0");
@@ -392,8 +409,11 @@ namespace Predial10.caja
                     Cadena.Append("RFC='" + txtRFC.Text + "',");
                     Cadena.Append("maildeenvio='" + txtEmail.Text + "',");
                     Cadena.Append("DELEGACION='" + txtDelegacion.Text + "',");
-                    Cadena.Append("PAIS='" + txtPais.Text + "'");
-                    Cadena.Append("regimenfiscal='" + txtPais.Text + "'");
+                    Cadena.Append("PAIS='" + txtPais.Text + "',");
+                    Cadena.Append("regimenfiscal='" + cmbRegimenFiscal.SelectedValue + "',");
+                    Cadena.Append("CP_Impreso='" + txtCPimpreso.Text + "'");
+                    //Cadena.Append("regimenfiscal='616'" + "',");
+                    //Cadena.Append("CP_Impreso='43730'");
 
                     Conexion_a_BD.insertar(Cadena.ToString());
                     Conexion_a_BD.Desconectar();
@@ -421,9 +441,5 @@ namespace Predial10.caja
            
         }
 
-        private void btnEditarCliente_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

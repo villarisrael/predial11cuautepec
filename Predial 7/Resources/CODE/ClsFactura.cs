@@ -259,14 +259,18 @@ namespace Predial10.Resources.CODE
            
             MFObject emisor = new MFObject("emisor");
             if (Properties.Settings.Default.timbrarprueba.ToUpper() == "SI")
-            { 
+            {
                 //emisor["rfc"] = "AAA010101AAA";
                 //emisor["nombre"] = "CINDEMEX SA DE CV";
                 //emisor["RegimenFiscal"] = "601";
 
-                emisor["rfc"] = "KIJ0906199R1";
-                emisor["nombre"] = "KERNEL INDUSTIA JUGUETERA SA DE CV";
-                emisor["RegimenFiscal"] = "603";
+                //emisor["rfc"] = "KIJ0906199R1";
+                //emisor["nombre"] = "KERNEL INDUSTIA JUGUETERA SA DE CV";
+                //emisor["RegimenFiscal"] = "603";
+
+                emisor["rfc"] = "EKU9003173C9";
+                emisor["nombre"] = "ESCUELA KEMPER URGATE";
+                emisor["RegimenFiscal"] = "601";
 
                 //
             }
@@ -400,6 +404,8 @@ namespace Predial10.Resources.CODE
             // Muestras la estructura
             return sdk;
         }
+
+
         public SDKRespuesta timbrar(MFSDK sdk)
         {
             SDKRespuesta respuesta = sdk.Timbrar(@"C:\sdk2\timbrar32.bat", @"C:\sdk2\timbrados\", "factura", false);
@@ -448,8 +454,12 @@ namespace Predial10.Resources.CODE
             MFObject conf = new MFObject("conf");
             if (Properties.Settings.Default.timbrarprueba.ToUpper() == "SI")
             {
-                conf["cer"] = @"C:\sdk2\certificados\lan7008173r5.cer.pem";
-                conf["key"] = @"C:\sdk2\certificados\lan7008173r5.key.pem";
+                //conf["cer"] = @"C:\sdk2\certificados\lan7008173r5.cer.pem";
+                //conf["key"] = @"C:\sdk2\certificados\lan7008173r5.key.pem";
+                //conf["pass"] = "12345678a";
+
+                conf["cer"] = @"C:\sdk2\certificados\EKU9003173C9.cer.pem";
+                conf["key"] = @"C:\sdk2\certificados\EKU9003173C9.key.pem";
                 conf["pass"] = "12345678a";
             }
             else

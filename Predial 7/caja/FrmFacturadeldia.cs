@@ -15,6 +15,7 @@ using MySql.Data.MySqlClient;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Data.SqlClient;
+using Predial10.Facturacion_V4;
 
 namespace Predial10.caja
 {
@@ -134,13 +135,14 @@ namespace Predial10.caja
                 }
                 DataTable Datosfac = new DataTable();
 
+                String cpOrganismo = Conexion_a_BD.obtenercampo("select CCODPOS from empresa limit 1");
                 String seriefactura = Conexion_a_BD.obtenercampo("select seriefactura from empresa limit 1");
                 String numerofactura =( int.Parse(( Conexion_a_BD.obtenercampo("select foliofactura from empresa limit 1"))) + 1).ToString();
 
-                ClsFactura factu = new ClsFactura();
+                ClsFactura_v4 factu = new ClsFactura_v4();
 
 
-                MultiFacturasSDK.MFSDK ARCHIVO = factu.construirfactura(seriefactura, numerofactura, "01","PUE","G03", txtRFC.Text, txtNombre.Text,DTGdetalles,"ImporteSD","43740");
+                MultiFacturasSDK.MFSDK ARCHIVO = factu.construirfacturaV4(seriefactura, numerofactura, "01","PUE","S01", txtRFC.Text, txtNombre.Text,DTGdetalles,"ImporteSD", cpOrganismo, "616", true);
                 MultiFacturasSDK.SDKRespuesta respuesta = factu.timbrar(ARCHIVO);
 
                 if (!respuesta.Codigo_MF_Texto.Contains("OK"))
@@ -217,7 +219,7 @@ namespace Predial10.caja
 
 
 
-                    System.Drawing.Image imagen = factu.qrdatos(cadenaxml);
+                    //System.Drawing.Image imagen = factu.qrdatos(cadenaxml);
 
 
 

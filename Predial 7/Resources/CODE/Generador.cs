@@ -13,6 +13,7 @@ using System.Xml;
 using System.Globalization;
 using System.Windows.Forms;
 using System.Collections;
+using cobroexprexx2020;
 
 namespace Generador
 {
@@ -1128,8 +1129,18 @@ private void ObtenerNodoImpuestos()
 
 
 
-
+            
             tabla1.AddCell(new Phrase(m_pago.ToUpper(), new Font(Font.FontFamily.HELVETICA, 8)));
+
+
+
+            tabla1.AddCell(new Phrase("RÉGIMEN FISCAL".ToUpper(), new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD)));
+            string _regimenFiscal = "";
+            _regimenFiscal = DecodificadorSAT.getRegimen(_templatePDF.regimenFiscal);
+            tabla1.AddCell(new Phrase(_regimenFiscal.ToUpper(), new Font(Font.FontFamily.HELVETICA, 8)));
+
+
+
             tabla1.AddCell(new Phrase("TIPO DE CAMBIO".ToUpper(), new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD)));
             tabla1.AddCell(new Phrase(ReturnClavePago(_templatePDF.tipo_cambio), new Font(Font.FontFamily.HELVETICA, 8)));
             tabla1.AddCell(new Phrase("\n\n", new Font(Font.FontFamily.HELVETICA, 8)));
@@ -1518,7 +1529,7 @@ private void ObtenerNodoImpuestos()
                 tabla.HorizontalAlignment = Element.ALIGN_CENTER;
                 tabla.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 tabla.LockedWidth = true;
-                tabla.AddCell(new Phrase("Este documento es una representación impresa de un CFDI 3.3", new Font(Font.FontFamily.HELVETICA, 10)));
+                tabla.AddCell(new Phrase("Este documento es una representación impresa de un CFDI 4.0", new Font(Font.FontFamily.HELVETICA, 10)));
                
                 tabla.WriteSelectedRows(0, -1, 5, document.PageSize.GetBottom(40), writer.DirectContent);
 

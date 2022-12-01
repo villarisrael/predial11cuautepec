@@ -277,21 +277,21 @@ namespace Predial10.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.0.16;User Id=uziel;password=uziel;database=predialchico")]
-        public string predialchicoConnectionString {
-            get {
-                return ((string)(this["predialchicoConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://pac1.multifacturas.com/cancelacion2022/index.php")]
         public string Predial_10_WSCancelar_v4_Cancelar_cfdi_4_0_SAT {
             get {
                 return ((string)(this["Predial_10_WSCancelar_v4_Cancelar_cfdi_4_0_SAT"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;User Id=root;password=root;database=predialchico")]
+        public string predialchicoConnectionString {
+            get {
+                return ((string)(this["predialchicoConnectionString"]));
             }
         }
     }

@@ -1835,6 +1835,7 @@
             // cmbconcepto
             // 
             this.cmbconcepto.DataSource = this.detalleBindingSource;
+            this.cmbconcepto.DisplayMember = "Concepto";
             this.cmbconcepto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbconcepto.FormattingEnabled = true;
             this.cmbconcepto.ItemHeight = 14;
