@@ -199,16 +199,16 @@ namespace Predial10.caja
                     //fs.Close();
 
                     //Por aqui se encuentra el error Caracter no valido
-                    try
-                    {
+                    //try
+                    //{
                        
 
-                        EscribeEnArchivo(respuesta.CFDI, cadenaxml, true);
-                    }
-                    catch (Exception err)
-                    {
-                        string mensajedeerror = err.Message;
-                    }
+                    //    EscribeEnArchivo(respuesta.CFDI, cadenaxml, true);
+                    //}
+                    //catch (Exception err)
+                    //{
+                    //    string mensajedeerror = err.Message;
+                    //}
 
 
                     //Byte[] info = new UTF8Encoding(true).GetBytes(respuesta.CFDI.ToString().TrimStart());
@@ -232,8 +232,8 @@ namespace Predial10.caja
 
 
 
-                    DataSet datos = new DataSet();
-                    datos.ReadXml(cadenaxml);
+                    //DataSet datos = new DataSet();
+                    //datos.ReadXml(cadenaxml);
 
 
                     byte[] logoempresa = Conexion_a_BD.obtenerimagen("select logo from empresa");
@@ -256,7 +256,7 @@ namespace Predial10.caja
 
                     DataTable empresat = new DataTable();
                     empresat = Conexion_a_BD.Consultasql("*", "empresa", "cnombre limit 1");
-                    datos.Tables.Add(empresat);
+                    //datos.Tables.Add(empresat);
 
                     //Generador.CreaPDF documentox = new Generador.CreaPDF(respuesta.CFDI, cadenapdf, null, txtObservaciones.Text);
                     //decimal descuentocfdi = decimal.Parse(documentox._templatePDF.descuento.ToString());
