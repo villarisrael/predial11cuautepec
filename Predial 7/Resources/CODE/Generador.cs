@@ -17,6 +17,7 @@ using cobroexprexx2020;
 
 namespace Generador
 {
+    
     public class Emisor
     {
 
@@ -120,6 +121,8 @@ namespace Generador
 
         public string tipo_cambio { get; internal set; }
 
+        string versionCFDI = "";
+
     }
 
     public class CreaPDF
@@ -129,10 +132,10 @@ namespace Generador
         BaseFont _fuenteContenido = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, BaseFont.NOT_EMBEDDED);
         PdfWriter _writer;
         PdfContentByte _cb;
-         public  DocumentoPDF _templatePDF; //Objeto que contendra la información del documento pdf
+        public DocumentoPDF _templatePDF; //Objeto que contendra la información del documento pdf
         XmlDocument xDoc; // Objeto para abrir el archivo xml
 
-        public CreaPDF(string rutaXML, string rutaPDF, System.Drawing.Image logo, string Observacion)
+        public CreaPDF(string rutaXML, string rutaPDF, System.Drawing.Image logo, string Observacion, string versionCFDI = "")
         {
             try
             {
@@ -371,7 +374,8 @@ private void ObtenerNodoReceptor()
     _templatePDF.receptor.razonSocial = XmlAttributeExtensions.GetValue(((XmlElement)receptor[0]), "Nombre"); //((XmlElement)receptor[0]).GetAttribute("Nombre");
     _templatePDF.receptor.rfc = XmlAttributeExtensions.GetValue(((XmlElement)receptor[0]), "Rfc"); //((XmlElement)receptor[0]).GetAttribute("Rfc");
     _templatePDF.receptor.usocfdi = XmlAttributeExtensions.GetValue(((XmlElement)receptor[0]), "UsoCFDI"); //(XmlElement)receptor[0]).GetAttribute("UsoCFDI");
-}
+            _templatePDF.receptor.RegimenFiscal = XmlAttributeExtensions.GetValue(((XmlElement)receptor[0]), "RegimenFiscalReceptor"); //(XmlElement)receptor[0]).GetAttribute("UsoCFDI");
+        }
 
 private void ObtenerNodoConceptos()
 {
@@ -1129,15 +1133,9 @@ private void ObtenerNodoImpuestos()
 
 
 
-            
             tabla1.AddCell(new Phrase(m_pago.ToUpper(), new Font(Font.FontFamily.HELVETICA, 8)));
 
 
-
-            tabla1.AddCell(new Phrase("RÉGIMEN FISCAL".ToUpper(), new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD)));
-            string _regimenFiscal = "";
-            _regimenFiscal = DecodificadorSAT.getRegimen(_templatePDF.regimenFiscal);
-            tabla1.AddCell(new Phrase(_regimenFiscal.ToUpper(), new Font(Font.FontFamily.HELVETICA, 8)));
 
 
 
@@ -1148,10 +1146,126 @@ private void ObtenerNodoImpuestos()
 
             float[] anchoColumnas2 = {1000.0F};
             PdfPTable tablaObservacion = new PdfPTable(anchoColumnas2);
+
             tablaObservacion.DefaultCell.Border = Rectangle.NO_BORDER;
             tablaObservacion.SetTotalWidth(anchoColumnas2);
             tablaObservacion.HorizontalAlignment = Element.ALIGN_LEFT;
             tablaObservacion.LockedWidth = true;
+
+
+            string regimen_fiscal_Receptor = "";
+
+            if (_templatePDF.receptor.RegimenFiscal == "601")
+            {
+                regimen_fiscal_Receptor = "601: General de Ley Personas Morales";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "603")
+            {
+                regimen_fiscal_Receptor = "603: Personas Morales con Fines no Lucrativos";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "605")
+            {
+                regimen_fiscal_Receptor = "605: Sueldos y Salarios e Ingresos Asimilados a Salarios";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "606")
+            {
+                regimen_fiscal_Receptor = "606: Arrendamiento";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "608")
+            {
+                regimen_fiscal_Receptor = "608: Demás ingresos";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "609")
+            {
+                regimen_fiscal_Receptor = "609: Consolidación";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "610")
+            {
+                regimen_fiscal_Receptor = "610: Residentes en el Extranjero sin Establecimiento Permanente en México";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "611")
+            {
+                regimen_fiscal_Receptor = "611: Ingresos por Dividendos (socios y accionistas)";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "612")
+            {
+                regimen_fiscal_Receptor = "612: Personas Físicas con Actividades Empresariales y Profesionales";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "614")
+            {
+                regimen_fiscal_Receptor = "614: Ingresos por intereses";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "616")
+            {
+                regimen_fiscal_Receptor = "616: Sin obligaciones fiscales";
+            }
+            if (_templatePDF.receptor.RegimenFiscal == "620")
+            {
+                regimen_fiscal_Receptor = "620: Sociedades Cooperativas de Producción que optan por diferir sus ingresos";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "621")
+            {
+                regimen_fiscal_Receptor = "621: Incorporación Fiscal";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "622")
+            {
+                regimen_fiscal_Receptor = "622: Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "624")
+            {
+                regimen_fiscal_Receptor = "624: Coordinados";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "628")
+            {
+                regimen_fiscal_Receptor = "628: Hidrocarburos";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "607")
+            {
+                regimen_fiscal_Receptor = "607: Régimen de Enajenación o Adquisición de Bienes";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "629")
+            {
+                regimen_fiscal_Receptor = "629: De los Regímenes Fiscales Preferentes y de las Empresas Multinacionales";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "630")
+            {
+                regimen_fiscal_Receptor = "630: Enajenación de acciones en bolsa de valores";
+            }
+
+            if (_templatePDF.receptor.RegimenFiscal == "615")
+            {
+                regimen_fiscal_Receptor = "615: Régimen de los ingresos por obtención de premios";
+            }
+
+
+
+
+
+            //_templatePDF.receptor.RegimenFiscal
+            tablaObservacion.AddCell(new Phrase("RÉGIMEN FISCAL".ToUpper(), new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD)));
+            string _regimenFiscal = "";
+            _regimenFiscal = DecodificadorSAT.getRegimen(regimen_fiscal_Receptor);
+            tablaObservacion.AddCell(new Phrase(_regimenFiscal.ToUpper(), new Font(Font.FontFamily.HELVETICA, 8)));
+
+
+            
             tablaObservacion.AddCell(new Phrase("OBSERVACION: ", new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD)));
             tablaObservacion.AddCell(new Phrase(Observacion, new Font(Font.FontFamily.HELVETICA, 8)));
 
@@ -1422,7 +1536,10 @@ private void ObtenerNodoImpuestos()
             tablaSellosQR.AddCell(img);
 
             _documento.Add(tablaSellosQR);
+
         }
+
+
 
         #endregion
 
@@ -1529,6 +1646,7 @@ private void ObtenerNodoImpuestos()
                 tabla.HorizontalAlignment = Element.ALIGN_CENTER;
                 tabla.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 tabla.LockedWidth = true;
+                
                 tabla.AddCell(new Phrase("Este documento es una representación impresa de un CFDI 4.0", new Font(Font.FontFamily.HELVETICA, 10)));
                
                 tabla.WriteSelectedRows(0, -1, 5, document.PageSize.GetBottom(40), writer.DirectContent);
@@ -1980,6 +2098,7 @@ private void ObtenerNodoImpuestos()
                 return Resultado.ToString().Substring(1);
         }
 
+        
 
     }
     public static class XmlAttributeExtensions
@@ -1997,7 +2116,8 @@ private void ObtenerNodoImpuestos()
             }
             return "";
         }
+
     }
 
-
+    
 }

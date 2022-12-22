@@ -40,11 +40,11 @@ namespace Predial10
 
                 if (txtCaja.Text == "")
                 {
-                    tablausuario = Conexion_a_BD.Consultasql(" fecha, serie, numero, nombre,  Subtotal,IVA, Total, Estado, tipo as Es,MOTIVOCANCELACION,recibo, serierecibo,observacion, UUID", " encfac where fecha between '" + dtinicio.Value.ToString("yyyy-MM-dd") + " 00:00:01' and '" + dtfinal.Value.ToString("yyyy-MM-dd") + " 23:59:59'", " numero");
+                    tablausuario = Conexion_a_BD.Consultasql(" fecha, serie, numero, nombre,  Subtotal,IVA, Total, Estado, tipo as Es,MOTIVOCANCELACION,recibo, serierecibo,observacion, UUID, AcuseCancelacion", " encfac where fecha between '" + dtinicio.Value.ToString("yyyy-MM-dd") + " 00:00:01' and '" + dtfinal.Value.ToString("yyyy-MM-dd") + " 23:59:59'", " numero");
                     dataGridView1.DataSource = tablausuario;
             }
                 else {
-                    tablausuario = Conexion_a_BD.Consultasql(" fecha, serie, numero, nombre,  Subtotal,IVA, Total, Estado, tipo as Es,MOTIVOCANCELACION,recibo, serierecibo,observacion, UUID ", " encfac where fecha between '" + dtinicio.Value.ToString("yyyy-MM-dd") + " 00:00:01' and '" + dtfinal.Value.ToString("yyyy-MM-dd") + " 23:59:59' and caja=" + txtCaja.Text + "", " numero");
+                    tablausuario = Conexion_a_BD.Consultasql(" fecha, serie, numero, nombre,  Subtotal,IVA, Total, Estado, tipo as Es,MOTIVOCANCELACION,recibo, serierecibo,observacion, UUID, AcuseCancelacion", " encfac where fecha between '" + dtinicio.Value.ToString("yyyy-MM-dd") + " 00:00:01' and '" + dtfinal.Value.ToString("yyyy-MM-dd") + " 23:59:59' and caja=" + txtCaja.Text + "", " numero");
                     dataGridView1.DataSource = tablausuario;
                 }
 
@@ -72,6 +72,8 @@ namespace Predial10
             string fecha;
             string metodo = "PUE";
             string uso = "G03";
+            string versionCFDI = "";
+
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -83,7 +85,8 @@ namespace Predial10
                 DataTable tablafactura = new DataTable();
                 tablafactura = Conexion_a_BD.Consultasql(" *", "encfac where serie='" + serie + "' and numero=" + fact, "numero");
 
-                DataRow linea = tablafactura.DefaultView[0].Row;
+                    
+                    DataRow linea = tablafactura.DefaultView[0].Row;
 
                     //string cadxml = ("select CFDI from encfac where serie='" + serie + "' and numero=" + fact + "numero");
                     //// Obtener contenido del archivo
@@ -160,7 +163,9 @@ namespace Predial10
                     string observacion = dataGridView1.CurrentRow.Cells[12].Value.ToString();
                     //string observacion = dataGridView1.Rows[i].Cells[12].Value.ToString();
 
-                    Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdfGen, logoempresa2, observacion);
+                    versionCFDI = linea["version"].ToString();
+
+                    Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdfGen, logoempresa2, observacion, versionCFDI);
 
                     fecha = crearPDF._templatePDF.fechaEmisionCFDI;
                     metodo = crearPDF._templatePDF.metodoPago;
@@ -432,7 +437,7 @@ namespace Predial10
 
             //Dim IDFactura As String = obtenerCampo("select idENCFAC from Encfac where numero=" & factura & " and serie='" & serie & "'", "idencfac")
 
-        string IDFactura = Conexion_a_BD.obtenercampo($"SELECT IDENCFAC from ENCFAC WHERE SERIE= '{ serie }' and numero = {factura} ");
+        int IDFactura = int.Parse(Conexion_a_BD.obtenercampo($"SELECT IDENCFAC from ENCFAC WHERE SERIE= '{ serie }' and numero = {factura} "));
 
 
             CancelarFacturas_v4 objCancelar = new CancelarFacturas_v4(uuid, IDFactura);

@@ -39,6 +39,7 @@ namespace Predial10.caja
                 cmbforma.ValueMember = "ccodpago";
                 cmbforma.DisplayMember = "cdespago";
                 cmbforma.DataSource = Conexion_a_BD.Consultasql("ccodpago, cdespago", "fpago", "cdespago");
+                cmbforma.SelectedValue = "01";
 
                 cmbmetodo.ValueMember = "c_MetodoPago";
                 cmbmetodo.DisplayMember = "descripcion";
@@ -241,7 +242,7 @@ namespace Predial10.caja
 
 
                     //Factura de cliente con ItextSharp
-                    Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdf, logoempresa2, txtObservaciones.Text);
+                    Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdf, logoempresa2, txtObservaciones.Text, "4.0");
 
 
                     //System.Drawing.Image imagen = factu.qrdatos(cadenaxml);

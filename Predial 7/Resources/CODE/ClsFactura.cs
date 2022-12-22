@@ -512,7 +512,7 @@ namespace Predial10.Resources.CODE
             string varcertificado = "";
 
          //   varTotal = varXmlFile.SelectSingleNode("/cfdi:Comprobante/@total", varXmlNsMngr).InnerXml;
-            varUUID = varXmlFile.SelectSingleNode("/cfdi:Comprobante/cfdi:Complemento/tfd:TimbreFiscalDigital/@UUID", varXmlNsMngr).InnerText;
+            //varUUID = varXmlFile.SelectSingleNode("/cfdi:Comprobante/cfdi:Complemento/tfd:TimbreFiscalDigital/@UUID", varXmlNsMngr).InnerText;
           //  varcertificado = varXmlFile.SelectSingleNode("/cfdi:Comprobante/cfdi:Complemento/tfd:TimbreFiscalDigital/@noCertificadoSAT", varXmlNsMngr).InnerText;
             XmlNodeList LISTANODOSEMISOR  = varXmlFile.GetElementsByTagName("cfdi:Emisor");
             foreach (XmlElement xAtt in LISTANODOSEMISOR)

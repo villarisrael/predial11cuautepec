@@ -43,6 +43,7 @@ namespace Predial10
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnreimprimir = new System.Windows.Forms.ToolStripButton();
             this.ToolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Maestro = new DevComponents.DotNetBar.SuperTabItem();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@ namespace Predial10
             this.btncargar = new DevComponents.DotNetBar.ButtonX();
             this.btncerrar = new DevComponents.DotNetBar.ButtonX();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.Panel1.SuspendLayout();
@@ -240,6 +240,16 @@ namespace Predial10
             this.ToolStripButton2.ToolTipText = "Genera el pdf de nuevo";
             this.ToolStripButton2.Click += new System.EventHandler(this.ToolStripButton2_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Cancelar SAT";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -250,7 +260,6 @@ namespace Predial10
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 28);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(844, 360);
             this.dataGridView1.TabIndex = 0;
@@ -319,16 +328,6 @@ namespace Predial10
             this.btncerrar.TabIndex = 53;
             this.btncerrar.Text = "Cerrar";
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // frmlistadofacturas
             // 

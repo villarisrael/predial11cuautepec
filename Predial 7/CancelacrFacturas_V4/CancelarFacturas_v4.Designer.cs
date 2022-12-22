@@ -29,6 +29,7 @@ namespace Predial10.CancelacrFacturas_V4
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CancelarFacturas_v4));
             this.lblFolioFiscal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancelarFactura = new System.Windows.Forms.Button();
@@ -60,30 +61,38 @@ namespace Predial10.CancelacrFacturas_V4
             // 
             // btnCancelarFactura
             // 
-            this.btnCancelarFactura.Location = new System.Drawing.Point(386, 168);
+            this.btnCancelarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarFactura.Image")));
+            this.btnCancelarFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarFactura.Location = new System.Drawing.Point(306, 168);
             this.btnCancelarFactura.Name = "btnCancelarFactura";
-            this.btnCancelarFactura.Size = new System.Drawing.Size(104, 23);
+            this.btnCancelarFactura.Size = new System.Drawing.Size(186, 41);
             this.btnCancelarFactura.TabIndex = 3;
-            this.btnCancelarFactura.Text = "Cancelar Factura";
+            this.btnCancelarFactura.Text = "Cancelar Factura SAT";
+            this.btnCancelarFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarFactura.UseVisualStyleBackColor = true;
             this.btnCancelarFactura.Click += new System.EventHandler(this.btnCancelarFactura_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(521, 168);
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(499, 168);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(75, 41);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // cmbMotivosCancelacion
             // 
+            this.cmbMotivosCancelacion.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMotivosCancelacion.FormattingEnabled = true;
             this.cmbMotivosCancelacion.Location = new System.Drawing.Point(173, 55);
             this.cmbMotivosCancelacion.Name = "cmbMotivosCancelacion";
-            this.cmbMotivosCancelacion.Size = new System.Drawing.Size(404, 21);
+            this.cmbMotivosCancelacion.Size = new System.Drawing.Size(404, 25);
             this.cmbMotivosCancelacion.TabIndex = 5;
+            this.cmbMotivosCancelacion.SelectedIndexChanged += new System.EventHandler(this.cmbMotivosCancelacion_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -97,6 +106,7 @@ namespace Predial10.CancelacrFacturas_V4
             // 
             // txtFolioFiscal
             // 
+            this.txtFolioFiscal.Enabled = false;
             this.txtFolioFiscal.Location = new System.Drawing.Point(173, 103);
             this.txtFolioFiscal.Name = "txtFolioFiscal";
             this.txtFolioFiscal.Size = new System.Drawing.Size(404, 20);

@@ -109,7 +109,7 @@ namespace Predial10.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("SI")]
+        [global::System.Configuration.DefaultSettingValueAttribute("NO")]
         public string timbrarprueba {
             get {
                 return ((string)(this["timbrarprueba"]));
@@ -229,7 +229,7 @@ namespace Predial10.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\\\sdk2\\\\certificados\\\\lan7008173r5.cer")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\SDK2\\certificados\\MCH850101BW8.cer")]
         public string CertificadoCSD {
             get {
                 return ((string)(this["CertificadoCSD"]));
@@ -241,7 +241,7 @@ namespace Predial10.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\\\sdk2\\\\certificados\\\\lan7008173r5.key")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\SDK2\\certificados\\MCH850101BW8.key")]
         public string keyCSD {
             get {
                 return ((string)(this["keyCSD"]));
@@ -253,7 +253,7 @@ namespace Predial10.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("62626262")]
+        [global::System.Configuration.DefaultSettingValueAttribute("MDCH2021")]
         public string passCSD {
             get {
                 return ((string)(this["passCSD"]));
@@ -288,7 +288,7 @@ namespace Predial10.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;User Id=root;password=root;database=predialchico")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=25.0.121.86;User Id=root;password=root;database=predialchico")]
         public string predialchicoConnectionString {
             get {
                 return ((string)(this["predialchicoConnectionString"]));
