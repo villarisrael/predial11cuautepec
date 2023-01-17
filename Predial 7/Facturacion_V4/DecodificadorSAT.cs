@@ -108,6 +108,18 @@ namespace cobroexprexx2020
                 return "Regimen Fiscal: 615 Régimen de los ingresos por obtención de premios";
             }
             return _regimen;
+
+            if (_regimen == "625")
+            {
+                return "Regimen Fiscal: 625 Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas";
+            }
+            return _regimen;
+
+            if (_regimen == "626")
+            {
+                return "Regimen Fiscal: 626 Régimen Simplificado de Confianza";
+            }
+            return _regimen;
         }
 
         public static string getUso(string _uso)

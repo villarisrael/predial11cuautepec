@@ -1400,7 +1400,7 @@ private void ObtenerNodoImpuestos()
                 tablaProductos.AddCell(new Phrase(p.c_unidad, new Font(Font.FontFamily.HELVETICA, 6)));
                 tablaProductos.AddCell(new Phrase(p.desc, new Font(Font.FontFamily.HELVETICA, 6)));
                 PdfPCell celdauni = new PdfPCell() { Rotation = 0, HorizontalAlignment = Element.ALIGN_RIGHT, BorderWidthLeft = 0.1f, BorderWidthTop = 0.0f, BorderWidthRight = 0.0f, BorderWidthBottom = 0.0f };
-                celdauni.Phrase = new Phrase(p.v_unitario.ToString("C"), new Font(Font.FontFamily.HELVETICA, 6));
+                celdauni.Phrase = new Phrase(p.v_unitario.ToString("C") + p.valorUnitario, new Font(Font.FontFamily.HELVETICA, 6));
                 tablaProductos.AddCell(celdauni);
 
 

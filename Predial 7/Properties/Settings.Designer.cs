@@ -109,7 +109,7 @@ namespace Predial10.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("NO")]
+        [global::System.Configuration.DefaultSettingValueAttribute("SI")]
         public string timbrarprueba {
             get {
                 return ((string)(this["timbrarprueba"]));
@@ -229,7 +229,7 @@ namespace Predial10.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\SDK2\\certificados\\MCH850101BW8.cer")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\\\SDK2\\\\certificados\\\\CUAUTEPECBUENO.cer")]
         public string CertificadoCSD {
             get {
                 return ((string)(this["CertificadoCSD"]));
@@ -241,7 +241,7 @@ namespace Predial10.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\SDK2\\certificados\\MCH850101BW8.key")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\\\SDK2\\\\certificados\\\\CUAUTEPECBUENO.key")]
         public string keyCSD {
             get {
                 return ((string)(this["keyCSD"]));
@@ -288,7 +288,7 @@ namespace Predial10.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=25.0.121.86;User Id=root;password=root;database=predialchico")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;User Id=root;password=root;database=predialchico")]
         public string predialchicoConnectionString {
             get {
                 return ((string)(this["predialchicoConnectionString"]));

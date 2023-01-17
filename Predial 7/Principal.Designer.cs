@@ -34,6 +34,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menu = new DevComponents.DotNetBar.RibbonControl();
+            this.PanelCaja = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar23 = new DevComponents.DotNetBar.RibbonBar();
+            this.buttonItem14 = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar22 = new DevComponents.DotNetBar.RibbonBar();
+            this.btncierrecaja = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar21 = new DevComponents.DotNetBar.RibbonBar();
+            this.btncaja = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar18 = new DevComponents.DotNetBar.RibbonBar();
+            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
+            this.PanelCobranza = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar20 = new DevComponents.DotNetBar.RibbonBar();
+            this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar17 = new DevComponents.DotNetBar.RibbonBar();
+            this.btncierre = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem6 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnlistado = new DevComponents.DotNetBar.ButtonItem();
+            this.btnliscomunidades = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar25 = new DevComponents.DotNetBar.RibbonBar();
             this.buttonItem15 = new DevComponents.DotNetBar.ButtonItem();
@@ -65,23 +82,6 @@
             this.btnmodifcar = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
-            this.PanelCobranza = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar20 = new DevComponents.DotNetBar.RibbonBar();
-            this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar17 = new DevComponents.DotNetBar.RibbonBar();
-            this.btncierre = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem6 = new DevComponents.DotNetBar.ButtonItem();
-            this.btnlistado = new DevComponents.DotNetBar.ButtonItem();
-            this.btnliscomunidades = new DevComponents.DotNetBar.ButtonItem();
-            this.PanelCaja = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar23 = new DevComponents.DotNetBar.RibbonBar();
-            this.buttonItem14 = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar22 = new DevComponents.DotNetBar.RibbonBar();
-            this.btncierrecaja = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar21 = new DevComponents.DotNetBar.RibbonBar();
-            this.btncaja = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar18 = new DevComponents.DotNetBar.RibbonBar();
-            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
             this.Panelrecaudacion = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar11 = new DevComponents.DotNetBar.RibbonBar();
             this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
@@ -114,10 +114,10 @@
             this.Dgridusuario = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.usuarios = new DevComponents.DotNetBar.SuperTabItem();
             this.menu.SuspendLayout();
+            this.PanelCaja.SuspendLayout();
+            this.PanelCobranza.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.Panelusuario.SuspendLayout();
-            this.PanelCobranza.SuspendLayout();
-            this.PanelCaja.SuspendLayout();
             this.Panelrecaudacion.SuspendLayout();
             this.PanelAdminitracion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl)).BeginInit();
@@ -133,9 +133,9 @@
             // 
             this.menu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.menu.Controls.Add(this.Panelusuario);
-            this.menu.Controls.Add(this.ribbonPanel1);
-            this.menu.Controls.Add(this.PanelCobranza);
             this.menu.Controls.Add(this.PanelCaja);
+            this.menu.Controls.Add(this.PanelCobranza);
+            this.menu.Controls.Add(this.ribbonPanel1);
             this.menu.Controls.Add(this.Panelrecaudacion);
             this.menu.Controls.Add(this.PanelAdminitracion);
             this.menu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -171,6 +171,334 @@
             this.menu.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
             this.menu.TabGroupHeight = 14;
             this.menu.TabIndex = 0;
+            // 
+            // PanelCaja
+            // 
+            this.PanelCaja.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.PanelCaja.Controls.Add(this.ribbonBar23);
+            this.PanelCaja.Controls.Add(this.ribbonBar22);
+            this.PanelCaja.Controls.Add(this.ribbonBar21);
+            this.PanelCaja.Controls.Add(this.ribbonBar18);
+            this.PanelCaja.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelCaja.Location = new System.Drawing.Point(0, 27);
+            this.PanelCaja.Name = "PanelCaja";
+            this.PanelCaja.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.PanelCaja.Size = new System.Drawing.Size(1081, 79);
+            // 
+            // 
+            // 
+            this.PanelCaja.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.PanelCaja.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.PanelCaja.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.PanelCaja.TabIndex = 4;
+            this.PanelCaja.Visible = false;
+            // 
+            // ribbonBar23
+            // 
+            this.ribbonBar23.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar23.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar23.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar23.ContainerControlProcessDialogKey = true;
+            this.ribbonBar23.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar23.DragDropSupport = true;
+            this.ribbonBar23.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem14});
+            this.ribbonBar23.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.ribbonBar23.Location = new System.Drawing.Point(287, 0);
+            this.ribbonBar23.Name = "ribbonBar23";
+            this.ribbonBar23.Size = new System.Drawing.Size(71, 76);
+            this.ribbonBar23.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar23.TabIndex = 3;
+            this.ribbonBar23.Text = "Listado";
+            // 
+            // 
+            // 
+            this.ribbonBar23.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar23.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // buttonItem14
+            // 
+            this.buttonItem14.Image = global::Predial10.Properties.Resources._1389189135_list;
+            this.buttonItem14.Name = "buttonItem14";
+            this.buttonItem14.SubItemsExpandWidth = 14;
+            this.buttonItem14.Tooltip = "Listado de recibos";
+            this.buttonItem14.Click += new System.EventHandler(this.buttonItem14_Click);
+            // 
+            // ribbonBar22
+            // 
+            this.ribbonBar22.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar22.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar22.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar22.ContainerControlProcessDialogKey = true;
+            this.ribbonBar22.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar22.DragDropSupport = true;
+            this.ribbonBar22.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
+            this.ribbonBar22.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btncierrecaja});
+            this.ribbonBar22.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.ribbonBar22.Location = new System.Drawing.Point(187, 0);
+            this.ribbonBar22.Name = "ribbonBar22";
+            this.ribbonBar22.Size = new System.Drawing.Size(100, 76);
+            this.ribbonBar22.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar22.TabIndex = 2;
+            this.ribbonBar22.Text = "Cierre de Caja";
+            // 
+            // 
+            // 
+            this.ribbonBar22.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar22.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btncierrecaja
+            // 
+            this.btncierrecaja.Image = ((System.Drawing.Image)(resources.GetObject("btncierrecaja.Image")));
+            this.btncierrecaja.Name = "btncierrecaja";
+            this.btncierrecaja.SubItemsExpandWidth = 14;
+            this.btncierrecaja.Tooltip = "Cierre";
+            this.btncierrecaja.Click += new System.EventHandler(this.buttonItem18_Click);
+            // 
+            // ribbonBar21
+            // 
+            this.ribbonBar21.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar21.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar21.ContainerControlProcessDialogKey = true;
+            this.ribbonBar21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar21.DragDropSupport = true;
+            this.ribbonBar21.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
+            this.ribbonBar21.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btncaja});
+            this.ribbonBar21.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.ribbonBar21.Location = new System.Drawing.Point(87, 0);
+            this.ribbonBar21.Name = "ribbonBar21";
+            this.ribbonBar21.Size = new System.Drawing.Size(100, 76);
+            this.ribbonBar21.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar21.TabIndex = 0;
+            this.ribbonBar21.Text = "Caja";
+            // 
+            // 
+            // 
+            this.ribbonBar21.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar21.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btncaja
+            // 
+            this.btncaja.Image = ((System.Drawing.Image)(resources.GetObject("btncaja.Image")));
+            this.btncaja.Name = "btncaja";
+            this.btncaja.SubItemsExpandWidth = 14;
+            this.btncaja.Tooltip = "Caja";
+            this.btncaja.Click += new System.EventHandler(this.buttonItem17_Click);
+            // 
+            // ribbonBar18
+            // 
+            this.ribbonBar18.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar18.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar18.ContainerControlProcessDialogKey = true;
+            this.ribbonBar18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar18.DragDropSupport = true;
+            this.ribbonBar18.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem3});
+            this.ribbonBar18.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.ribbonBar18.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar18.Name = "ribbonBar18";
+            this.ribbonBar18.Size = new System.Drawing.Size(84, 76);
+            this.ribbonBar18.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar18.TabIndex = 0;
+            this.ribbonBar18.Text = "Apertura de caja";
+            // 
+            // 
+            // 
+            this.ribbonBar18.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar18.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar18.ItemClick += new System.EventHandler(this.ribbonBar18_ItemClick);
+            // 
+            // buttonItem3
+            // 
+            this.buttonItem3.Image = global::Predial10.Properties.Resources.AperturaCaja;
+            this.buttonItem3.Name = "buttonItem3";
+            this.buttonItem3.SubItemsExpandWidth = 14;
+            this.buttonItem3.Text = "buttonItem3";
+            this.buttonItem3.Tooltip = "Apertura de caja";
+            this.buttonItem3.Click += new System.EventHandler(this.buttonItem3_Click_1);
+            // 
+            // PanelCobranza
+            // 
+            this.PanelCobranza.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.PanelCobranza.Controls.Add(this.ribbonBar20);
+            this.PanelCobranza.Controls.Add(this.ribbonBar17);
+            this.PanelCobranza.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelCobranza.Location = new System.Drawing.Point(0, 27);
+            this.PanelCobranza.Name = "PanelCobranza";
+            this.PanelCobranza.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.PanelCobranza.Size = new System.Drawing.Size(1081, 79);
+            // 
+            // 
+            // 
+            this.PanelCobranza.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.PanelCobranza.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.PanelCobranza.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.PanelCobranza.TabIndex = 3;
+            this.PanelCobranza.Visible = false;
+            // 
+            // ribbonBar20
+            // 
+            this.ribbonBar20.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar20.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar20.ContainerControlProcessDialogKey = true;
+            this.ribbonBar20.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar20.DragDropSupport = true;
+            this.ribbonBar20.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem13});
+            this.ribbonBar20.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.ribbonBar20.Location = new System.Drawing.Point(256, 0);
+            this.ribbonBar20.Name = "ribbonBar20";
+            this.ribbonBar20.Size = new System.Drawing.Size(80, 76);
+            this.ribbonBar20.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar20.TabIndex = 1;
+            this.ribbonBar20.Text = "Requerimiento";
+            // 
+            // 
+            // 
+            this.ribbonBar20.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar20.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // buttonItem13
+            // 
+            this.buttonItem13.Image = global::Predial10.Properties.Resources.REQUERIMIENTO;
+            this.buttonItem13.Name = "buttonItem13";
+            this.buttonItem13.SubItemsExpandWidth = 14;
+            this.buttonItem13.Text = "buttonItem13";
+            this.buttonItem13.Tooltip = "Elaboracion de Requerimientos";
+            this.buttonItem13.Click += new System.EventHandler(this.buttonItem13_Click);
+            // 
+            // ribbonBar17
+            // 
+            this.ribbonBar17.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar17.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar17.ContainerControlProcessDialogKey = true;
+            this.ribbonBar17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar17.DragDropSupport = true;
+            this.ribbonBar17.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btncierre,
+            this.buttonItem6,
+            this.btnlistado,
+            this.btnliscomunidades});
+            this.ribbonBar17.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.ribbonBar17.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar17.Name = "ribbonBar17";
+            this.ribbonBar17.Size = new System.Drawing.Size(253, 76);
+            this.ribbonBar17.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar17.TabIndex = 0;
+            this.ribbonBar17.Text = "Facturacion";
+            // 
+            // 
+            // 
+            this.ribbonBar17.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar17.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btncierre
+            // 
+            this.btncierre.Image = ((System.Drawing.Image)(resources.GetObject("btncierre.Image")));
+            this.btncierre.Name = "btncierre";
+            this.btncierre.SubItemsExpandWidth = 14;
+            this.btncierre.Text = "buttonItem6";
+            this.btncierre.Tooltip = "Cierre al bimestre";
+            this.btncierre.Click += new System.EventHandler(this.btncierre_Click);
+            // 
+            // buttonItem6
+            // 
+            this.buttonItem6.Image = global::Predial10.Properties.Resources.aviso;
+            this.buttonItem6.Name = "buttonItem6";
+            this.buttonItem6.SubItemsExpandWidth = 14;
+            this.buttonItem6.Text = "buttonItem6";
+            this.buttonItem6.Tooltip = "Elaborar avisos de pago";
+            this.buttonItem6.Click += new System.EventHandler(this.buttonItem6_Click);
+            // 
+            // btnlistado
+            // 
+            this.btnlistado.Image = global::Predial10.Properties.Resources.requeri;
+            this.btnlistado.Name = "btnlistado";
+            this.btnlistado.SubItemsExpandWidth = 14;
+            this.btnlistado.Text = "buttonItem17";
+            this.btnlistado.Tooltip = "Listado de usuarios";
+            this.btnlistado.Click += new System.EventHandler(this.btnlistado_Click);
+            // 
+            // btnliscomunidades
+            // 
+            this.btnliscomunidades.Image = global::Predial10.Properties.Resources.listado;
+            this.btnliscomunidades.Name = "btnliscomunidades";
+            this.btnliscomunidades.SubItemsExpandWidth = 14;
+            this.btnliscomunidades.Text = "Adeudocomunidades";
+            this.btnliscomunidades.Tooltip = "Listado de adeudo por comunidades";
+            this.btnliscomunidades.Click += new System.EventHandler(this.btnliscomunidades_Click);
             // 
             // ribbonPanel1
             // 
@@ -784,334 +1112,6 @@
             this.buttonItem5.Tooltip = "Visualizar";
             this.buttonItem5.Click += new System.EventHandler(this.buttonItem5_Click);
             // 
-            // PanelCobranza
-            // 
-            this.PanelCobranza.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.PanelCobranza.Controls.Add(this.ribbonBar20);
-            this.PanelCobranza.Controls.Add(this.ribbonBar17);
-            this.PanelCobranza.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelCobranza.Location = new System.Drawing.Point(0, 27);
-            this.PanelCobranza.Name = "PanelCobranza";
-            this.PanelCobranza.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.PanelCobranza.Size = new System.Drawing.Size(1081, 79);
-            // 
-            // 
-            // 
-            this.PanelCobranza.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.PanelCobranza.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.PanelCobranza.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.PanelCobranza.TabIndex = 3;
-            this.PanelCobranza.Visible = false;
-            // 
-            // ribbonBar20
-            // 
-            this.ribbonBar20.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar20.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar20.ContainerControlProcessDialogKey = true;
-            this.ribbonBar20.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar20.DragDropSupport = true;
-            this.ribbonBar20.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem13});
-            this.ribbonBar20.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.ribbonBar20.Location = new System.Drawing.Point(256, 0);
-            this.ribbonBar20.Name = "ribbonBar20";
-            this.ribbonBar20.Size = new System.Drawing.Size(80, 76);
-            this.ribbonBar20.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar20.TabIndex = 1;
-            this.ribbonBar20.Text = "Requerimiento";
-            // 
-            // 
-            // 
-            this.ribbonBar20.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar20.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // buttonItem13
-            // 
-            this.buttonItem13.Image = global::Predial10.Properties.Resources.REQUERIMIENTO;
-            this.buttonItem13.Name = "buttonItem13";
-            this.buttonItem13.SubItemsExpandWidth = 14;
-            this.buttonItem13.Text = "buttonItem13";
-            this.buttonItem13.Tooltip = "Elaboracion de Requerimientos";
-            this.buttonItem13.Click += new System.EventHandler(this.buttonItem13_Click);
-            // 
-            // ribbonBar17
-            // 
-            this.ribbonBar17.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar17.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar17.ContainerControlProcessDialogKey = true;
-            this.ribbonBar17.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar17.DragDropSupport = true;
-            this.ribbonBar17.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btncierre,
-            this.buttonItem6,
-            this.btnlistado,
-            this.btnliscomunidades});
-            this.ribbonBar17.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.ribbonBar17.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar17.Name = "ribbonBar17";
-            this.ribbonBar17.Size = new System.Drawing.Size(253, 76);
-            this.ribbonBar17.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar17.TabIndex = 0;
-            this.ribbonBar17.Text = "Facturacion";
-            // 
-            // 
-            // 
-            this.ribbonBar17.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar17.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btncierre
-            // 
-            this.btncierre.Image = ((System.Drawing.Image)(resources.GetObject("btncierre.Image")));
-            this.btncierre.Name = "btncierre";
-            this.btncierre.SubItemsExpandWidth = 14;
-            this.btncierre.Text = "buttonItem6";
-            this.btncierre.Tooltip = "Cierre al bimestre";
-            this.btncierre.Click += new System.EventHandler(this.btncierre_Click);
-            // 
-            // buttonItem6
-            // 
-            this.buttonItem6.Image = global::Predial10.Properties.Resources.aviso;
-            this.buttonItem6.Name = "buttonItem6";
-            this.buttonItem6.SubItemsExpandWidth = 14;
-            this.buttonItem6.Text = "buttonItem6";
-            this.buttonItem6.Tooltip = "Elaborar avisos de pago";
-            this.buttonItem6.Click += new System.EventHandler(this.buttonItem6_Click);
-            // 
-            // btnlistado
-            // 
-            this.btnlistado.Image = global::Predial10.Properties.Resources.requeri;
-            this.btnlistado.Name = "btnlistado";
-            this.btnlistado.SubItemsExpandWidth = 14;
-            this.btnlistado.Text = "buttonItem17";
-            this.btnlistado.Tooltip = "Listado de usuarios";
-            this.btnlistado.Click += new System.EventHandler(this.btnlistado_Click);
-            // 
-            // btnliscomunidades
-            // 
-            this.btnliscomunidades.Image = global::Predial10.Properties.Resources.listado;
-            this.btnliscomunidades.Name = "btnliscomunidades";
-            this.btnliscomunidades.SubItemsExpandWidth = 14;
-            this.btnliscomunidades.Text = "Adeudocomunidades";
-            this.btnliscomunidades.Tooltip = "Listado de adeudo por comunidades";
-            this.btnliscomunidades.Click += new System.EventHandler(this.btnliscomunidades_Click);
-            // 
-            // PanelCaja
-            // 
-            this.PanelCaja.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.PanelCaja.Controls.Add(this.ribbonBar23);
-            this.PanelCaja.Controls.Add(this.ribbonBar22);
-            this.PanelCaja.Controls.Add(this.ribbonBar21);
-            this.PanelCaja.Controls.Add(this.ribbonBar18);
-            this.PanelCaja.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelCaja.Location = new System.Drawing.Point(0, 27);
-            this.PanelCaja.Name = "PanelCaja";
-            this.PanelCaja.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.PanelCaja.Size = new System.Drawing.Size(1081, 79);
-            // 
-            // 
-            // 
-            this.PanelCaja.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.PanelCaja.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.PanelCaja.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.PanelCaja.TabIndex = 4;
-            this.PanelCaja.Visible = false;
-            // 
-            // ribbonBar23
-            // 
-            this.ribbonBar23.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar23.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar23.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar23.ContainerControlProcessDialogKey = true;
-            this.ribbonBar23.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar23.DragDropSupport = true;
-            this.ribbonBar23.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem14});
-            this.ribbonBar23.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.ribbonBar23.Location = new System.Drawing.Point(287, 0);
-            this.ribbonBar23.Name = "ribbonBar23";
-            this.ribbonBar23.Size = new System.Drawing.Size(71, 76);
-            this.ribbonBar23.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar23.TabIndex = 3;
-            this.ribbonBar23.Text = "Listado";
-            // 
-            // 
-            // 
-            this.ribbonBar23.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar23.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // buttonItem14
-            // 
-            this.buttonItem14.Image = global::Predial10.Properties.Resources._1389189135_list;
-            this.buttonItem14.Name = "buttonItem14";
-            this.buttonItem14.SubItemsExpandWidth = 14;
-            this.buttonItem14.Tooltip = "Listado de recibos";
-            this.buttonItem14.Click += new System.EventHandler(this.buttonItem14_Click);
-            // 
-            // ribbonBar22
-            // 
-            this.ribbonBar22.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar22.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar22.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar22.ContainerControlProcessDialogKey = true;
-            this.ribbonBar22.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar22.DragDropSupport = true;
-            this.ribbonBar22.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
-            this.ribbonBar22.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btncierrecaja});
-            this.ribbonBar22.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.ribbonBar22.Location = new System.Drawing.Point(187, 0);
-            this.ribbonBar22.Name = "ribbonBar22";
-            this.ribbonBar22.Size = new System.Drawing.Size(100, 76);
-            this.ribbonBar22.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar22.TabIndex = 2;
-            this.ribbonBar22.Text = "Cierre de Caja";
-            // 
-            // 
-            // 
-            this.ribbonBar22.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar22.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btncierrecaja
-            // 
-            this.btncierrecaja.Image = ((System.Drawing.Image)(resources.GetObject("btncierrecaja.Image")));
-            this.btncierrecaja.Name = "btncierrecaja";
-            this.btncierrecaja.SubItemsExpandWidth = 14;
-            this.btncierrecaja.Tooltip = "Cierre";
-            this.btncierrecaja.Click += new System.EventHandler(this.buttonItem18_Click);
-            // 
-            // ribbonBar21
-            // 
-            this.ribbonBar21.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar21.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar21.ContainerControlProcessDialogKey = true;
-            this.ribbonBar21.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar21.DragDropSupport = true;
-            this.ribbonBar21.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
-            this.ribbonBar21.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btncaja});
-            this.ribbonBar21.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.ribbonBar21.Location = new System.Drawing.Point(87, 0);
-            this.ribbonBar21.Name = "ribbonBar21";
-            this.ribbonBar21.Size = new System.Drawing.Size(100, 76);
-            this.ribbonBar21.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar21.TabIndex = 0;
-            this.ribbonBar21.Text = "Caja";
-            // 
-            // 
-            // 
-            this.ribbonBar21.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar21.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btncaja
-            // 
-            this.btncaja.Image = ((System.Drawing.Image)(resources.GetObject("btncaja.Image")));
-            this.btncaja.Name = "btncaja";
-            this.btncaja.SubItemsExpandWidth = 14;
-            this.btncaja.Tooltip = "Caja";
-            this.btncaja.Click += new System.EventHandler(this.buttonItem17_Click);
-            // 
-            // ribbonBar18
-            // 
-            this.ribbonBar18.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar18.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar18.ContainerControlProcessDialogKey = true;
-            this.ribbonBar18.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar18.DragDropSupport = true;
-            this.ribbonBar18.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem3});
-            this.ribbonBar18.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.ribbonBar18.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar18.Name = "ribbonBar18";
-            this.ribbonBar18.Size = new System.Drawing.Size(84, 76);
-            this.ribbonBar18.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar18.TabIndex = 0;
-            this.ribbonBar18.Text = "Apertura de caja";
-            // 
-            // 
-            // 
-            this.ribbonBar18.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar18.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar18.ItemClick += new System.EventHandler(this.ribbonBar18_ItemClick);
-            // 
-            // buttonItem3
-            // 
-            this.buttonItem3.Image = global::Predial10.Properties.Resources.AperturaCaja;
-            this.buttonItem3.Name = "buttonItem3";
-            this.buttonItem3.SubItemsExpandWidth = 14;
-            this.buttonItem3.Text = "buttonItem3";
-            this.buttonItem3.Tooltip = "Apertura de caja";
-            this.buttonItem3.Click += new System.EventHandler(this.buttonItem3_Click_1);
-            // 
             // Panelrecaudacion
             // 
             this.Panelrecaudacion.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -1618,10 +1618,10 @@
             this.Load += new System.EventHandler(this.Principal_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
+            this.PanelCaja.ResumeLayout(false);
+            this.PanelCobranza.ResumeLayout(false);
             this.ribbonPanel1.ResumeLayout(false);
             this.Panelusuario.ResumeLayout(false);
-            this.PanelCobranza.ResumeLayout(false);
-            this.PanelCaja.ResumeLayout(false);
             this.Panelrecaudacion.ResumeLayout(false);
             this.PanelAdminitracion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl)).EndInit();

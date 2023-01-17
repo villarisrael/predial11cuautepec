@@ -41,6 +41,7 @@ namespace Predial10.caja
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idReciboMaestroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -165,7 +166,8 @@ namespace Predial10.caja
             this.toolStripButton1,
             this.toolStripLabel2,
             this.toolStripButton2,
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(730, 25);
@@ -229,6 +231,16 @@ namespace Predial10.caja
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton3.Text = "Desmarca el numero de factura";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "Facturar";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // dataGridView1
             // 
@@ -478,16 +490,15 @@ namespace Predial10.caja
             // 
             this.superTabControlPanel2.Controls.Add(this.advDetalles);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 25);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(730, 370);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(730, 345);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.Esclavo;
             // 
             // advDetalles
             // 
             this.advDetalles.AccessibleRole = System.Windows.Forms.AccessibleRole.Outline;
-            this.advDetalles.AllowDrop = true;
             this.advDetalles.BackColor = System.Drawing.SystemColors.Window;
             // 
             // 
@@ -910,5 +921,6 @@ namespace Predial10.caja
         private DataGridViewTextBoxColumn fechafinalDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn Facturado;
         private ToolStripButton toolStripButton3;
+        private ToolStripButton toolStripButton4;
     }
 }

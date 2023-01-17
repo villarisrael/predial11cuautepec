@@ -186,6 +186,7 @@
     <Compile Include="caja\Listarecibos.Designer.cs">
       <DependentUpon>Listarecibos.cs</DependentUpon>
     </Compile>
+    <Compile Include="caja\ReciboEsclavo.cs" />
     <Compile Include="caja\VariablesCajas.cs" />
     <Compile Include="CancelacrFacturas_V4\CancelarFacturas_v4.cs">
       <SubType>Form</SubType>

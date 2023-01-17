@@ -22,7 +22,125 @@ namespace Predial10.caja
         DataTable Datos = new DataTable();
        
         frmcaja caja;
-       
+
+        string idCaja = "";
+        string serieRecibo = "";
+        int folioRecibo = 0;
+        string departamento = "";
+        string vieneDe = "";
+        string serieFacturacion = "";
+        string cuentaCatastral = "";
+        double totalListado = 0.0;
+        double descuentoListado = 0.0;
+
+
+        //Este contructor se usuara para facturar desde el listado de recibos
+        public DatosFiscales(string seriePa, int folioPa, string cuenta, string ListadoRecibo, string idCajaP, double totalP, double descuentoP)
+        {
+            InitializeComponent();
+            //autocompletar();
+            //idCaja = IDcaja;
+            serieRecibo = seriePa;
+            folioRecibo = folioPa;
+            cuentaCatastral = cuenta;
+            vieneDe = ListadoRecibo;
+            totalListado = totalP;
+            descuentoListado = descuentoP;
+            idCaja = idCajaP;
+
+            //serieFacturacion = new CobroDefault().Database.SqlQuery<string>("select Serie from [dbo].[FolioVentas] where IDCaja = '" + Settings.Default.IDCaja + "'").LastOrDefault();
+
+            //labelSerieFactura.Text = serieFacturacion;
+
+
+            Conexion_a_BD.Conectar();
+            Datos = Conexion_a_BD.Consultasql("*", "datosfiscales where cuenta='" + cuentaCatastral + "'");
+
+
+
+
+            try
+            {
+
+                Conexion_a_BD.Conectar();
+                Datos = Conexion_a_BD.Consultasql("*", "datosfiscales where cuenta='" + cuentaCatastral + "'");
+
+                cmbforma.ValueMember = "ccodpago";
+                cmbforma.DisplayMember = "cdespago";
+                cmbforma.DataSource = Conexion_a_BD.Consultasql("ccodpago, cdespago", "fpago", "cdespago");
+                cmbforma.SelectedValue = "01";
+
+                cmbmetodo.ValueMember = "c_MetodoPago";
+                cmbmetodo.DisplayMember = "descripcion";
+                cmbmetodo.DataSource = Conexion_a_BD.Consultasql("c_MetodoPago, concat(c_MetodoPago,' ',descripcion) as descripcion", "c_metodopago", "descripcion");
+                cmbmetodo.SelectedValue = "PUE";
+
+                cmbuso.ValueMember = "c_UsoCFDI";
+                cmbuso.DisplayMember = "descripcion";
+                cmbuso.DataSource = Conexion_a_BD.Consultasql("c_UsoCFDI, concat(c_UsoCFDI,' ',descripcion) as descripcion", "c_UsoCFDI", "descripcion");
+                cmbuso.SelectedValue = "G03";
+
+                //Agregar RegimenFíscal para la facturación CFDI 4.0
+                cmbRegimenFiscal.ValueMember = "ClaveRegimenFiscal";
+                cmbRegimenFiscal.DisplayMember = "Descripcion";
+                cmbRegimenFiscal.DataSource = Conexion_a_BD.Consultasql("ClaveRegimenFiscal, concat(ClaveRegimenFiscal,' | ',Descripcion) as Descripcion", "regimenfiscal", "idRegimenFiscal");
+                cmbRegimenFiscal.SelectedValue = "601";
+            }
+            catch (Exception err)
+            {
+
+            }
+
+            Conexion_a_BD.Desconectar();
+
+
+            if (Datos.Rows.Count > 0)
+            {
+                txtCuenta.Text = Datos.Rows[0]["cuenta"].ToString();
+                txtNombre.Text = Datos.Rows[0]["NOMBRE"].ToString();
+                txtCalle.Text = Datos.Rows[0]["CALLE"].ToString();
+                txtNoExterior.Text = Datos.Rows[0]["NUMEXT"].ToString();
+                txtNoInterior.Text = Datos.Rows[0]["NUMINT"].ToString();
+                txtColonia.Text = Datos.Rows[0]["COLONIA"].ToString();
+                txtPoblacion.Text = Datos.Rows[0]["POBLACION"].ToString();
+                txtEstado.Text = Datos.Rows[0]["ESTADO"].ToString();
+                txtCP.Text = Datos.Rows[0]["CP"].ToString();
+                txtRFC.Text = Datos.Rows[0]["RFC"].ToString();
+                if (txtRFC.Text == "XAXX010101000")
+                {
+                    cmbuso.SelectedValue = "S01";
+                }
+                else
+                {
+                    cmbuso.SelectedValue = "G03";
+                }
+                txtEmail.Text = Datos.Rows[0]["maildeenvio"].ToString();
+                txtDelegacion.Text = Datos.Rows[0]["DELEGACION"].ToString();
+                txtPais.Text = Datos.Rows[0]["PAIS"].ToString();
+                txtCPimpreso.Text = Datos.Rows[0]["CP_Impreso"].ToString();
+                if (Datos.Rows[0]["regimenfiscal"].ToString() != "")
+                {
+
+                    cmbRegimenFiscal.SelectedValue = Datos.Rows[0]["regimenfiscal"].ToString();
+
+                }
+            }
+            else
+            {
+                //traigo los datos del la caja
+                txtCuenta.Text = VariablesCajas.Cuenta;
+                txtNombre.Text = VariablesCajas.Nombre;
+                txtCalle.Text = VariablesCajas.Calle;
+                txtNoExterior.Text = VariablesCajas.NoExt;
+                txtColonia.Text = VariablesCajas.Colonia;
+                txtPoblacion.Text = VariablesCajas.Comunidad;
+
+            }
+
+
+
+
+        }
 
         public DatosFiscales(frmcaja _caja)
         {
@@ -176,10 +294,27 @@ namespace Predial10.caja
 
             try
             {
-                
                 String CAJA = "";
+                
+
+                if (vieneDe == "LISTADORECIBO")
+                {
+
+                    CAJA = idCaja;
+
+                }
+                else
+                {
+
+                
+                
                 CAJA = caja.CAJA;
+
+
                 caja.btnGuardar_Click(sender, e);
+
+                }
+
 
                 DataTable Datosfac = new DataTable();
 
@@ -188,14 +323,52 @@ namespace Predial10.caja
                 
                 ClsFactura_v4 factu = new ClsFactura_v4();
 
-                double total = (double)Math.Round(caja.total, 2);
-                double descuento = (double)Math.Round(caja.descuento, 2);
+                double total;
+                double descuento;
+
+                double subtotal;
+
+                if (vieneDe == "LISTADORECIBO")
+                {
+
+                    total = totalListado;
+                    descuento = descuentoListado;
+
+                    subtotal = (double)Math.Round(total + descuento, 2);
+
+                    
+                }
+                else
+                {
+                    total = (double)Math.Round(caja.total, 2);
+                    descuento = (double)Math.Round(caja.descuento, 2);
+
+                    subtotal = (double)Math.Round(total + descuento, 2);
+
+
+                }
+
+
                 
-                double subtotal = (double)Math.Round(total + descuento,2);
+                
 
                 //Invocar a la clase facturación CFDI 4.0 15/06/2022 UMG
                 //MultiFacturasSDK.MFSDK ARCHIVO = factu.construirfactura(seriefactura, numerofactura, this.cmbforma.SelectedValue.ToString(), cmbmetodo.SelectedValue.ToString(), cmbuso.SelectedValue.ToString(),  txtRFC.Text, txtNombre.Text, caja.DTpartidas1,"importeSD");
-                MultiFacturasSDK.MFSDK ARCHIVO = factu.construirfacturaV4(seriefactura, numerofactura, this.cmbforma.SelectedValue.ToString(), cmbmetodo.SelectedValue.ToString(), cmbuso.SelectedValue.ToString(), txtRFC.Text, txtNombre.Text, caja.DTpartidas1, "importeSD", txtCP.Text.ToString(), cmbRegimenFiscal.SelectedValue.ToString(), false);
+                MultiFacturasSDK.MFSDK ARCHIVO;
+
+                if (vieneDe == "LISTADORECIBO")
+                {
+
+                    var elementosReciboEsclavo = Conexion_a_BD.Consulta($"SELECT * FROM RECIBOESCLAVO WHERE SERIE = '{serieRecibo}' AND RECIBO = {folioRecibo}");
+
+                    ARCHIVO = factu.construirfacturaV4(seriefactura, numerofactura, this.cmbforma.SelectedValue.ToString(), cmbmetodo.SelectedValue.ToString(), cmbuso.SelectedValue.ToString(), txtRFC.Text, txtNombre.Text, elementosReciboEsclavo, "importeSD", txtCP.Text.ToString(), cmbRegimenFiscal.SelectedValue.ToString(), false);
+
+                }
+                else
+                {
+                    ARCHIVO = factu.construirfacturaV4(seriefactura, numerofactura, this.cmbforma.SelectedValue.ToString(), cmbmetodo.SelectedValue.ToString(), cmbuso.SelectedValue.ToString(), txtRFC.Text, txtNombre.Text, caja.DTpartidas1, "importeSD", txtCP.Text.ToString(), cmbRegimenFiscal.SelectedValue.ToString(), false);
+                }
+                
                 MultiFacturasSDK.SDKRespuesta respuesta = factu.timbrar(ARCHIVO);
 
                 if (!respuesta.Codigo_MF_Texto.Contains("OK"))
@@ -208,6 +381,8 @@ namespace Predial10.caja
                 {
                     String cadena;
                     
+
+
                     cadena = "insert into encfac SET FECHA = CONCAT('" + DateTime.Now.Year + "-" + DateTime.Now.Month;
                     cadena += "-" + DateTime.Now.Day + "', ' ', curtime()), SERIE = '" + seriefactura + "', numero = " + numerofactura + ",NOMBRE = '" + txtNombre.Text + "',";
                     cadena += "cadena='" + respuesta.Cadena + "', sello ='" + respuesta.Sello + "', sellosat='" + respuesta.SelloSAT + "', cfdi='" + respuesta.CFDI + "',";
@@ -215,8 +390,26 @@ namespace Predial10.caja
                     cadena += "SUBTOTAL = " + subtotal + ",IVA = 0,TOTAL = " + total + ", UUID='" + respuesta.UUID + "',formapago='" + this.cmbforma.SelectedValue.ToString() + "'";
                     cadena += ",TIPO = 'INDIVIDUAL', ESTADO = 'A', CAJA = '" + CAJA + "', USUARIO = '', motivocancelacion = '', version = '4.0', observacion='" + txtObservaciones.Text + "'";
 
+
+
+
                     Conexion_a_BD.Ejecutar(cadena);
+
+
+                    if(vieneDe == "LISTADORECIBO")
+                    {
+
+                        Conexion_a_BD.Ejecutar("UPDATE RECIBOMAESTRO SET FACTURADO=" + numerofactura + " WHERE RECIBOMAESTRO.serie='" + serieRecibo + "' AND  RECIBOMAESTRO.folio=" + folioRecibo + " and facturado=0");
+
+                    }
+                    else
+                    {
+
+                    
                     Conexion_a_BD.Ejecutar("UPDATE RECIBOMAESTRO SET FACTURADO=" + numerofactura + " WHERE RECIBOMAESTRO.serie='" +caja.serie  + "' AND  RECIBOMAESTRO.folio=" + caja.ultimofolio + " and facturado=0");
+
+                    }
+
                     Conexion_a_BD.Ejecutar("update empresa set foliofactura=" + numerofactura);
                     Conexion_a_BD.Desconectar();
 
@@ -309,7 +502,7 @@ namespace Predial10.caja
             }
             catch (Exception exvc)
             {
-
+                MessageBox.Show($"Ocurrio un error mientras se generraba la factura: {exvc.ToString()}");
             }
             Close();
         }

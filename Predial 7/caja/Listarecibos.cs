@@ -333,5 +333,38 @@ namespace Predial10.caja
                 dataGridView1.Refresh();
             }
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+
+            DialogResult result = MessageBox.Show("¿Esta Seguro que Desea Facturar este Recibo de Pago?", "Alerta", MessageBoxButtons.OKCancel);
+
+            if (result == DialogResult.OK)
+            {
+                //CancelacionOrdenIngreso cancelarOI = new CancelacionOrdenIngreso();
+
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    string Estado = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[11].Value.ToString();
+                    int facturado = (int)dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[25].Value;
+
+
+                    if (Estado == "A" && facturado == 0)
+                    {
+                        string serie = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
+                        int folio = int.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString());
+                        string cuenta = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[16].Value.ToString();
+                        string idCaja = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[13].Value.ToString();
+                        double total = double.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value.ToString());
+                        double descuento = double.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[15].Value.ToString());
+
+                        DatosFiscales objFacturar = new DatosFiscales(serie, folio, cuenta, "LISTADORECIBO", idCaja, total, descuento);
+                        objFacturar.ShowDialog();
+                    }
+                }
+            }
+
+
+        }
     }
 }

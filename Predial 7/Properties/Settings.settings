@@ -24,7 +24,7 @@
       <Value Profile="(Default)">si</Value>
     </Setting>
     <Setting Name="timbrarprueba" Type="System.String" Scope="User">
-      <Value Profile="(Default)">NO</Value>
+      <Value Profile="(Default)">SI</Value>
     </Setting>
     <Setting Name="Rezago_urbano" Type="System.String" Scope="User">
       <Value Profile="(Default)">360</Value>
@@ -54,10 +54,10 @@
       <Value Profile="(Default)">Predial@2018</Value>
     </Setting>
     <Setting Name="CertificadoCSD" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\SDK2\certificados\MCH850101BW8.cer</Value>
+      <Value Profile="(Default)">C:\\SDK2\\certificados\\CUAUTEPECBUENO.cer</Value>
     </Setting>
     <Setting Name="keyCSD" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\SDK2\certificados\MCH850101BW8.key</Value>
+      <Value Profile="(Default)">C:\\SDK2\\certificados\\CUAUTEPECBUENO.key</Value>
     </Setting>
     <Setting Name="passCSD" Type="System.String" Scope="User">
       <Value Profile="(Default)">MDCH2021</Value>
@@ -71,10 +71,10 @@
     <Setting Name="predialchicoConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=25.0.121.86;User Id=root;password=root;database=predialchico&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;server=localhost;User Id=root;password=root;database=predialchico&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=25.0.121.86;User Id=root;password=root;database=predialchico</Value>
+      <Value Profile="(Default)">server=localhost;User Id=root;password=root;database=predialchico</Value>
     </Setting>
   </Settings>
 </SettingsFile>
