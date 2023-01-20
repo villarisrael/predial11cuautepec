@@ -571,12 +571,11 @@ namespace Predial10.Facturacion_V4
                 int Cantidad = int.Parse(row["Cantidad"].ToString());
                 string importeTotal = (Cantidad * importe).ToString();
                 descuento = 0;
-                    String importecondescuento = "0";
-                    try
+                try
                 {
-                    
-                    importecondescuento = row["MontoSinDescuento"].ToString();
-                    descuento = Math.Round(Decimal.Parse(importecondescuento) - (importe), 2);
+                    String importecondescuento = "0";
+                    importecondescuento = row["Importe"].ToString();
+                    descuento = Math.Round((importe) - Decimal.Parse(importecondescuento), 2);
 
 
                 }
@@ -611,7 +610,7 @@ namespace Predial10.Facturacion_V4
                 }
                 concepto0["ClaveUnidad"] = unidadsat;
                 concepto0["Descripcion"] = concepto.Replace("Ñ", "&ntilde");
-                concepto0["ValorUnitario"] = importecondescuento.ToString();
+                concepto0["ValorUnitario"] = importe.ToString();
                 concepto0["Importe"] = importeTotal;
                 if (descuento > 0)
                 {
@@ -643,7 +642,6 @@ namespace Predial10.Facturacion_V4
                     MessageBox.Show($"Error: {err.ToString()}");
                 }
             }
-            acusubtotal = acusubtotal + acudescuento;
             total = Math.Round((acusubtotal - acudescuento), 2);
 
 
