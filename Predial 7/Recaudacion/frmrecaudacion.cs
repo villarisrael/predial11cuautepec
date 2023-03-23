@@ -139,7 +139,7 @@ namespace Predial10.Recaudacion
             DateTime fech;
             string fecha = "";
             string nombre = "";
-            string total = "";
+            decimal total = 0.0M;
             string forma = "";
             string cancelado = "";
             int contador = 0;
@@ -331,7 +331,7 @@ namespace Predial10.Recaudacion
 
             //Tabla de Conceptos
             PdfPTable TabConceptos = new PdfPTable(6);
-            float[] widthsConceptos = new float[] { 70f, 80f, 250f, 60f, 60f, 80f };
+            float[] widthsConceptos = new float[] { 70f, 70f, 250f, 80f, 50f, 80f };
             TabConceptos.DefaultCell.Border = iTextSharp.text.Rectangle.BOX;
             //Color colFromHex = System.Drawing.ColorTranslator.FromHtml("#9b2226");
             //TabConceptos.DefaultCell.BackgroundColor = new iTextSharp.text.BaseColor(colFromHex);
@@ -419,7 +419,7 @@ namespace Predial10.Recaudacion
                    fech = DateTime.Parse(datosconc.Rows[i]["fecha"].ToString());
                    fecha = fech.ToShortDateString();
                    nombre = datosconc.Rows[i]["Nombre"].ToString();
-                   total = datosconc.Rows[i]["Total"].ToString();
+                   total = decimal.Parse(datosconc.Rows[i]["Total"].ToString());
                    forma = datosconc.Rows[i]["idformapago"].ToString();
                    cancelado = datosconc.Rows[i]["Cancelado"].ToString();
                     
@@ -452,7 +452,7 @@ namespace Predial10.Recaudacion
                     CelDato.Border = 3;
                     TabDatos.AddCell(CelDato);
 
-                    CelDato = new PdfPCell(new Phrase(total, _Color));
+                    CelDato = new PdfPCell(new Phrase(total.ToString("C"), _Color));
                     CelDato.Rowspan = 2;
                     CelDato.VerticalAlignment = Element.ALIGN_LEFT;
                     CelDato.HorizontalAlignment = 2; //0=Left, 1=Centre, 2=Right       
@@ -484,10 +484,10 @@ namespace Predial10.Recaudacion
 
                         string cantidad = datosconceptoReca.Rows[k]["Cantidad"].ToString();
                         string concepto = datosconceptoReca.Rows[k]["Concepto"].ToString();
-                        string importe = datosconceptoReca.Rows[k]["Importe"].ToString();
+                        decimal importe = decimal.Parse(datosconceptoReca.Rows[k]["Importe"].ToString());
 
                         PdfPTable TabDatos1 = new PdfPTable(6);
-                        float[] widthsesp1 = new float[] { 70f, 300f, 60f, 60f, 80f, 30f };
+                        float[] widthsesp1 = new float[] { 40f, 300f, 80f, 80f, 70f, 30f };
                         TabDatos1.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
                         TabDatos1.SetTotalWidth(widthsesp1);
 
@@ -507,14 +507,14 @@ namespace Predial10.Recaudacion
                         CelDato1.Border = 0;
                         TabDatos1.AddCell(CelDato1);
 
-                        CelDato1 = new PdfPCell(new Phrase(importe, _FuenteNormal7B));
+                        CelDato1 = new PdfPCell(new Phrase(importe.ToString("C"), _FuenteNormal7B));
                         CelDato1.Rowspan = 2;
                         CelDato1.VerticalAlignment = Element.ALIGN_LEFT;
                         CelDato1.HorizontalAlignment = 2; //0=Left, 1=Centre, 2=Right       
                         CelDato1.Border = 0;
                         TabDatos1.AddCell(CelDato1);
 
-                        CelDato1 = new PdfPCell(new Phrase(importe, _FuenteNormal7B));
+                        CelDato1 = new PdfPCell(new Phrase(importe.ToString("C"), _FuenteNormal7B));
                         CelDato1.Rowspan = 2;
                         CelDato1.VerticalAlignment = Element.ALIGN_LEFT;
                         CelDato1.HorizontalAlignment = 2; //0=Left, 1=Centre, 2=Right       
@@ -536,13 +536,14 @@ namespace Predial10.Recaudacion
                         TabDatos1.AddCell(CelDato1);
 
                         ReportexRubroPredial.Add(TabDatos1);
-                        ReportexRubroPredial.Add(TabVacio);
+                        
                         
 
                     }
+                    ReportexRubroPredial.Add(TabVacio);
                     DataTableReader dat = new DataTableReader(datosconceptoReca);
 
-                    totalFinal += double.Parse(total);
+                    totalFinal += double.Parse(total.ToString());
                     contador = contador + 1;
                 }
             }
@@ -590,7 +591,7 @@ namespace Predial10.Recaudacion
 
                 //recib = Math.Round(recib, 2);
                 descuento = Math.Round(descuento, 2);
-                totalFinal = Math.Round(totalFinal);
+                totalFinal = Math.Round(totalFinal, 2);
                 descuento = Math.Round(descuento, 2);
 
                 // recib   = Math.Round(recib, 2);
