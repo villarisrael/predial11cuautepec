@@ -40,11 +40,11 @@
             this.cmbcaja = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btncerrar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
+            this.chkExportExcel = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // fechaini
             // 
-            this.fechaini.AnnuallyMarkedDates = new System.DateTime[0];
             this.fechaini.AutoSize = true;
             // 
             // 
@@ -67,8 +67,6 @@
             this.fechaini.ContainerControlProcessDialogKey = true;
             this.fechaini.DisplayMonth = new System.DateTime(2013, 3, 1, 0, 0, 0, 0);
             this.fechaini.Location = new System.Drawing.Point(22, 96);
-            this.fechaini.MarkedDates = new System.DateTime[0];
-            this.fechaini.MonthlyMarkedDates = new System.DateTime[0];
             this.fechaini.Name = "fechaini";
             // 
             // 
@@ -80,11 +78,9 @@
             this.fechaini.Size = new System.Drawing.Size(170, 131);
             this.fechaini.TabIndex = 0;
             this.fechaini.Text = "monthCalendarAdv1";
-            this.fechaini.WeeklyMarkedDays = new System.DayOfWeek[0];
             // 
             // fechafin
             // 
-            this.fechafin.AnnuallyMarkedDates = new System.DateTime[0];
             this.fechafin.AutoSize = true;
             // 
             // 
@@ -107,8 +103,6 @@
             this.fechafin.ContainerControlProcessDialogKey = true;
             this.fechafin.DisplayMonth = new System.DateTime(2013, 3, 1, 0, 0, 0, 0);
             this.fechafin.Location = new System.Drawing.Point(266, 96);
-            this.fechafin.MarkedDates = new System.DateTime[0];
-            this.fechafin.MonthlyMarkedDates = new System.DateTime[0];
             this.fechafin.Name = "fechafin";
             // 
             // 
@@ -120,7 +114,6 @@
             this.fechafin.Size = new System.Drawing.Size(170, 131);
             this.fechafin.TabIndex = 1;
             this.fechafin.Text = "monthCalendarAdv2";
-            this.fechafin.WeeklyMarkedDays = new System.DayOfWeek[0];
             // 
             // reflectionLabel1
             // 
@@ -133,7 +126,7 @@
             this.reflectionLabel1.Size = new System.Drawing.Size(171, 38);
             this.reflectionLabel1.TabIndex = 2;
             this.reflectionLabel1.Text = "<b><font size=\"+6\"><i></i><font color=\"#B02B2C\">Rango a imprimir</font></font></b" +
-                ">";
+    ">";
             // 
             // labelX1
             // 
@@ -167,7 +160,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(22, 240);
+            this.labelX3.Location = new System.Drawing.Point(22, 312);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(75, 23);
             this.labelX3.TabIndex = 5;
@@ -179,7 +172,7 @@
             // 
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(22, 270);
+            this.labelX4.Location = new System.Drawing.Point(22, 342);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(75, 23);
             this.labelX4.TabIndex = 6;
@@ -191,7 +184,7 @@
             this.cmboficina.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmboficina.FormattingEnabled = true;
             this.cmboficina.ItemHeight = 14;
-            this.cmboficina.Location = new System.Drawing.Point(103, 241);
+            this.cmboficina.Location = new System.Drawing.Point(103, 313);
             this.cmboficina.Name = "cmboficina";
             this.cmboficina.Size = new System.Drawing.Size(333, 20);
             this.cmboficina.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -204,7 +197,7 @@
             this.cmbcaja.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbcaja.FormattingEnabled = true;
             this.cmbcaja.ItemHeight = 14;
-            this.cmbcaja.Location = new System.Drawing.Point(103, 273);
+            this.cmbcaja.Location = new System.Drawing.Point(103, 345);
             this.cmbcaja.Name = "cmbcaja";
             this.cmbcaja.Size = new System.Drawing.Size(333, 20);
             this.cmbcaja.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -215,7 +208,7 @@
             this.btncerrar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btncerrar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(347, 313);
+            this.btncerrar.Location = new System.Drawing.Point(347, 385);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(89, 37);
             this.btncerrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -228,7 +221,7 @@
             this.btnAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
-            this.btnAceptar.Location = new System.Drawing.Point(239, 313);
+            this.btnAceptar.Location = new System.Drawing.Point(239, 385);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(102, 37);
             this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -236,11 +229,22 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.Click += new System.EventHandler(this.btncAceptar_Click);
             // 
+            // chkExportExcel
+            // 
+            this.chkExportExcel.AutoSize = true;
+            this.chkExportExcel.Location = new System.Drawing.Point(22, 254);
+            this.chkExportExcel.Name = "chkExportExcel";
+            this.chkExportExcel.Size = new System.Drawing.Size(103, 17);
+            this.chkExportExcel.TabIndex = 11;
+            this.chkExportExcel.Text = "Exportar a Excel";
+            this.chkExportExcel.UseVisualStyleBackColor = true;
+            // 
             // frmrecaudacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 362);
+            this.ClientSize = new System.Drawing.Size(470, 438);
+            this.Controls.Add(this.chkExportExcel);
             this.Controls.Add(this.btncerrar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cmbcaja);
@@ -274,6 +278,6 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbcaja;
         private DevComponents.DotNetBar.ButtonX btnAceptar;
         private DevComponents.DotNetBar.ButtonX btncerrar;
-
+        private System.Windows.Forms.CheckBox chkExportExcel;
     }
 }

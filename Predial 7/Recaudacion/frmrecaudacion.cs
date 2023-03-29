@@ -83,46 +83,88 @@ namespace Predial10.Recaudacion
 
         private void btncAceptar_Click(object sender, EventArgs e)
         {
-      
-            filtrocrystal = " {recibomaestro.fecha} >= date ('" + fechaini.SelectedDate.ToString("dd/MM/yyyy") + "') and {recibomaestro.fecha} <= date ('" + fechafin.SelectedDate.ToString("dd/MM/yyyy") + "') ";
-            filtromysql = " fecha>= '" + fechaini.SelectedDate.ToString("yyyy/MM/dd") + "' and fecha<='" + fechafin.SelectedDate.ToString("yyyy/MM/dd") + "'";
-            encabezado1 = "DEL DIA : " + fechaini.SelectedDate.ToString("dd/MM/yyyy") + " AL DIA: " + fechafin.SelectedDate.ToString("dd/MM/yyyy");
-            if (cmboficina.SelectedIndex == -1 && cmbcaja.SelectedIndex == -1)
+            if (chkExportExcel.Checked == false)
             {
-                filtromysql += " and ccodofi = '001', and caja = ''";
-                encabezado2 = "OFICINA: " + "CORTE GENERAL";
+
+                filtrocrystal = " {recibomaestro.fecha} >= date ('" + fechaini.SelectedDate.ToString("dd/MM/yyyy") + "') and {recibomaestro.fecha} <= date ('" + fechafin.SelectedDate.ToString("dd/MM/yyyy") + "') ";
+                filtromysql = " fecha>= '" + fechaini.SelectedDate.ToString("yyyy/MM/dd") + "' and fecha<='" + fechafin.SelectedDate.ToString("yyyy/MM/dd") + "'";
+                encabezado1 = "DEL DIA : " + fechaini.SelectedDate.ToString("dd/MM/yyyy") + " AL DIA: " + fechafin.SelectedDate.ToString("dd/MM/yyyy");
+                if (cmboficina.SelectedIndex == -1 && cmbcaja.SelectedIndex == -1)
+                {
+                    filtromysql += " and ccodofi = '001', and caja = ''";
+                    encabezado2 = "OFICINA: " + "CORTE GENERAL";
+                }
+                else
+                {
+                    if (cmboficina.SelectedIndex > -1)
+                    {
+                        filtrocrystal += " and {recibomaestro.ccodofi} = '" + cmboficina.SelectedValue + "' ";
+                        string cadena = ("select * from predialchico.vrubros where fecha >=" + fechaini + "and fecha <=" + fechafin);
+                        filtromysql += " and ccodofi = '" + cmboficina.SelectedValue + "' ";
+                        encabezado2 = "OFICINA: " + cmboficina.Text;
+                    }
+
+                    if (cmbcaja.SelectedIndex > -1)
+                    {
+                        filtrocrystal += " and {recibomaestro.caja} = '" + cmbcaja.SelectedValue + "' ";
+                        filtromysql += " and caja = '" + cmbcaja.SelectedValue + "'";
+                        encabezado2 += " CAJA: " + cmbcaja.Text;
+                    }
+                }
+                if (tipo == "Rubros")
+                {
+                    Conexion_a_BD.Conectar();
+
+                    reportexRubrosITSharp reportexRubros = new reportexRubrosITSharp();
+                    reportexRubros.CrearReporte(filtromysql, fechaini.SelectedDate.ToString("yyyy-MM-dd"), fechafin.SelectedDate.ToString("yyyy-MM-dd"), encabezado1, encabezado2, cmbcaja.SelectedValue);
+                }
+
+                if (tipo == "Recaudacion")
+                {
+                    Conexion_a_BD.Conectar();
+                    ReporteXRrcaudacion(filtromysql);
+                }
+
+
             }
             else
             {
-                if (cmboficina.SelectedIndex > -1)
+
+                filtrocrystal = " {recibomaestro.fecha} >= date ('" + fechaini.SelectedDate.ToString("dd/MM/yyyy") + "') and {recibomaestro.fecha} <= date ('" + fechafin.SelectedDate.ToString("dd/MM/yyyy") + "') ";
+                filtromysql = " fecha>= '" + fechaini.SelectedDate.ToString("yyyy/MM/dd") + "' and fecha<='" + fechafin.SelectedDate.ToString("yyyy/MM/dd") + "'";
+                encabezado1 = "DEL DIA : " + fechaini.SelectedDate.ToString("dd/MM/yyyy") + " AL DIA: " + fechafin.SelectedDate.ToString("dd/MM/yyyy");
+                if (cmboficina.SelectedIndex == -1 && cmbcaja.SelectedIndex == -1)
                 {
-                    filtrocrystal += " and {recibomaestro.ccodofi} = '" + cmboficina.SelectedValue + "' ";
-                    string cadena = ("select * from predialchico.vrubros where fecha >=" + fechaini + "and fecha <=" + fechafin);
-                    filtromysql += " and ccodofi = '" + cmboficina.SelectedValue + "' ";
-                    encabezado2 = "OFICINA: " + cmboficina.Text;
+                    filtromysql += " and ccodofi = '001', and caja = ''";
+                    encabezado2 = "OFICINA: " + "CORTE GENERAL";
+                }
+                else
+                {
+                    if (cmboficina.SelectedIndex > -1)
+                    {
+                        filtrocrystal += " and {recibomaestro.ccodofi} = '" + cmboficina.SelectedValue + "' ";
+                        string cadena = ("select * from predialchico.vrubros where fecha >=" + fechaini + "and fecha <=" + fechafin);
+                        filtromysql += " and ccodofi = '" + cmboficina.SelectedValue + "' ";
+                        encabezado2 = "OFICINA: " + cmboficina.Text;
+                    }
+
+                    if (cmbcaja.SelectedIndex > -1)
+                    {
+                        filtrocrystal += " and {recibomaestro.caja} = '" + cmbcaja.SelectedValue + "' ";
+                        filtromysql += " and caja = '" + cmbcaja.SelectedValue + "'";
+                        encabezado2 += " CAJA: " + cmbcaja.Text;
+                    }
+                }
+                if (tipo == "Rubros")
+                {
+                    Conexion_a_BD.Conectar();
+
+                    reportexRubrosITSharp reportexRubros = new reportexRubrosITSharp();
+                    reportexRubros.CrearReporteExcel(filtromysql, fechaini.SelectedDate.ToString("yyyy-MM-dd"), fechafin.SelectedDate.ToString("yyyy-MM-dd"), encabezado1, encabezado2, cmbcaja.SelectedValue);
                 }
 
-                if (cmbcaja.SelectedIndex > -1)
-                {
-                    filtrocrystal += " and {recibomaestro.caja} = '" + cmbcaja.SelectedValue + "' ";
-                    filtromysql += " and caja = '" + cmbcaja.SelectedValue + "'";
-                    encabezado2 += " CAJA: " + cmbcaja.Text;
-                }
-            }
-            if (tipo == "Rubros")
-            {
-                Conexion_a_BD.Conectar();
-                
-                reportexRubrosITSharp reportexRubros = new reportexRubrosITSharp();
-                reportexRubros.CrearReporte(filtromysql, fechaini.SelectedDate.ToString("yyyy-MM-dd"), fechafin.SelectedDate.ToString("yyyy-MM-dd"), encabezado1, encabezado2, cmbcaja.SelectedValue);
             }
 
-            if (tipo == "Recaudacion")
-            {
-                Conexion_a_BD.Conectar();
-                ReporteXRrcaudacion(filtromysql);
-            }
-          
         }
         
 

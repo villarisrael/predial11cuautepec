@@ -1,10 +1,14 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using Predial10.Resources.CODE;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -285,9 +289,9 @@ namespace Predial10.Recaudacion
 
                     if (idCaja == null)
                     {
-                        SQL1 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'A' group by D.Partida";
+                        SQL1 = "select count(RM.idReciboMaestro) as NumRecibos, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'A' group by D.Partida";
 
-                        SQL2 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'C' group by D.Partida";
+                        SQL2 = "select count(RM.idReciboMaestro) as NumRecibos, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'C' group by D.Partida";
                     }
                     else
                     {
@@ -693,5 +697,160 @@ namespace Predial10.Recaudacion
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        public void CrearReporteExcel(string consultaSQLP, string fechaInicioP, string fechaFinP, string encabezado1P, string encabezado2P, object idCajaP)
+        {
+
+            string SQL1 = "";
+            string SQL2 = "";
+            String path = (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ReportexRubroPredial\\").Trim();
+
+            if (!Directory.Exists(path))
+            {
+
+                DirectoryInfo di = Directory.CreateDirectory(path);
+
+            }
+            string ruta = "\\ReportexRubroPredial\\" + "ReportexRubro_" + fechaInicioP + "-" + fechaFinP + idCajaP + ".xlsx";
+            string pathReporte = (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + ruta).Trim();
+
+
+
+            if (idCajaP == null)
+            {
+                SQL1 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'A' group by D.Partida";
+
+                SQL2 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'C' group by D.Partida";
+            }
+            else
+            {
+                SQL1 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'A' and caja = '" + idCajaP + "' group by D.Partida";
+
+                SQL2 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'C' and caja = '" + idCajaP + "' group by D.Partida";
+            }
+
+            //new reportexRubrosITSharp().Export(pathReporte);
+
+            //var elementos2 = Conexion_a_BD.Consulta(SQL1);
+
+
+            //List<ReportexRurbos> reportexRubrosList = elementos2.Rows.Cast<ReportexRurbos>().ToList();
+
+
+            DataTable datosconcepto = Conexion_a_BD.Consulta(SQL1);
+
+            ExcelPackage Ep = new ExcelPackage();
+
+            var Sheet = Ep.Workbook.Worksheets.Add("Reporte por Rubros");
+
+            int row = 1;
+
+            Sheet.Cells["A1:E1"].Style.Font.Size = 20;
+            Sheet.Cells["A1:E1"].Style.Font.Name = "Calibri";
+            Sheet.Cells["A1:E3"].Style.Font.Bold = true;
+            Sheet.Cells["A1:E1"].Style.Font.Color.SetColor(Color.DarkBlue);
+            Sheet.Cells["A1:E1"].Style.HorizontalAlignment = ExcelHorizontalAlignment.CenterContinuous;
+            Sheet.Cells["A1"].RichText.Add("Reporte por Rubros");
+
+
+            row = 2;
+            Sheet.Cells["A1:E1"].Style.Font.Size = 12;
+            Sheet.Cells["A1:E1"].Style.Font.Name = "Calibri";
+            Sheet.Cells["A1:E1"].Style.Border.Bottom.Style = ExcelBorderStyle.Hair;
+            Sheet.Cells["A2:E2"].Style.Font.Bold = true;
+
+
+            row = 2;
+            string Fec = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString();
+            Sheet.Cells[string.Format("A2", row)].Value = "FECHA DE EMISIÓN: ";
+            Sheet.Cells[string.Format("B2", row)].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+            Sheet.Cells[string.Format("B2", row)].Value = Fec;
+
+
+            Sheet.Cells[string.Format("D2", row)].Value = "OFICINA: ";
+            Sheet.Cells[string.Format("E2", row)].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+            Sheet.Cells[string.Format("E2", row)].Value = encabezado2P;
+
+            Sheet.Cells[string.Format("F2", row)].Value = "DEL DÍA: ";
+            Sheet.Cells[string.Format("G2", row)].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+            Sheet.Cells[string.Format("G2", row)].Value = encabezado1P;
+
+
+            row = 3;
+            Sheet.Cells.Style.Font.Name = "Calibri";
+            Sheet.Cells.Style.Font.Size = 10;
+            Sheet.Cells["A3:G3"].Style.Font.Bold = true;
+            Sheet.Cells["A3:G3"].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+            Sheet.Cells["A3:G3"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray);
+
+
+
+            Sheet.Cells["A3"].RichText.Add("PARTIDA");
+            
+            Sheet.Cells["B3"].RichText.Add("CONCEPTO");
+            Sheet.Cells["C3"].RichText.Add("NO. RECIBOS");
+            
+            Sheet.Cells["D3"].RichText.Add("TOTAL BRUTO");
+            Sheet.Cells["E3"].RichText.Add("TOTAL NETO");
+
+
+            row = 4;
+            Sheet.Cells.Style.Font.Bold = false;
+
+
+            for (int j = 0; j < datosconcepto.Rows.Count; j++)
+            {
+                string NumRecibos = datosconcepto.Rows[j]["NumRecibos"].ToString();
+                string CPartida = datosconcepto.Rows[j]["Partida"].ToString();
+                string CConcepto = datosconcepto.Rows[j]["Concepto"].ToString();
+                string recCancelado = datosconcepto.Rows[j]["Cancelado"].ToString();
+
+                decimal CTNeto = Decimal.Parse(datosconcepto.Rows[j]["TotalNeto"].ToString());
+                decimal CTBruto = Decimal.Parse(datosconcepto.Rows[j]["TotalBruto"].ToString());
+                //foreach (ReportexRurbos item in reportexRubrosList)
+                //{
+                //Clientes cliente = new ClientesContext().Clientes.Find(item.IDCliente);
+                //Vendedor vendedor = new VendedorContext().Vendedores.Find(cliente.IDVendedor);
+                //Oficina oficina = new OficinaContext().Oficinas.Find(cliente.IDOficina);
+
+                Sheet.Cells[string.Format("A{0}", row)].Value = CPartida;
+                //Sheet.Cells[string.Format("B{0}", row)].Style.Numberformat.Format = "$#,##0.00";
+                Sheet.Cells[string.Format("B{0}", row)].Value = CConcepto;
+                //Sheet.Cells[string.Format("C{0}", row)].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+                Sheet.Cells[string.Format("C{0}", row)].Value = NumRecibos;
+                //if (cliente.noExpediente == null)
+                //{
+                //    Sheet.Cells[string.Format("D{0}", row)].Value = "S/N";
+                //}
+                //else
+                //{
+                Sheet.Cells[string.Format("D{0}", row)].Style.Numberformat.Format = "$#,##0.00";
+                Sheet.Cells[string.Format("D{0}", row)].Value = CTBruto;
+                Sheet.Cells[string.Format("E{0}", row)].Style.Numberformat.Format = "$#,##0.00";
+                Sheet.Cells[string.Format("E{0}", row)].Value = CTNeto;
+
+                row++;
+                //}
+
+            }
+
+            Ep.SaveAs(new FileInfo(pathReporte));
+
+        }
+
     }
+
+    public class ReportexRurbos
+    {
+
+        public int NumRecibos { get; set; }
+        public string TotalBruto { get; set; }
+        public decimal TotalNeto { get; set; }
+        public string Concepto { get; set; }
+        public decimal Partida { get; set; }
+        public string Estatus { get; set; }
+        
+    }
+
+    
 }
