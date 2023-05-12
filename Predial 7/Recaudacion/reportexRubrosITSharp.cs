@@ -31,6 +31,7 @@ namespace Predial10.Recaudacion
         public string NumConceptos = "";
         public string recCancelado = "";
         public Int64 numRecCancelados = 0;
+        DataTable datosCancelados;
         public void CrearReporte(string consulta, string FechaInicio, string FechaFin, string encabezado1, string encabezado2, object idCaja)
         {
             try
@@ -282,34 +283,44 @@ namespace Predial10.Recaudacion
             try
             {
                 Conexion_a_BD.Conectar();
-                //SQL = "select count(IdReciboMaestro) as NumConcepto, sum(MontoSindescuento) as TotalB, SUM(MontoSindescuento * PORCDESCUENTO /100 ) as TotalN, Partida, Concepto, Cantidad, Importe, Importe from predialchico.vrubros where fecha between '" + fechaini.SelectedDate.ToString("yyyy/MM/dd") + "' and '" + fechafin.SelectedDate.ToString("yyyy/MM/dd") + "' and caja = '" + cmbcaja.SelectedValue + "' group by Partida";
+                    //SQL = "select count(IdReciboMaestro) as NumConcepto, sum(MontoSindescuento) as TotalB, SUM(MontoSindescuento * PORCDESCUENTO /100 ) as TotalN, Partida, Concepto, Cantidad, Importe, Importe from predialchico.vrubros where fecha between '" + fechaini.SelectedDate.ToString("yyyy/MM/dd") + "' and '" + fechafin.SelectedDate.ToString("yyyy/MM/dd") + "' and caja = '" + cmbcaja.SelectedValue + "' group by Partida";
 
-                //Consulta hecha por los chicos de estadía
-                //SQL = "select count(IdReciboMaestro) as NumConcepto, sum(MontoSindescuento) as TotalB, SUM(Importe) as TotalN, Partida, Concepto, Cantidad, Importe, Importe from predialchico.vrubros where fecha between '" + fechaini.SelectedDate.ToString("yyyy/MM/dd") + "' and '" + fechafin.SelectedDate.ToString("yyyy/MM/dd") + "' and caja = '" + cmbcaja.SelectedValue + "' group by Partida";
+                    //Consulta hecha por los chicos de estadía
+                    //SQL = "select count(IdReciboMaestro) as NumConcepto, sum(MontoSindescuento) as TotalB, SUM(Importe) as TotalN, Partida, Concepto, Cantidad, Importe, Importe from predialchico.vrubros where fecha between '" + fechaini.SelectedDate.ToString("yyyy/MM/dd") + "' and '" + fechafin.SelectedDate.ToString("yyyy/MM/dd") + "' and caja = '" + cmbcaja.SelectedValue + "' group by Partida";
+                    
 
                     if (idCaja == null)
                     {
-                        SQL1 = "select count(RM.idReciboMaestro) as NumRecibos, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'A' group by D.Partida";
+                        SQL1 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'A' group by D.Partida";
 
-                        SQL2 = "select count(RM.idReciboMaestro) as NumRecibos, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'C' group by D.Partida";
+                        //SQL2 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'C' group by D.Partida";
+
+                        string SQLCancelados = $"SELECT COUNT(CANCELADO) AS CANCELADOS FROM RECIBOMAESTRO WHERE FECHA BETWEEN '{FechaInicio}' AND '{FechaFin}' and cancelado = 'C'";
+
+                        datosCancelados = Conexion_a_BD.Consulta(SQLCancelados);
                     }
                     else
                     {
                         SQL1 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'A' and caja = '" + idCaja + "' group by D.Partida";
 
-                        SQL2 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'C' and caja = '" + idCaja + "' group by D.Partida";
+                        //SQL2 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + FechaInicio + "' and '" + FechaFin + "' and RM.Cancelado = 'C' and caja = '" + idCaja + "' group by D.Partida";
+
+                        string SQLCancelados = $"SELECT COUNT(CANCELADO) AS CANCELADOS FROM RECIBOMAESTRO WHERE FECHA BETWEEN '{FechaInicio}' AND '{FechaFin}' and cancelado = 'C' and caja = '{idCaja}'";
+
+                        datosCancelados = Conexion_a_BD.Consulta(SQLCancelados);
+
                     }
                 
 
 
                 DataTable datosconcepto = Conexion_a_BD.Consulta(SQL1);
 
-                    DataTable datosconcepto2 = Conexion_a_BD.Consulta(SQL2);
+                    //DataTable datosconcepto2 = Conexion_a_BD.Consulta(SQL2);
 
-                    for (int j = 0; j < datosconcepto2.Rows.Count; j++)
-                    {
-                        numRecCancelados = numRecCancelados + 1;
-                    }
+                    //for (int j = 0; j < datosconcepto2.Rows.Count; j++)
+                    //{
+                    //    numRecCancelados = numRecCancelados + 1;
+                    //}
 
 
                     for (int j = 0; j < datosconcepto.Rows.Count; j++)
@@ -462,7 +473,7 @@ namespace Predial10.Recaudacion
 
             //clsconv let = new clsconv();
             //string mensaje = let.enletras(CTBruto.ToString());
-            PdfPCell CelTotDesc = new PdfPCell(new Phrase("Conceptos cancelados: " + numRecCancelados, _FuenteContenido7B));
+            PdfPCell CelTotDesc = new PdfPCell(new Phrase("Conceptos cancelados: " + datosCancelados.Rows[0]["CANCELADOS"], _FuenteContenido7B));
             CelTotDesc.Rowspan = 2;
             CelTotDesc.VerticalAlignment = Element.ALIGN_LEFT;
             CelTotDesc.HorizontalAlignment = 0; //0=Left, 1=Centre, 2=Right       
@@ -703,6 +714,11 @@ namespace Predial10.Recaudacion
 
             string SQL1 = "";
             string SQL2 = "";
+
+            decimal acumuladorDescuento = 0.0M;
+            decimal totalBruto = 0.0M;
+            decimal totalNeto = 0.0M;
+
             String path = (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ReportexRubroPredial\\").Trim();
 
             if (!Directory.Exists(path))
@@ -711,6 +727,7 @@ namespace Predial10.Recaudacion
                 DirectoryInfo di = Directory.CreateDirectory(path);
 
             }
+
             string ruta = "\\ReportexRubroPredial\\" + "ReportexRubro_" + fechaInicioP + "-" + fechaFinP + idCajaP + ".xlsx";
             string pathReporte = (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + ruta).Trim();
 
@@ -718,15 +735,15 @@ namespace Predial10.Recaudacion
 
             if (idCajaP == null)
             {
-                SQL1 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'A' group by D.Partida";
+                SQL1 = "select count(RM.idReciboMaestro) as NumRecibos, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'A' group by D.Partida";
 
-                SQL2 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'C' group by D.Partida";
+                SQL2 = "select count(RM.idReciboMaestro) as NumRecibos, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'C' group by D.Partida";
             }
             else
             {
-                SQL1 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'A' and caja = '" + idCajaP + "' group by D.Partida";
+                SQL1 = "select count(RM.idReciboMaestro) as NumRecibos, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'A' and caja = '" + idCajaP + "' group by D.Partida";
 
-                SQL2 = "select count(RM.idReciboMaestro) as NumConcepto, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'C' and caja = '" + idCajaP + "' group by D.Partida";
+                SQL2 = "select count(RM.idReciboMaestro) as NumRecibos, sum(RE.MontoSinDescuento) as TotalBruto,  sum(RE.importe) as TotalNeto, RE.Concepto as Concepto, D.Partida as Partida, RM.Cancelado as Cancelado from recibomaestro RM inner join reciboesclavo RE inner join Detalle D on RM.serie = RE.serie and RM.folio = RE.recibo and RE.Clave = D.clave and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'C' and caja = '" + idCajaP + "' group by D.Partida";
             }
 
             //new reportexRubrosITSharp().Export(pathReporte);
@@ -736,10 +753,19 @@ namespace Predial10.Recaudacion
 
             //List<ReportexRurbos> reportexRubrosList = elementos2.Rows.Cast<ReportexRurbos>().ToList();
 
+            try
+            {
 
+            
+               
             DataTable datosconcepto = Conexion_a_BD.Consulta(SQL1);
 
-            ExcelPackage Ep = new ExcelPackage();
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            using (ExcelPackage Ep = new ExcelPackage())
+            {
+
+            
 
             var Sheet = Ep.Workbook.Worksheets.Add("Reporte por Rubros");
 
@@ -766,35 +792,35 @@ namespace Predial10.Recaudacion
             Sheet.Cells[string.Format("B2", row)].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
             Sheet.Cells[string.Format("B2", row)].Value = Fec;
 
+                Sheet.Cells[string.Format("B3", 3)].Value = encabezado2P + " " + encabezado1P;
+                //Sheet.Cells[string.Format("D2", row)].Value = encabezado2P + " " + encabezado1P;
+            //Sheet.Cells[string.Format("E2", row)].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+            //Sheet.Cells[string.Format("E2", row)].Value = encabezado2P;
 
-            Sheet.Cells[string.Format("D2", row)].Value = "OFICINA: ";
-            Sheet.Cells[string.Format("E2", row)].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
-            Sheet.Cells[string.Format("E2", row)].Value = encabezado2P;
-
-            Sheet.Cells[string.Format("F2", row)].Value = "DEL DÍA: ";
-            Sheet.Cells[string.Format("G2", row)].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
-            Sheet.Cells[string.Format("G2", row)].Value = encabezado1P;
-
-
-            row = 3;
-            Sheet.Cells.Style.Font.Name = "Calibri";
-            Sheet.Cells.Style.Font.Size = 10;
-            Sheet.Cells["A3:G3"].Style.Font.Bold = true;
-            Sheet.Cells["A3:G3"].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
-            Sheet.Cells["A3:G3"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray);
-
-
-
-            Sheet.Cells["A3"].RichText.Add("PARTIDA");
-            
-            Sheet.Cells["B3"].RichText.Add("CONCEPTO");
-            Sheet.Cells["C3"].RichText.Add("NO. RECIBOS");
-            
-            Sheet.Cells["D3"].RichText.Add("TOTAL BRUTO");
-            Sheet.Cells["E3"].RichText.Add("TOTAL NETO");
+            //Sheet.Cells[string.Format("F2", row)].Value = "DEL DÍA: ";
+            //Sheet.Cells[string.Format("G2", row)].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+            //Sheet.Cells[string.Format("G2", row)].Value = encabezado1P;
 
 
             row = 4;
+            Sheet.Cells.Style.Font.Name = "Calibri";
+            Sheet.Cells.Style.Font.Size = 10;
+            Sheet.Cells["A4:G4"].Style.Font.Bold = true;
+            Sheet.Cells["A4:G4"].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+            Sheet.Cells["A4:G4"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray);
+
+
+
+            Sheet.Cells["A4"].RichText.Add("PARTIDA");
+            
+            Sheet.Cells["B4"].RichText.Add("CONCEPTO");
+            Sheet.Cells["C4"].RichText.Add("NO. RECIBOS");
+            
+            Sheet.Cells["D4"].RichText.Add("TOTAL BRUTO");
+            Sheet.Cells["E4"].RichText.Add("TOTAL NETO");
+
+
+            row = 5;
             Sheet.Cells.Style.Font.Bold = false;
 
 
@@ -815,7 +841,7 @@ namespace Predial10.Recaudacion
 
                 Sheet.Cells[string.Format("A{0}", row)].Value = CPartida;
                 //Sheet.Cells[string.Format("B{0}", row)].Style.Numberformat.Format = "$#,##0.00";
-                Sheet.Cells[string.Format("B{0}", row)].Value = CConcepto;
+                Sheet.Cells[string.Format("B{0}", row)].Value = CConcepto.ToUpper();
                 //Sheet.Cells[string.Format("C{0}", row)].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
                 Sheet.Cells[string.Format("C{0}", row)].Value = NumRecibos;
                 //if (cliente.noExpediente == null)
@@ -829,13 +855,120 @@ namespace Predial10.Recaudacion
                 Sheet.Cells[string.Format("E{0}", row)].Style.Numberformat.Format = "$#,##0.00";
                 Sheet.Cells[string.Format("E{0}", row)].Value = CTNeto;
 
-                row++;
+                    totalBruto += CTBruto;
+                    totalNeto += CTNeto;
+
+                    
+                    acumuladorDescuento = totalBruto - totalNeto;
+
+                    row++;
                 //}
 
             }
 
-            Ep.SaveAs(new FileInfo(pathReporte));
+                row++;
+                Sheet.Cells[string.Format("D{0}", row)].Style.Numberformat.Format = "$#,##0.00";
+                Sheet.Cells[string.Format("D{0}", row)].Value = totalBruto;
 
+
+                row = row + 2;
+
+                
+                string SQLCancelados = $"SELECT COUNT(CANCELADO) AS CANCELADOS FROM RECIBOMAESTRO WHERE FECHA BETWEEN '{fechaInicioP}' AND '{fechaFinP}' and cancelado = 'C'";
+                DataTable datosCancelados = Conexion_a_BD.Consulta(SQLCancelados);
+                //datosconcepto.Rows[j]["NumConcepto"].ToString();
+
+                Sheet.Cells[string.Format("A{0}", row)].Value = "RECIBOS CANCELADOS";
+                Sheet.Cells[string.Format("B{0}", row)].Value = datosCancelados.Rows[0]["CANCELADOS"];
+
+                row = row + 2;
+
+                Sheet.Cells[string.Format("A{0}", row)].Value = "DESCUENTOS";
+                Sheet.Cells[string.Format("B{0}", row)].Style.Numberformat.Format = "$#,##0.00";
+                Sheet.Cells[string.Format("B{0}", row)].Value = acumuladorDescuento;
+
+
+                row = row + 2;
+
+
+
+                if (idCajaP == null)
+                {
+                    SQLDescuentos = "select tipodescuento, sum(MontoSinDescuento-Importe) As TotalxDesc from recibomaestro RM inner join reciboesclavo RE on RM.serie = RE.serie and RM.folio = RE.recibo and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and RM.Cancelado = 'A' group by tipodescuento order by TotalxDesc asc";
+                }
+                else
+                {
+                    SQLDescuentos = "select tipodescuento, sum(MontoSinDescuento-Importe) As TotalxDesc from recibomaestro RM inner join reciboesclavo RE on RM.serie = RE.serie and RM.folio = RE.recibo and RM.fecha between '" + fechaInicioP + "' and '" + fechaFinP + "' and caja = '" + idCajaP + "' and RM.Cancelado = 'A' group by tipodescuento order by TotalxDesc asc";
+                }
+
+
+                row = row + 2;
+
+
+                DataTable datosdescuentos = Conexion_a_BD.Consulta(SQLDescuentos);
+
+                string tipoDescuento = "";
+                decimal totalxTDesc = 0.0M;
+
+
+
+
+                for (int j = 0; j < datosdescuentos.Rows.Count; j++)
+                {
+
+                    tipoDescuento = datosdescuentos.Rows[j]["tipodescuento"].ToString();
+                    totalxTDesc = Decimal.Parse(datosdescuentos.Rows[j]["TotalxDesc"].ToString());
+
+                    if (tipoDescuento == "Ninguno" & DateTime.Now.Month == 1)
+                    {
+                        Sheet.Cells[string.Format("A{0}", row)].Value = "DESCUENTOS ENERO 30%";
+                        Sheet.Cells[string.Format("B{0}", row)].Value = acumuladorDescuento;
+                    }
+                    else if (tipoDescuento == "Ninguno" & DateTime.Now.Month == 2)
+                    {
+                        Sheet.Cells[string.Format("A{0}", row)].Value = "DESCUENTOS ENERO 20%";
+                        Sheet.Cells[string.Format("B{0}", row)].Value = acumuladorDescuento;
+                    }
+                    else if (tipoDescuento == "Ninguno" & DateTime.Now.Month == 3)
+                    {
+                        Sheet.Cells[string.Format("A{0}", row)].Value = "DESCUENTOS ENERO 10%";
+                        Sheet.Cells[string.Format("B{0}", row)].Value = acumuladorDescuento;
+                    }
+
+                    else
+                    {
+
+                        Sheet.Cells[string.Format("A{0}", row)].Value = tipoDescuento;
+                        
+                    }
+
+                    Sheet.Cells[string.Format("B{0}", row)].Style.Numberformat.Format = "$#,##0.00";
+                    Sheet.Cells[string.Format("B{0}", row)].Value = totalxTDesc;
+
+                    row = row + 1;
+                }
+
+                row = row + 2;
+
+
+                Sheet.Cells[string.Format("A{0}", row)].Value = "TOTAL GENERAL: ";
+                Sheet.Cells[string.Format("B{0}", row)].Style.Numberformat.Format = "$#,##0.00";
+                Sheet.Cells[string.Format("B{0}", row)].Value = totalNeto;
+
+
+                Sheet.Cells["A:AZ"].AutoFitColumns();
+
+                Ep.SaveAs(new FileInfo(pathReporte));
+
+                    MessageBox.Show("DATOS EXPORTADOS A EXCEL CORRECTAMENTE");
+
+            }
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
         }
 
     }

@@ -61,6 +61,13 @@
             this.btnmodifcar = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
+            this.Panelrecaudacion = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar11 = new DevComponents.DotNetBar.RibbonBar();
+            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.btningresoportarifa = new DevComponents.DotNetBar.ButtonItem();
+            this.btningresoporcomunidad = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
             this.PanelCaja = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar23 = new DevComponents.DotNetBar.RibbonBar();
             this.buttonItem14 = new DevComponents.DotNetBar.ButtonItem();
@@ -82,13 +89,6 @@
             this.ribbonBar25 = new DevComponents.DotNetBar.RibbonBar();
             this.buttonItem15 = new DevComponents.DotNetBar.ButtonItem();
             this.btnlistarfacturas = new DevComponents.DotNetBar.ButtonItem();
-            this.Panelrecaudacion = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar11 = new DevComponents.DotNetBar.RibbonBar();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.btningresoportarifa = new DevComponents.DotNetBar.ButtonItem();
-            this.btningresoporcomunidad = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
             this.PanelAdminitracion = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar14 = new DevComponents.DotNetBar.RibbonBar();
             this.btnREcibo = new DevComponents.DotNetBar.ButtonItem();
@@ -115,10 +115,10 @@
             this.usuarios = new DevComponents.DotNetBar.SuperTabItem();
             this.menu.SuspendLayout();
             this.Panelusuario.SuspendLayout();
+            this.Panelrecaudacion.SuspendLayout();
             this.PanelCaja.SuspendLayout();
             this.PanelCobranza.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
-            this.Panelrecaudacion.SuspendLayout();
             this.PanelAdminitracion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl)).BeginInit();
             this.superTabControl.SuspendLayout();
@@ -132,10 +132,10 @@
             // 
             // 
             this.menu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.menu.Controls.Add(this.Panelrecaudacion);
             this.menu.Controls.Add(this.PanelCaja);
-            this.menu.Controls.Add(this.PanelCobranza);
+            this.menu.Controls.Add(this.Panelrecaudacion);
             this.menu.Controls.Add(this.Panelusuario);
+            this.menu.Controls.Add(this.PanelCobranza);
             this.menu.Controls.Add(this.ribbonPanel1);
             this.menu.Controls.Add(this.PanelAdminitracion);
             this.menu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -712,6 +712,115 @@
             this.buttonItem5.Tooltip = "Visualizar";
             this.buttonItem5.Click += new System.EventHandler(this.buttonItem5_Click);
             // 
+            // Panelrecaudacion
+            // 
+            this.Panelrecaudacion.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.Panelrecaudacion.Controls.Add(this.ribbonBar11);
+            this.Panelrecaudacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Panelrecaudacion.Location = new System.Drawing.Point(0, 27);
+            this.Panelrecaudacion.Name = "Panelrecaudacion";
+            this.Panelrecaudacion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.Panelrecaudacion.Size = new System.Drawing.Size(1081, 79);
+            // 
+            // 
+            // 
+            this.Panelrecaudacion.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.Panelrecaudacion.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.Panelrecaudacion.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.Panelrecaudacion.TabIndex = 5;
+            this.Panelrecaudacion.Visible = false;
+            // 
+            // ribbonBar11
+            // 
+            this.ribbonBar11.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar11.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar11.ContainerControlProcessDialogKey = true;
+            this.ribbonBar11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar11.DragDropSupport = true;
+            this.ribbonBar11.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
+            this.ribbonBar11.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem2,
+            this.buttonItem1,
+            this.btningresoportarifa,
+            this.btningresoporcomunidad,
+            this.buttonItem4});
+            this.ribbonBar11.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.ribbonBar11.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar11.Name = "ribbonBar11";
+            this.ribbonBar11.Size = new System.Drawing.Size(487, 76);
+            this.ribbonBar11.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar11.TabIndex = 1;
+            this.ribbonBar11.Text = "Reportes";
+            // 
+            // 
+            // 
+            this.ribbonBar11.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar11.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // buttonItem2
+            // 
+            this.buttonItem2.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem2.Image")));
+            this.buttonItem2.Name = "buttonItem2";
+            this.buttonItem2.SubItemsExpandWidth = 14;
+            this.buttonItem2.Text = "Recaudación";
+            this.buttonItem2.Tooltip = "Total de Recaudacion ";
+            this.buttonItem2.Click += new System.EventHandler(this.buttonItem2_Click);
+            // 
+            // buttonItem1
+            // 
+            this.buttonItem1.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem1.Image")));
+            this.buttonItem1.Name = "buttonItem1";
+            this.buttonItem1.SubItemsExpandWidth = 14;
+            this.buttonItem1.Text = "buttonItem1";
+            this.buttonItem1.Tooltip = "Total de recaudacion por rubros";
+            this.buttonItem1.Click += new System.EventHandler(this.buttonItem1_Click);
+            // 
+            // btningresoportarifa
+            // 
+            this.btningresoportarifa.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btningresoportarifa.Image = global::Predial10.Properties.Resources._1425651283_Emblem_Money_641;
+            this.btningresoportarifa.Name = "btningresoportarifa";
+            this.btningresoportarifa.SubItemsExpandWidth = 14;
+            this.btningresoportarifa.Text = "Por tarifa";
+            this.btningresoportarifa.Tooltip = "Reporte de recaudacion por tarifa";
+            this.btningresoportarifa.Click += new System.EventHandler(this.btningresoportarifa_Click);
+            // 
+            // btningresoporcomunidad
+            // 
+            this.btningresoporcomunidad.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btningresoporcomunidad.Image = global::Predial10.Properties.Resources._1425651283_Emblem_Money_641;
+            this.btningresoporcomunidad.Name = "btningresoporcomunidad";
+            this.btningresoporcomunidad.SubItemsExpandWidth = 14;
+            this.btningresoporcomunidad.Text = "Por comunidad";
+            this.btningresoporcomunidad.Tooltip = "Reporte de recaudacion por comunidad";
+            this.btningresoporcomunidad.Click += new System.EventHandler(this.btningresoporcomunidad_Click);
+            // 
+            // buttonItem4
+            // 
+            this.buttonItem4.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.buttonItem4.Image = global::Predial10.Properties.Resources._1425651283_Emblem_Money_641;
+            this.buttonItem4.Name = "buttonItem4";
+            this.buttonItem4.SubItemsExpandWidth = 14;
+            this.buttonItem4.Text = "Ingresos <font color=\"#C0504D\">Anuales</font>";
+            this.buttonItem4.Tooltip = "Ingresos anuales o trimestrales";
+            this.buttonItem4.Click += new System.EventHandler(this.buttonItem4_Click);
+            // 
             // PanelCaja
             // 
             this.PanelCaja.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -737,7 +846,6 @@
             // 
             this.PanelCaja.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.PanelCaja.TabIndex = 4;
-            this.PanelCaja.Visible = false;
             // 
             // ribbonBar23
             // 
@@ -1113,114 +1221,6 @@
             this.btnlistarfacturas.Text = "buttonItem17";
             this.btnlistarfacturas.Click += new System.EventHandler(this.btnlistarfacturas_Click);
             // 
-            // Panelrecaudacion
-            // 
-            this.Panelrecaudacion.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.Panelrecaudacion.Controls.Add(this.ribbonBar11);
-            this.Panelrecaudacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panelrecaudacion.Location = new System.Drawing.Point(0, 27);
-            this.Panelrecaudacion.Name = "Panelrecaudacion";
-            this.Panelrecaudacion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.Panelrecaudacion.Size = new System.Drawing.Size(1081, 79);
-            // 
-            // 
-            // 
-            this.Panelrecaudacion.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.Panelrecaudacion.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.Panelrecaudacion.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.Panelrecaudacion.TabIndex = 5;
-            // 
-            // ribbonBar11
-            // 
-            this.ribbonBar11.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar11.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar11.ContainerControlProcessDialogKey = true;
-            this.ribbonBar11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar11.DragDropSupport = true;
-            this.ribbonBar11.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
-            this.ribbonBar11.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem2,
-            this.buttonItem1,
-            this.btningresoportarifa,
-            this.btningresoporcomunidad,
-            this.buttonItem4});
-            this.ribbonBar11.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.ribbonBar11.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar11.Name = "ribbonBar11";
-            this.ribbonBar11.Size = new System.Drawing.Size(487, 76);
-            this.ribbonBar11.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar11.TabIndex = 1;
-            this.ribbonBar11.Text = "Reportes";
-            // 
-            // 
-            // 
-            this.ribbonBar11.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar11.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // buttonItem2
-            // 
-            this.buttonItem2.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem2.Image")));
-            this.buttonItem2.Name = "buttonItem2";
-            this.buttonItem2.SubItemsExpandWidth = 14;
-            this.buttonItem2.Text = "Recaudación";
-            this.buttonItem2.Tooltip = "Total de Recaudacion ";
-            this.buttonItem2.Click += new System.EventHandler(this.buttonItem2_Click);
-            // 
-            // buttonItem1
-            // 
-            this.buttonItem1.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem1.Image")));
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.SubItemsExpandWidth = 14;
-            this.buttonItem1.Text = "buttonItem1";
-            this.buttonItem1.Tooltip = "Total de recaudacion por rubros";
-            this.buttonItem1.Click += new System.EventHandler(this.buttonItem1_Click);
-            // 
-            // btningresoportarifa
-            // 
-            this.btningresoportarifa.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btningresoportarifa.Image = global::Predial10.Properties.Resources._1425651283_Emblem_Money_641;
-            this.btningresoportarifa.Name = "btningresoportarifa";
-            this.btningresoportarifa.SubItemsExpandWidth = 14;
-            this.btningresoportarifa.Text = "Por tarifa";
-            this.btningresoportarifa.Tooltip = "Reporte de recaudacion por tarifa";
-            this.btningresoportarifa.Click += new System.EventHandler(this.btningresoportarifa_Click);
-            // 
-            // btningresoporcomunidad
-            // 
-            this.btningresoporcomunidad.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btningresoporcomunidad.Image = global::Predial10.Properties.Resources._1425651283_Emblem_Money_641;
-            this.btningresoporcomunidad.Name = "btningresoporcomunidad";
-            this.btningresoporcomunidad.SubItemsExpandWidth = 14;
-            this.btningresoporcomunidad.Text = "Por comunidad";
-            this.btningresoporcomunidad.Tooltip = "Reporte de recaudacion por comunidad";
-            this.btningresoporcomunidad.Click += new System.EventHandler(this.btningresoporcomunidad_Click);
-            // 
-            // buttonItem4
-            // 
-            this.buttonItem4.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.buttonItem4.Image = global::Predial10.Properties.Resources._1425651283_Emblem_Money_641;
-            this.buttonItem4.Name = "buttonItem4";
-            this.buttonItem4.SubItemsExpandWidth = 14;
-            this.buttonItem4.Text = "Ingresos <font color=\"#C0504D\">Anuales</font>";
-            this.buttonItem4.Tooltip = "Ingresos anuales o trimestrales";
-            this.buttonItem4.Click += new System.EventHandler(this.buttonItem4_Click);
-            // 
             // PanelAdminitracion
             // 
             this.PanelAdminitracion.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -1469,6 +1469,7 @@
             // 
             // TabCajas
             // 
+            this.TabCajas.Checked = true;
             this.TabCajas.Name = "TabCajas";
             this.TabCajas.Panel = this.PanelCaja;
             this.TabCajas.Text = "Cajas";
@@ -1476,7 +1477,6 @@
             // 
             // TabRecaudacion
             // 
-            this.TabRecaudacion.Checked = true;
             this.TabRecaudacion.Name = "TabRecaudacion";
             this.TabRecaudacion.Panel = this.Panelrecaudacion;
             this.TabRecaudacion.Text = "Recaudación";
@@ -1619,10 +1619,10 @@
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.Panelusuario.ResumeLayout(false);
+            this.Panelrecaudacion.ResumeLayout(false);
             this.PanelCaja.ResumeLayout(false);
             this.PanelCobranza.ResumeLayout(false);
             this.ribbonPanel1.ResumeLayout(false);
-            this.Panelrecaudacion.ResumeLayout(false);
             this.PanelAdminitracion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl)).EndInit();
             this.superTabControl.ResumeLayout(false);
