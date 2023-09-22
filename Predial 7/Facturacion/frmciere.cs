@@ -46,7 +46,7 @@ namespace Predial10.Facturacion
             btnhacer.Enabled = false;
             btncerrar.Enabled = false;
             Conexion_a_BD.Conectar();
-            tablausuario = Conexion_a_BD.Consultasql("*", "usuario,tarifas where usuario.id_tarifa_p =Tarifas.idTarifas");
+            tablausuario = Conexion_a_BD.Consultasql("*", "usuario,tarifas where usuario.id_tarifa_p =Tarifas.idTarifas ORDER BY CLAVE ASC");
             Conexion_a_BD.Desconectar();
 
             var results = from myRow in tablausuario.AsEnumerable() select myRow;
