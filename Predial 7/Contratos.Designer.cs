@@ -38,6 +38,8 @@
             this.txtDomAudiencia2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDomAudiencia1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel7 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.DIConstruida = new DevComponents.Editors.DoubleInput();
+            this.label2 = new System.Windows.Forms.Label();
             this.DIsuperficie = new DevComponents.Editors.DoubleInput();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNotario = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -166,13 +168,12 @@
             this.btnCerrar = new DevComponents.DotNetBar.ButtonItem();
             this.rbgrabar = new DevComponents.DotNetBar.RibbonBar();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonItem();
-            this.label2 = new System.Windows.Forms.Label();
-            this.DIConstruida = new DevComponents.Editors.DoubleInput();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
             this.groupPanel8.SuspendLayout();
             this.groupPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DIConstruida)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DIsuperficie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaActa)).BeginInit();
             this.tabControlPanel1.SuspendLayout();
@@ -191,19 +192,19 @@
             this.tabControlPanel4.SuspendLayout();
             this.groupPanel10.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DIConstruida)).BeginInit();
             this.SuspendLayout();
             // 
             // styleManager1
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2007Blue;
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
             // tabControl1
             // 
             this.tabControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
+            this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Controls.Add(this.tabControlPanel5);
             this.tabControl1.Controls.Add(this.tabControlPanel4);
@@ -224,6 +225,7 @@
             // 
             this.tabControlPanel3.Controls.Add(this.groupPanel8);
             this.tabControlPanel3.Controls.Add(this.groupPanel7);
+            this.tabControlPanel3.DisabledBackColor = System.Drawing.Color.Empty;
             this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel3.Name = "tabControlPanel3";
@@ -233,8 +235,8 @@
             this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel3.Style.GradientAngle = 90;
             this.tabControlPanel3.TabIndex = 3;
             this.tabControlPanel3.TabItem = this.tabItem3;
@@ -246,6 +248,7 @@
             this.groupPanel8.Controls.Add(this.txtDomAudiencia3);
             this.groupPanel8.Controls.Add(this.txtDomAudiencia2);
             this.groupPanel8.Controls.Add(this.txtDomAudiencia1);
+            this.groupPanel8.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel8.Location = new System.Drawing.Point(9, 234);
             this.groupPanel8.Name = "groupPanel8";
             this.groupPanel8.Size = new System.Drawing.Size(1025, 115);
@@ -264,7 +267,6 @@
             this.groupPanel8.Style.BorderRightWidth = 1;
             this.groupPanel8.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel8.Style.BorderTopWidth = 1;
-            this.groupPanel8.Style.Class = "";
             this.groupPanel8.Style.CornerDiameter = 4;
             this.groupPanel8.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel8.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
@@ -273,12 +275,10 @@
             // 
             // 
             // 
-            this.groupPanel8.StyleMouseDown.Class = "";
             this.groupPanel8.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel8.StyleMouseOver.Class = "";
             this.groupPanel8.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel8.TabIndex = 1;
             this.groupPanel8.Text = "Superficie";
@@ -337,6 +337,7 @@
             this.groupPanel7.Controls.Add(this.labelX42);
             this.groupPanel7.Controls.Add(this.labelX41);
             this.groupPanel7.Controls.Add(this.labelX40);
+            this.groupPanel7.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel7.Location = new System.Drawing.Point(9, 4);
             this.groupPanel7.Name = "groupPanel7";
             this.groupPanel7.Size = new System.Drawing.Size(1025, 217);
@@ -355,7 +356,6 @@
             this.groupPanel7.Style.BorderRightWidth = 1;
             this.groupPanel7.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel7.Style.BorderTopWidth = 1;
-            this.groupPanel7.Style.Class = "";
             this.groupPanel7.Style.CornerDiameter = 4;
             this.groupPanel7.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel7.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
@@ -364,15 +364,38 @@
             // 
             // 
             // 
-            this.groupPanel7.StyleMouseDown.Class = "";
             this.groupPanel7.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel7.StyleMouseOver.Class = "";
             this.groupPanel7.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel7.TabIndex = 0;
             this.groupPanel7.Text = "Datos de la escritura";
+            // 
+            // DIConstruida
+            // 
+            // 
+            // 
+            // 
+            this.DIConstruida.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.DIConstruida.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DIConstruida.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
+            this.DIConstruida.Increment = 1D;
+            this.DIConstruida.Location = new System.Drawing.Point(497, 142);
+            this.DIConstruida.Name = "DIConstruida";
+            this.DIConstruida.ShowUpDown = true;
+            this.DIConstruida.Size = new System.Drawing.Size(80, 20);
+            this.DIConstruida.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(367, 144);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Superficie Construida";
             // 
             // DIsuperficie
             // 
@@ -438,12 +461,10 @@
             // 
             // 
             // 
-            this.dtFechaActa.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
             this.dtFechaActa.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dtFechaActa.MonthCalendar.BackgroundStyle.Class = "";
             this.dtFechaActa.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtFechaActa.MonthCalendar.ClearButtonVisible = true;
             // 
@@ -455,21 +476,16 @@
             this.dtFechaActa.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.dtFechaActa.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.dtFechaActa.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtFechaActa.MonthCalendar.CommandsBackgroundStyle.Class = "";
             this.dtFechaActa.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtFechaActa.MonthCalendar.DisplayMonth = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
-            this.dtFechaActa.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtFechaActa.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
             this.dtFechaActa.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.dtFechaActa.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
             this.dtFechaActa.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtFechaActa.MonthCalendar.NavigationBackgroundStyle.Class = "";
             this.dtFechaActa.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtFechaActa.MonthCalendar.TodayButtonVisible = true;
-            this.dtFechaActa.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dtFechaActa.Name = "dtFechaActa";
             this.dtFechaActa.Size = new System.Drawing.Size(107, 20);
             this.dtFechaActa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -494,7 +510,6 @@
             // 
             // 
             // 
-            this.labelX43.BackgroundStyle.Class = "";
             this.labelX43.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX43.Location = new System.Drawing.Point(121, 108);
             this.labelX43.Name = "labelX43";
@@ -508,7 +523,6 @@
             // 
             // 
             // 
-            this.labelX42.BackgroundStyle.Class = "";
             this.labelX42.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX42.Location = new System.Drawing.Point(121, 79);
             this.labelX42.Name = "labelX42";
@@ -522,7 +536,6 @@
             // 
             // 
             // 
-            this.labelX41.BackgroundStyle.Class = "";
             this.labelX41.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX41.Location = new System.Drawing.Point(121, 50);
             this.labelX41.Name = "labelX41";
@@ -536,7 +549,6 @@
             // 
             // 
             // 
-            this.labelX40.BackgroundStyle.Class = "";
             this.labelX40.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX40.Location = new System.Drawing.Point(121, 21);
             this.labelX40.Name = "labelX40";
@@ -556,6 +568,7 @@
             this.tabControlPanel1.Controls.Add(this.groupPanel4);
             this.tabControlPanel1.Controls.Add(this.groupPanel2);
             this.tabControlPanel1.Controls.Add(this.groupPanel1);
+            this.tabControlPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel1.Name = "tabControlPanel1";
@@ -565,8 +578,8 @@
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
@@ -596,6 +609,7 @@
             this.groupPanel3.Controls.Add(this.txtManzana);
             this.groupPanel3.Controls.Add(this.labelX22);
             this.groupPanel3.Controls.Add(this.labelX21);
+            this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel3.Location = new System.Drawing.Point(13, 177);
             this.groupPanel3.Name = "groupPanel3";
             this.groupPanel3.Size = new System.Drawing.Size(1021, 120);
@@ -614,7 +628,6 @@
             this.groupPanel3.Style.BorderRightWidth = 1;
             this.groupPanel3.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel3.Style.BorderTopWidth = 1;
-            this.groupPanel3.Style.Class = "";
             this.groupPanel3.Style.CornerDiameter = 4;
             this.groupPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel3.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
@@ -623,12 +636,10 @@
             // 
             // 
             // 
-            this.groupPanel3.StyleMouseDown.Class = "";
             this.groupPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel3.StyleMouseOver.Class = "";
             this.groupPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel3.TabIndex = 4;
             this.groupPanel3.Text = "Ubicación del predio";
@@ -665,7 +676,6 @@
             // 
             // 
             // 
-            this.labelX15.BackgroundStyle.Class = "";
             this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX15.ForeColor = System.Drawing.Color.Red;
             this.labelX15.Location = new System.Drawing.Point(673, 67);
@@ -680,7 +690,6 @@
             // 
             // 
             // 
-            this.labelX20.BackgroundStyle.Class = "";
             this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX20.ForeColor = System.Drawing.Color.Red;
             this.labelX20.Location = new System.Drawing.Point(15, 64);
@@ -707,7 +716,6 @@
             // 
             // 
             // 
-            this.labelX13.BackgroundStyle.Class = "";
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX13.Location = new System.Drawing.Point(15, 3);
             this.labelX13.Name = "labelX13";
@@ -734,7 +742,6 @@
             // 
             // 
             // 
-            this.lblGis.BackgroundStyle.Class = "";
             this.lblGis.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblGis.ForeColor = System.Drawing.Color.Red;
             this.lblGis.Location = new System.Drawing.Point(639, 67);
@@ -750,7 +757,6 @@
             // 
             // 
             // 
-            this.labelX27.BackgroundStyle.Class = "";
             this.labelX27.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX27.Location = new System.Drawing.Point(544, 31);
             this.labelX27.Name = "labelX27";
@@ -777,7 +783,6 @@
             // 
             // 
             // 
-            this.labelX26.BackgroundStyle.Class = "";
             this.labelX26.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX26.Location = new System.Drawing.Point(320, 31);
             this.labelX26.Name = "labelX26";
@@ -827,7 +832,6 @@
             // 
             // 
             // 
-            this.labelX25.BackgroundStyle.Class = "";
             this.labelX25.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX25.Location = new System.Drawing.Point(544, 3);
             this.labelX25.Name = "labelX25";
@@ -841,7 +845,6 @@
             // 
             // 
             // 
-            this.labelX24.BackgroundStyle.Class = "";
             this.labelX24.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX24.Location = new System.Drawing.Point(737, 31);
             this.labelX24.Name = "labelX24";
@@ -855,7 +858,6 @@
             // 
             // 
             // 
-            this.labelX23.BackgroundStyle.Class = "";
             this.labelX23.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX23.ForeColor = System.Drawing.Color.Red;
             this.labelX23.Location = new System.Drawing.Point(15, 31);
@@ -896,7 +898,6 @@
             // 
             // 
             // 
-            this.labelX22.BackgroundStyle.Class = "";
             this.labelX22.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX22.Location = new System.Drawing.Point(484, 64);
             this.labelX22.Name = "labelX22";
@@ -910,7 +911,6 @@
             // 
             // 
             // 
-            this.labelX21.BackgroundStyle.Class = "";
             this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX21.Location = new System.Drawing.Point(320, 64);
             this.labelX21.Name = "labelX21";
@@ -925,6 +925,7 @@
             this.groupPanel4.Controls.Add(this.rdbDomFiscal);
             this.groupPanel4.Controls.Add(this.rdbDomAudiencia);
             this.groupPanel4.Controls.Add(this.rdbUbicacionPeriodo);
+            this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel4.Location = new System.Drawing.Point(16, 434);
             this.groupPanel4.Name = "groupPanel4";
             this.groupPanel4.Size = new System.Drawing.Size(1023, 55);
@@ -943,7 +944,6 @@
             this.groupPanel4.Style.BorderRightWidth = 1;
             this.groupPanel4.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel4.Style.BorderTopWidth = 1;
-            this.groupPanel4.Style.Class = "";
             this.groupPanel4.Style.CornerDiameter = 4;
             this.groupPanel4.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel4.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
@@ -952,12 +952,10 @@
             // 
             // 
             // 
-            this.groupPanel4.StyleMouseDown.Class = "";
             this.groupPanel4.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel4.StyleMouseOver.Class = "";
             this.groupPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel4.TabIndex = 2;
             this.groupPanel4.Text = "¿En que dirección se deben recibir notificaciones?";
@@ -1019,6 +1017,7 @@
             this.groupPanel2.Controls.Add(this.cmbTipoUs);
             this.groupPanel2.Controls.Add(this.labelX12);
             this.groupPanel2.Controls.Add(this.labelX11);
+            this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Location = new System.Drawing.Point(16, 306);
             this.groupPanel2.Name = "groupPanel2";
             this.groupPanel2.Size = new System.Drawing.Size(1023, 115);
@@ -1037,7 +1036,6 @@
             this.groupPanel2.Style.BorderRightWidth = 1;
             this.groupPanel2.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel2.Style.BorderTopWidth = 1;
-            this.groupPanel2.Style.Class = "";
             this.groupPanel2.Style.CornerDiameter = 4;
             this.groupPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
@@ -1046,12 +1044,10 @@
             // 
             // 
             // 
-            this.groupPanel2.StyleMouseDown.Class = "";
             this.groupPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel2.StyleMouseOver.Class = "";
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 1;
             this.groupPanel2.Text = "Datos del servicio";
@@ -1070,12 +1066,10 @@
             // 
             // 
             // 
-            this.dtUFP.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
             this.dtUFP.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dtUFP.MonthCalendar.BackgroundStyle.Class = "";
             this.dtUFP.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtUFP.MonthCalendar.ClearButtonVisible = true;
             // 
@@ -1087,21 +1081,16 @@
             this.dtUFP.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.dtUFP.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.dtUFP.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtUFP.MonthCalendar.CommandsBackgroundStyle.Class = "";
             this.dtUFP.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtUFP.MonthCalendar.DisplayMonth = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
-            this.dtUFP.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtUFP.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
             this.dtUFP.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.dtUFP.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
             this.dtUFP.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtUFP.MonthCalendar.NavigationBackgroundStyle.Class = "";
             this.dtUFP.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtUFP.MonthCalendar.TodayButtonVisible = true;
-            this.dtUFP.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dtUFP.Name = "dtUFP";
             this.dtUFP.Size = new System.Drawing.Size(128, 20);
             this.dtUFP.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -1113,7 +1102,6 @@
             // 
             // 
             // 
-            this.chkServAgua.BackgroundStyle.Class = "";
             this.chkServAgua.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.chkServAgua.Location = new System.Drawing.Point(151, 66);
             this.chkServAgua.Name = "chkServAgua";
@@ -1130,7 +1118,6 @@
             // 
             // 
             // 
-            this.labelX2.BackgroundStyle.Class = "";
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.ForeColor = System.Drawing.Color.Red;
             this.labelX2.Location = new System.Drawing.Point(828, 1);
@@ -1145,7 +1132,6 @@
             // 
             // 
             // 
-            this.chkGestionCobranza.BackgroundStyle.Class = "";
             this.chkGestionCobranza.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.chkGestionCobranza.Location = new System.Drawing.Point(12, 66);
             this.chkGestionCobranza.Name = "chkGestionCobranza";
@@ -1174,7 +1160,6 @@
             // 
             // 
             // 
-            this.labelX17.BackgroundStyle.Class = "";
             this.labelX17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX17.Location = new System.Drawing.Point(529, 33);
             this.labelX17.Name = "labelX17";
@@ -1200,7 +1185,6 @@
             // 
             // 
             // 
-            this.labelX16.BackgroundStyle.Class = "";
             this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX16.ForeColor = System.Drawing.Color.Red;
             this.labelX16.Location = new System.Drawing.Point(280, 3);
@@ -1227,7 +1211,6 @@
             // 
             // 
             // 
-            this.labelX14.BackgroundStyle.Class = "";
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX14.Location = new System.Drawing.Point(11, 37);
             this.labelX14.Name = "labelX14";
@@ -1265,7 +1248,6 @@
             // 
             // 
             // 
-            this.labelX12.BackgroundStyle.Class = "";
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX12.ForeColor = System.Drawing.Color.Red;
             this.labelX12.Location = new System.Drawing.Point(280, 36);
@@ -1280,7 +1262,6 @@
             // 
             // 
             // 
-            this.labelX11.BackgroundStyle.Class = "";
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX11.ForeColor = System.Drawing.Color.Red;
             this.labelX11.Location = new System.Drawing.Point(12, 2);
@@ -1318,6 +1299,7 @@
             this.groupPanel1.Controls.Add(this.labelX3);
             this.groupPanel1.Controls.Add(this.cmbMunicipio);
             this.groupPanel1.Controls.Add(this.labelX1);
+            this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Location = new System.Drawing.Point(12, 4);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(1023, 166);
@@ -1336,7 +1318,6 @@
             this.groupPanel1.Style.BorderRightWidth = 1;
             this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderTopWidth = 1;
-            this.groupPanel1.Style.Class = "";
             this.groupPanel1.Style.CornerDiameter = 4;
             this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
@@ -1345,12 +1326,10 @@
             // 
             // 
             // 
-            this.groupPanel1.StyleMouseDown.Class = "";
             this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel1.StyleMouseOver.Class = "";
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 0;
             this.groupPanel1.Text = "Datos del contrato";
@@ -1421,7 +1400,6 @@
             // 
             // 
             // 
-            this.labelX18.BackgroundStyle.Class = "";
             this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX18.Location = new System.Drawing.Point(793, 86);
             this.labelX18.Name = "labelX18";
@@ -1449,7 +1427,6 @@
             // 
             // 
             // 
-            this.labelX44.BackgroundStyle.Class = "";
             this.labelX44.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX44.Location = new System.Drawing.Point(6, 111);
             this.labelX44.Name = "labelX44";
@@ -1517,7 +1494,6 @@
             // 
             // 
             // 
-            this.labelX10.BackgroundStyle.Class = "";
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX10.Location = new System.Drawing.Point(561, 87);
             this.labelX10.Name = "labelX10";
@@ -1531,7 +1507,6 @@
             // 
             // 
             // 
-            this.labelX9.BackgroundStyle.Class = "";
             this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX9.Location = new System.Drawing.Point(4, 82);
             this.labelX9.Name = "labelX9";
@@ -1545,7 +1520,6 @@
             // 
             // 
             // 
-            this.labelX8.BackgroundStyle.Class = "";
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX8.Location = new System.Drawing.Point(843, 52);
             this.labelX8.Name = "labelX8";
@@ -1586,7 +1560,6 @@
             // 
             // 
             // 
-            this.labelX7.BackgroundStyle.Class = "";
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Location = new System.Drawing.Point(4, 53);
             this.labelX7.Name = "labelX7";
@@ -1600,7 +1573,6 @@
             // 
             // 
             // 
-            this.labelX6.BackgroundStyle.Class = "";
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.ForeColor = System.Drawing.Color.Red;
             this.labelX6.Location = new System.Drawing.Point(4, 28);
@@ -1623,12 +1595,10 @@
             // 
             // 
             // 
-            this.dtFecha.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
             this.dtFecha.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dtFecha.MonthCalendar.BackgroundStyle.Class = "";
             this.dtFecha.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtFecha.MonthCalendar.ClearButtonVisible = true;
             // 
@@ -1640,21 +1610,16 @@
             this.dtFecha.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.dtFecha.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.dtFecha.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtFecha.MonthCalendar.CommandsBackgroundStyle.Class = "";
             this.dtFecha.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtFecha.MonthCalendar.DisplayMonth = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
-            this.dtFecha.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtFecha.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
             this.dtFecha.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.dtFecha.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
             this.dtFecha.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtFecha.MonthCalendar.NavigationBackgroundStyle.Class = "";
             this.dtFecha.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtFecha.MonthCalendar.TodayButtonVisible = true;
-            this.dtFecha.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(107, 20);
             this.dtFecha.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -1666,7 +1631,6 @@
             // 
             // 
             // 
-            this.labelX5.BackgroundStyle.Class = "";
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Location = new System.Drawing.Point(847, 0);
             this.labelX5.Name = "labelX5";
@@ -1680,7 +1644,6 @@
             // 
             // 
             // 
-            this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.ForeColor = System.Drawing.Color.Red;
             this.labelX4.Location = new System.Drawing.Point(528, 0);
@@ -1695,7 +1658,6 @@
             // 
             // 
             // 
-            this.labelX3.BackgroundStyle.Class = "";
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.ForeColor = System.Drawing.Color.Red;
             this.labelX3.Location = new System.Drawing.Point(227, 0);
@@ -1722,7 +1684,6 @@
             // 
             // 
             // 
-            this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.ForeColor = System.Drawing.Color.Red;
             this.labelX1.Location = new System.Drawing.Point(4, 0);
@@ -1741,6 +1702,7 @@
             // 
             this.tabControlPanel2.Controls.Add(this.groupPanel6);
             this.tabControlPanel2.Controls.Add(this.groupPanel5);
+            this.tabControlPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel2.Name = "tabControlPanel2";
@@ -1750,8 +1712,8 @@
             this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel2.Style.GradientAngle = 90;
             this.tabControlPanel2.TabIndex = 2;
             this.tabControlPanel2.TabItem = this.tabItem2;
@@ -1762,6 +1724,7 @@
             this.groupPanel6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel6.Controls.Add(this.txtObservaciones);
             this.groupPanel6.Controls.Add(this.labelX38);
+            this.groupPanel6.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel6.Location = new System.Drawing.Point(13, 277);
             this.groupPanel6.Name = "groupPanel6";
             this.groupPanel6.Size = new System.Drawing.Size(1021, 200);
@@ -1780,7 +1743,6 @@
             this.groupPanel6.Style.BorderRightWidth = 1;
             this.groupPanel6.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel6.Style.BorderTopWidth = 1;
-            this.groupPanel6.Style.Class = "";
             this.groupPanel6.Style.CornerDiameter = 4;
             this.groupPanel6.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel6.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
@@ -1789,12 +1751,10 @@
             // 
             // 
             // 
-            this.groupPanel6.StyleMouseDown.Class = "";
             this.groupPanel6.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel6.StyleMouseOver.Class = "";
             this.groupPanel6.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel6.TabIndex = 1;
             this.groupPanel6.Text = "Observaciones generales del predio";
@@ -1819,7 +1779,6 @@
             // 
             // 
             // 
-            this.labelX38.BackgroundStyle.Class = "";
             this.labelX38.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX38.Location = new System.Drawing.Point(4, 4);
             this.labelX38.Name = "labelX38";
@@ -1844,6 +1803,7 @@
             this.groupPanel5.Controls.Add(this.labelX31);
             this.groupPanel5.Controls.Add(this.txtReferencias);
             this.groupPanel5.Controls.Add(this.labelX30);
+            this.groupPanel5.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel5.Location = new System.Drawing.Point(9, 15);
             this.groupPanel5.Name = "groupPanel5";
             this.groupPanel5.Size = new System.Drawing.Size(1029, 240);
@@ -1862,7 +1822,6 @@
             this.groupPanel5.Style.BorderRightWidth = 1;
             this.groupPanel5.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel5.Style.BorderTopWidth = 1;
-            this.groupPanel5.Style.Class = "";
             this.groupPanel5.Style.CornerDiameter = 4;
             this.groupPanel5.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel5.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
@@ -1871,12 +1830,10 @@
             // 
             // 
             // 
-            this.groupPanel5.StyleMouseDown.Class = "";
             this.groupPanel5.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel5.StyleMouseOver.Class = "";
             this.groupPanel5.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel5.TabIndex = 0;
             this.groupPanel5.Text = "Datos de la ubicación del predio";
@@ -1947,7 +1904,6 @@
             // 
             // 
             // 
-            this.labelX36.BackgroundStyle.Class = "";
             this.labelX36.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX36.Location = new System.Drawing.Point(27, 189);
             this.labelX36.Name = "labelX36";
@@ -1961,7 +1917,6 @@
             // 
             // 
             // 
-            this.labelX35.BackgroundStyle.Class = "";
             this.labelX35.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX35.Location = new System.Drawing.Point(64, 157);
             this.labelX35.Name = "labelX35";
@@ -1975,7 +1930,6 @@
             // 
             // 
             // 
-            this.labelX34.BackgroundStyle.Class = "";
             this.labelX34.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX34.Location = new System.Drawing.Point(64, 128);
             this.labelX34.Name = "labelX34";
@@ -1989,7 +1943,6 @@
             // 
             // 
             // 
-            this.labelX33.BackgroundStyle.Class = "";
             this.labelX33.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX33.Location = new System.Drawing.Point(64, 99);
             this.labelX33.Name = "labelX33";
@@ -2003,7 +1956,6 @@
             // 
             // 
             // 
-            this.labelX32.BackgroundStyle.Class = "";
             this.labelX32.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX32.Location = new System.Drawing.Point(64, 70);
             this.labelX32.Name = "labelX32";
@@ -2017,7 +1969,6 @@
             // 
             // 
             // 
-            this.labelX31.BackgroundStyle.Class = "";
             this.labelX31.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX31.Location = new System.Drawing.Point(27, 42);
             this.labelX31.Name = "labelX31";
@@ -2044,7 +1995,6 @@
             // 
             // 
             // 
-            this.labelX30.BackgroundStyle.Class = "";
             this.labelX30.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX30.Location = new System.Drawing.Point(27, 13);
             this.labelX30.Name = "labelX30";
@@ -2061,6 +2011,7 @@
             // tabControlPanel5
             // 
             this.tabControlPanel5.Controls.Add(this.groupPanel11);
+            this.tabControlPanel5.DisabledBackColor = System.Drawing.Color.Empty;
             this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel5.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel5.Name = "tabControlPanel5";
@@ -2070,8 +2021,8 @@
             this.tabControlPanel5.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel5.Style.GradientAngle = 90;
             this.tabControlPanel5.TabIndex = 5;
             this.tabControlPanel5.TabItem = this.tabItem5;
@@ -2090,6 +2041,7 @@
             this.groupPanel11.Controls.Add(this.txtCopropietario3);
             this.groupPanel11.Controls.Add(this.txtCopropietario2);
             this.groupPanel11.Controls.Add(this.txtCopropietario1);
+            this.groupPanel11.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel11.Location = new System.Drawing.Point(87, 29);
             this.groupPanel11.Name = "groupPanel11";
             this.groupPanel11.Size = new System.Drawing.Size(849, 471);
@@ -2108,7 +2060,6 @@
             this.groupPanel11.Style.BorderRightWidth = 1;
             this.groupPanel11.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel11.Style.BorderTopWidth = 1;
-            this.groupPanel11.Style.Class = "";
             this.groupPanel11.Style.CornerDiameter = 4;
             this.groupPanel11.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel11.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
@@ -2117,12 +2068,10 @@
             // 
             // 
             // 
-            this.groupPanel11.StyleMouseDown.Class = "";
             this.groupPanel11.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel11.StyleMouseOver.Class = "";
             this.groupPanel11.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel11.TabIndex = 0;
             this.groupPanel11.Text = "Copropietarios";
@@ -2257,6 +2206,7 @@
             // tabControlPanel4
             // 
             this.tabControlPanel4.Controls.Add(this.groupPanel10);
+            this.tabControlPanel4.DisabledBackColor = System.Drawing.Color.Empty;
             this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel4.Name = "tabControlPanel4";
@@ -2266,8 +2216,8 @@
             this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel4.Style.GradientAngle = 90;
             this.tabControlPanel4.TabIndex = 4;
             this.tabControlPanel4.TabItem = this.tabItem4;
@@ -2284,6 +2234,7 @@
             this.groupPanel10.Controls.Add(this.labelX47);
             this.groupPanel10.Controls.Add(this.labelX46);
             this.groupPanel10.Controls.Add(this.labelX45);
+            this.groupPanel10.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel10.Location = new System.Drawing.Point(100, 46);
             this.groupPanel10.Name = "groupPanel10";
             this.groupPanel10.Size = new System.Drawing.Size(854, 234);
@@ -2302,7 +2253,6 @@
             this.groupPanel10.Style.BorderRightWidth = 1;
             this.groupPanel10.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel10.Style.BorderTopWidth = 1;
-            this.groupPanel10.Style.Class = "";
             this.groupPanel10.Style.CornerDiameter = 4;
             this.groupPanel10.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel10.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
@@ -2311,12 +2261,10 @@
             // 
             // 
             // 
-            this.groupPanel10.StyleMouseDown.Class = "";
             this.groupPanel10.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel10.StyleMouseOver.Class = "";
             this.groupPanel10.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel10.TabIndex = 0;
             // 
@@ -2379,7 +2327,6 @@
             // 
             // 
             // 
-            this.labelX48.BackgroundStyle.Class = "";
             this.labelX48.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX48.Location = new System.Drawing.Point(40, 169);
             this.labelX48.Name = "labelX48";
@@ -2393,7 +2340,6 @@
             // 
             // 
             // 
-            this.labelX47.BackgroundStyle.Class = "";
             this.labelX47.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX47.Location = new System.Drawing.Point(40, 122);
             this.labelX47.Name = "labelX47";
@@ -2407,7 +2353,6 @@
             // 
             // 
             // 
-            this.labelX46.BackgroundStyle.Class = "";
             this.labelX46.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX46.Location = new System.Drawing.Point(40, 78);
             this.labelX46.Name = "labelX46";
@@ -2421,7 +2366,6 @@
             // 
             // 
             // 
-            this.labelX45.BackgroundStyle.Class = "";
             this.labelX45.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX45.Location = new System.Drawing.Point(40, 30);
             this.labelX45.Name = "labelX45";
@@ -2447,17 +2391,14 @@
             // 
             // 
             // 
-            this.ribbonPanel1.Style.Class = "";
             this.ribbonPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonPanel1.StyleMouseDown.Class = "";
             this.ribbonPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonPanel1.StyleMouseOver.Class = "";
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 3;
             // 
@@ -2467,15 +2408,14 @@
             // 
             // 
             // 
-            this.ribbonBar6.BackgroundMouseOverStyle.Class = "";
             this.ribbonBar6.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonBar6.BackgroundStyle.Class = "";
             this.ribbonBar6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonBar6.ContainerControlProcessDialogKey = true;
             this.ribbonBar6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar6.DragDropSupport = true;
             this.ribbonBar6.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
             this.ribbonBar6.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnCerrar});
@@ -2489,12 +2429,10 @@
             // 
             // 
             // 
-            this.ribbonBar6.TitleStyle.Class = "";
             this.ribbonBar6.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonBar6.TitleStyleMouseOver.Class = "";
             this.ribbonBar6.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // btnCerrar
@@ -2510,15 +2448,14 @@
             // 
             // 
             // 
-            this.rbgrabar.BackgroundMouseOverStyle.Class = "";
             this.rbgrabar.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.rbgrabar.BackgroundStyle.Class = "";
             this.rbgrabar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.rbgrabar.ContainerControlProcessDialogKey = true;
             this.rbgrabar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbgrabar.DragDropSupport = true;
             this.rbgrabar.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
             this.rbgrabar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnAceptar});
@@ -2532,12 +2469,10 @@
             // 
             // 
             // 
-            this.rbgrabar.TitleStyle.Class = "";
             this.rbgrabar.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.rbgrabar.TitleStyleMouseOver.Class = "";
             this.rbgrabar.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // btnAceptar
@@ -2546,31 +2481,6 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.SubItemsExpandWidth = 14;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(367, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Superficie Construida";
-            // 
-            // DIConstruida
-            // 
-            // 
-            // 
-            // 
-            this.DIConstruida.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.DIConstruida.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.DIConstruida.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.DIConstruida.Increment = 1D;
-            this.DIConstruida.Location = new System.Drawing.Point(497, 142);
-            this.DIConstruida.Name = "DIConstruida";
-            this.DIConstruida.ShowUpDown = true;
-            this.DIConstruida.Size = new System.Drawing.Size(80, 20);
-            this.DIConstruida.TabIndex = 5;
             // 
             // Contratos
             // 
@@ -2590,6 +2500,7 @@
             this.groupPanel8.ResumeLayout(false);
             this.groupPanel7.ResumeLayout(false);
             this.groupPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DIConstruida)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DIsuperficie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaActa)).EndInit();
             this.tabControlPanel1.ResumeLayout(false);
@@ -2610,7 +2521,6 @@
             this.tabControlPanel4.ResumeLayout(false);
             this.groupPanel10.ResumeLayout(false);
             this.ribbonPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DIConstruida)).EndInit();
             this.ResumeLayout(false);
 
         }
