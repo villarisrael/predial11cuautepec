@@ -39,7 +39,7 @@ namespace Predial10.caja
                     return ;
             }
 
-          this.recibomaestroTableAdapter.Fillfechaycaja (predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString ());
+          recibomaestroTableAdapter.FillByfechaycaja (predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString ());
           dataGridView1.Refresh();
            double total=0;
            for (int i = 0; i <= dataGridView1.Rows.Count-1; i++)
@@ -80,7 +80,7 @@ namespace Predial10.caja
                 {
                     MessageBox.Show(exc.Message );
                 }
-                this.recibomaestroTableAdapter.Fillfechaycaja(predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString());
+                this.recibomaestroTableAdapter.FillByfechaycaja(predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString());
                 dataGridView1.Refresh();
             }
         }
@@ -184,7 +184,7 @@ namespace Predial10.caja
                 {
                     MessageBox.Show(exc.Message);
                 }
-                this.recibomaestroTableAdapter.Fillfechaycaja(predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString());
+                this.recibomaestroTableAdapter.FillByfechaycaja(predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString());
                 dataGridView1.Refresh();
             }
         }
@@ -273,7 +273,7 @@ namespace Predial10.caja
             {
                 MessageBox.Show(exc.Message );
             }
-            this.recibomaestroTableAdapter.Fillfechaycaja(predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString());
+            this.recibomaestroTableAdapter.FillByfechaycaja(predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString());
             dataGridView1.Refresh();
             btnrenumerar.Enabled = true;
         }
@@ -301,7 +301,7 @@ namespace Predial10.caja
                 {
                     MessageBox.Show(exc.Message);
                 }
-                this.recibomaestroTableAdapter.Fillfechaycaja(predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString());
+                this.recibomaestroTableAdapter.FillByfechaycaja(predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString());
                 dataGridView1.Refresh();
             }
         }
@@ -329,7 +329,7 @@ namespace Predial10.caja
                 {
                     MessageBox.Show(exc.Message);
                 }
-                this.recibomaestroTableAdapter.Fillfechaycaja(predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString());
+                this.recibomaestroTableAdapter.FillByfechaycaja(predialchicoDataSet.recibomaestro, dtinicio.Value, dtfinal.Value, cmbOficina.SelectedValue.ToString(), cmbCajas.SelectedValue.ToString());
                 dataGridView1.Refresh();
             }
         }

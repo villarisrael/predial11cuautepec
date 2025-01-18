@@ -29,7 +29,6 @@ namespace Predial10.configuracion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.txtcadena = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
@@ -54,7 +53,13 @@ namespace Predial10.configuracion
             this.IIlininicial = new DevComponents.Editors.IntegerInput();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+            this.predialchicoDataSet = new Predial10.DataSet1();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.btngrabar = new DevComponents.DotNetBar.ButtonX();
+            this.formatoreciboTableAdapter = new Predial10.DataSet1TableAdapters.formatoreciboTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,12 +68,6 @@ namespace Predial10.configuracion
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.predialchicoDataSet = new Predial10.predialchicoDataSet();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.btngrabar = new DevComponents.DotNetBar.ButtonX();
-            this.formatoreciboTableAdapter1 = new Predial10.predialchicoDataSetTableAdapters.formatoreciboTableAdapter();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
@@ -80,9 +79,9 @@ namespace Predial10.configuracion
             ((System.ComponentModel.ISupportInitialize)(this.Ditamano)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IIlininicial)).BeginInit();
             this.panelEx3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.predialchicoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEx1
@@ -92,6 +91,7 @@ namespace Predial10.configuracion
             this.panelEx1.Controls.Add(this.txtcadena);
             this.panelEx1.Controls.Add(this.labelX6);
             this.panelEx1.Controls.Add(this.labelX4);
+            this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Location = new System.Drawing.Point(141, 57);
             this.panelEx1.Name = "panelEx1";
             this.panelEx1.Size = new System.Drawing.Size(475, 101);
@@ -123,7 +123,6 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.labelX6.BackgroundStyle.Class = "";
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.Location = new System.Drawing.Point(3, 39);
@@ -137,7 +136,6 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -152,15 +150,13 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.reflectionLabel1.BackgroundStyle.Class = "";
             this.reflectionLabel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.reflectionLabel1.Location = new System.Drawing.Point(12, 11);
             this.reflectionLabel1.Name = "reflectionLabel1";
             this.reflectionLabel1.Size = new System.Drawing.Size(501, 40);
             this.reflectionLabel1.TabIndex = 3;
             this.reflectionLabel1.Text = "<b><font size=\"+6\">C<font color=\"#6E6E6E\">onfigurador del recibo</font></font></b" +
-                ">";
-         
+    ">";
             // 
             // superTabControl1
             // 
@@ -185,7 +181,7 @@ namespace Predial10.configuracion
             this.superTabControl1.ReorderTabsEnabled = true;
             this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.superTabControl1.SelectedTabIndex = 0;
-            this.superTabControl1.Size = new System.Drawing.Size(876, 300);
+            this.superTabControl1.Size = new System.Drawing.Size(876, 357);
             this.superTabControl1.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.superTabControl1.TabIndex = 5;
             this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -200,7 +196,7 @@ namespace Predial10.configuracion
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 25);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(876, 275);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(876, 332);
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.superTabItem1;
             // 
@@ -210,7 +206,6 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.labelX13.BackgroundStyle.Class = "";
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -239,6 +234,7 @@ namespace Predial10.configuracion
             this.panelEx4.Controls.Add(this.labelX8);
             this.panelEx4.Controls.Add(this.IIlininicial);
             this.panelEx4.Controls.Add(this.labelX7);
+            this.panelEx4.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx4.Location = new System.Drawing.Point(595, 3);
             this.panelEx4.Name = "panelEx4";
             this.panelEx4.Size = new System.Drawing.Size(278, 262);
@@ -257,7 +253,6 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.labelX14.BackgroundStyle.Class = "";
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -287,7 +282,6 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.labelX12.BackgroundStyle.Class = "";
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX12.Location = new System.Drawing.Point(28, 199);
@@ -316,7 +310,6 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.labelX11.BackgroundStyle.Class = "";
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX11.Location = new System.Drawing.Point(28, 149);
@@ -345,7 +338,6 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.labelX10.BackgroundStyle.Class = "";
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX10.Location = new System.Drawing.Point(28, 175);
@@ -387,7 +379,6 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.labelX9.BackgroundStyle.Class = "";
             this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX9.Location = new System.Drawing.Point(28, 121);
@@ -415,7 +406,6 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.labelX8.BackgroundStyle.Class = "";
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX8.Location = new System.Drawing.Point(28, 70);
@@ -444,7 +434,6 @@ namespace Predial10.configuracion
             // 
             // 
             // 
-            this.labelX7.BackgroundStyle.Class = "";
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.Location = new System.Drawing.Point(27, 45);
@@ -457,7 +446,8 @@ namespace Predial10.configuracion
             // 
             this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx3.Controls.Add(this.dataGridViewX1);
+            this.panelEx3.Controls.Add(this.dataGridView1);
+            this.panelEx3.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx3.Location = new System.Drawing.Point(3, 27);
             this.panelEx3.Name = "panelEx3";
             this.panelEx3.Size = new System.Drawing.Size(540, 245);
@@ -470,11 +460,39 @@ namespace Predial10.configuracion
             this.panelEx3.Style.GradientAngle = 90;
             this.panelEx3.TabIndex = 7;
             // 
-            // dataGridViewX1
+            // superTabItem1
             // 
-            this.dataGridViewX1.AutoGenerateColumns = false;
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+            this.superTabItem1.GlobalItem = false;
+            this.superTabItem1.Name = "superTabItem1";
+            this.superTabItem1.Text = "Generales de la impresón del recibo";
+            // 
+            // predialchicoDataSet
+            // 
+            this.predialchicoDataSet.DataSetName = "DataSet1";
+            this.predialchicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btngrabar
+            // 
+            this.btngrabar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btngrabar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btngrabar.Image = global::Predial10.Properties.Resources.SACVE2;
+            this.btngrabar.Location = new System.Drawing.Point(15, 60);
+            this.btngrabar.Name = "btngrabar";
+            this.btngrabar.Size = new System.Drawing.Size(99, 98);
+            this.btngrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btngrabar.TabIndex = 6;
+            this.btngrabar.Click += new System.EventHandler(this.btngrabar_Click);
+            // 
+            // formatoreciboTableAdapter
+            // 
+            this.formatoreciboTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
@@ -483,21 +501,16 @@ namespace Predial10.configuracion
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
-            this.dataGridViewX1.DataSource = this.bindingSource1;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.Size = new System.Drawing.Size(540, 245);
-            this.dataGridViewX1.TabIndex = 0;
+            this.dataGridView1.DataSource = this.bindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(536, 241);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "formatorecibo";
+            this.bindingSource1.DataSource = this.predialchicoDataSet;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -547,43 +560,10 @@ namespace Predial10.configuracion
             this.dataGridViewTextBoxColumn16.HeaderText = "Alineacion";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "formatorecibo";
-            this.bindingSource1.DataSource = this.predialchicoDataSet;
-            // 
-            // predialchicoDataSet
-            // 
-            this.predialchicoDataSet.DataSetName = "predialchicoDataSet";
-            this.predialchicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // superTabItem1
-            // 
-            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
-            this.superTabItem1.GlobalItem = false;
-            this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "Generales de la impresón del recibo";
-            // 
-            // btngrabar
-            // 
-            this.btngrabar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btngrabar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btngrabar.Image = global::Predial10.Properties.Resources.SACVE2;
-            this.btngrabar.Location = new System.Drawing.Point(15, 60);
-            this.btngrabar.Name = "btngrabar";
-            this.btngrabar.Size = new System.Drawing.Size(99, 98);
-            this.btngrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btngrabar.TabIndex = 6;
-            this.btngrabar.Click += new System.EventHandler(this.btngrabar_Click);
-            // 
-            // formatoreciboTableAdapter1
-            // 
-            this.formatoreciboTableAdapter1.ClearBeforeFill = true;
-            // 
             // frmconfigurar
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(900, 460);
+            this.ClientSize = new System.Drawing.Size(920, 533);
             this.Controls.Add(this.btngrabar);
             this.Controls.Add(this.superTabControl1);
             this.Controls.Add(this.reflectionLabel1);
@@ -603,9 +583,9 @@ namespace Predial10.configuracion
             ((System.ComponentModel.ISupportInitialize)(this.Ditamano)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IIlininicial)).EndInit();
             this.panelEx3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.predialchicoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -650,23 +630,14 @@ namespace Predial10.configuracion
         private System.Windows.Forms.FontDialog fontDialog1;
 
 
-
+        private DataSet1TableAdapters.formatoreciboTableAdapter formatoreciboTableAdapter;
         private DevComponents.DotNetBar.ButtonX btngrabar;
-        private System.Windows.Forms.BindingSource cobroexpressDataSetBindingSource;
-        private predialchicoDataSet cobroexpressDataSet;
+        
+        private DataSet1 predialchicoDataSet;
         private System.Windows.Forms.BindingSource formatoreciboBindingSource;
-        private predialchicoDataSetTableAdapters.formatoreciboTableAdapter formatoreciboTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private predialchicoDataSet predialchicoDataSet;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private predialchicoDataSetTableAdapters.formatoreciboTableAdapter formatoreciboTableAdapter1;
+
+
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
@@ -675,5 +646,6 @@ namespace Predial10.configuracion
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

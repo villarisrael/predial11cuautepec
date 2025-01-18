@@ -443,15 +443,15 @@ namespace Predial10.Facturacion
 
 
 
-            predialchicoDataSet data = new predialchicoDataSet();
+            DataSet1 data = new DataSet1();
             data.EnforceConstraints = false;
-            predialchicoDataSetTableAdapters.empresaTableAdapter xa = new predialchicoDataSetTableAdapters.empresaTableAdapter();
+            DataSet1TableAdapters.empresaTableAdapter xa = new DataSet1TableAdapters.empresaTableAdapter();
             xa.Fill(data.empresa);
-            predialchicoDataSetTableAdapters.tmpfacrecTableAdapter  ja = new predialchicoDataSetTableAdapters.tmpfacrecTableAdapter ();
+            DataSet1TableAdapters.tmpfacrecTableAdapter  ja = new DataSet1TableAdapters.tmpfacrecTableAdapter ();
 
             try
             {
-                ja.Fill(data.tmpfacrec );
+                ja.Fill(data.temfacrec );
 
             }
             catch (Exception algo)
@@ -459,7 +459,7 @@ namespace Predial10.Facturacion
                 MessageBox.Show(algo.Message);
                 buttonX1.Enabled = true;
             }
-            predialchicoDataSetTableAdapters.tarifasTableAdapter  ta = new predialchicoDataSetTableAdapters.tarifasTableAdapter ();
+            DataSet1TableAdapters.tarifasTableAdapter  ta = new DataSet1TableAdapters.tarifasTableAdapter ();
 
             try
             {

@@ -202,9 +202,6 @@
   <data name="none" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\none.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="p7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\p7.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="gtk-edit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\gtk-edit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -228,9 +225,6 @@
   </data>
   <data name="SACVE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SACVE2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="titulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\titulo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1388310493_49627" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1388310493_49627.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -264,5 +258,11 @@
   </data>
   <data name="cancel_invoice_2703075" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel_invoice_2703075.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="banner11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\banner11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

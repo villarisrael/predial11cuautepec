@@ -15,9 +15,19 @@ namespace Predial10
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Predial10.AccesoSistema.FrmAcceso ());
-          //  Application.Run(new Predial10.configuracion.frmaccesos());
-          //Application.Run(new Principal());
+
+            using (var accesoForm = new Predial10.AccesoSistema.FrmAcceso())
+            {
+                
+                if (accesoForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Si el usuario se autentica, abrir el formulario principal
+                    var programa = new Predial10.Principal();
+                    programa.usuario = accesoForm.UsuarioAutenticado; // Propaga el usuario autenticado si es necesario
+                    Application.Run(programa);
+                }
+            }
         }
+
     }
 }

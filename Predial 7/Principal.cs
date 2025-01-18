@@ -8,6 +8,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using Predial10.caja;
+using Predial10.Recaudacion;
 using Predial10.Resources.CODE;
 
 namespace Predial10
@@ -394,9 +396,8 @@ namespace Predial10
 
         private void btnliscomunidades_Click(object sender, EventArgs e)
         {
-            Facturacion.frmrepcomunidades  frmcom = new Facturacion.frmrepcomunidades();
-            frmcom.WindowState = FormWindowState.Maximized;
-            frmcom.ShowDialog();
+            RepAdeudoComu repo = new RepAdeudoComu();
+            repo.CrearReporte();
 
         }
 
@@ -492,6 +493,12 @@ namespace Predial10
             Dgridusuario.Columns[3].Width = 200;
 
             Dgridusuario.Visible = true;
+
+        
+
+            
+
+
         }
 
         private void btnREcibo_Click(object sender, EventArgs e)
@@ -524,8 +531,8 @@ namespace Predial10
 
         private void btningresoporcomunidad_Click(object sender, EventArgs e)
         {
-            PadronUsuarios.Frmreprectar rep = new PadronUsuarios.Frmreprectar();
-            rep.tipo = "Comunidad";
+            FrmResumen rep = new FrmResumen();
+           
             rep.Show();
         }
 

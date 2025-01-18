@@ -129,21 +129,7 @@ namespace Predial10
 
 
 
-
-
-                    // lo convertimos a imagen y de imagen a itext.image
-
-                    byte[] logoempresa = Conexion_a_BD.obtenerimagen("select logo from empresa");
-
-                    
-
-                    System.Drawing.Image logoempresa2 = byteArrayToImage(logoempresa);
-
-                    iTextSharp.text.Image imagenBMP = iTextSharp.text.Image.GetInstance(logoempresa2, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                    //System.Drawing.Image logoempresa = byteArrayToImage(empresa.Logo);
-
-                    //Crear la carpeta y pasar la ruta al generador
+ 
 
 
 
@@ -165,71 +151,11 @@ namespace Predial10
 
                     versionCFDI = linea["version"].ToString();
 
-                    Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdfGen, logoempresa2, observacion, versionCFDI);
+                    Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdfGen,  observacion, versionCFDI);
 
-                    fecha = crearPDF._templatePDF.fechaEmisionCFDI;
-                    metodo = crearPDF._templatePDF.metodoPago;
-                    uso = crearPDF._templatePDF.receptor.usocfdi;
-
-                    ClsFactura factu = new ClsFactura();
-                    System.Drawing.Image imagen = factu.qrdatos(cadenaxml);
-                    try
-                    {
-                        using (MySqlConnection conn = GetNewConnection())
-                        {
-                            using (MySqlCommand cmd = new MySqlCommand())
-                            {
-                                cmd.Connection = conn;
-                                cmd.CommandText = "update empresa set imagentem=@imagentem";
-                                ImageConverter convertidor = new ImageConverter();
-                                byte[] pngs = (byte[])convertidor.ConvertTo(imagen, typeof(byte[]));
-                                cmd.Parameters.AddWithValue("@imagentem", pngs);
-                                cmd.ExecuteNonQuery();
-                            }
-                        }
-                    }
-                    catch (Exception error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-
-                    DataSet datos = new DataSet();
-                    datos.ReadXml(cadenaxml);
-
-                    
-                    /////////////////////////itext
-                    //ReportDocument factura = new ReportDocument();
-                    //factura.Load(Application.StartupPath + "\\reportes\\factura.rpt");
-                    //factura.SetDataSource(datos);
-                 
-                    //factura.SetParameterValue("nombre", linea["NOMBRE"]);
-                    //factura.SetParameterValue("direccion", "");
-                    //factura.SetParameterValue("fechatimbrado", fecha);
-                    //factura.SetParameterValue("certificado", linea["nodeCertificado"]);
-                    //clsconv let = new clsconv();
-                    //string mensaje = let.enletras(linea["total"].ToString());
-                    //factura.SetParameterValue("Cantidadconletra", mensaje);
-                    //factura.SetParameterValue("formadepago", linea["formapago"]);
-                    //factura.SetParameterValue("cadenaoriginal", linea["cadena"]);
-                    //factura.SetParameterValue("foliofiscal", linea["serie"].ToString()+linea["numero"].ToString());
-                    //factura.SetParameterValue("RFCCLIENTE", linea["rfc"]);
-                    //factura.SetParameterValue("CERTIFICADOSAT", linea["nodeCertificado"]);
-                    //factura.SetParameterValue("nota", linea["OBSERVACION"]);
-                    //factura.SetParameterValue("sellodigital", linea["Sello"]);
-                    //factura.SetParameterValue("seriecertificado", linea["nodeCertificado"]);
-                    //factura.SetParameterValue("selloCFDI", linea["selloSAT"]);
-                    //factura.SetParameterValue("UUID", linea["uuid"]);
-                    //factura.SetParameterValue("subtotal", (double)linea["subtotal"]);
-                    //factura.SetParameterValue("descuento", (double)linea["descuento"]);
-                    //factura.SetParameterValue("total", (double)linea["total"]);
-                    //factura.SetParameterValue("metodo", metodo);
-                    //factura.SetParameterValue("colonia", "");
-                    //factura.SetParameterValue("ciudad", "");
-
-
-                    //factura.ExportToDisk(ExportFormatType.PortableDocFormat, cadenapdf);
-                    //Process.Start(cadenapdf);
-
+                   
+                  
+             
                 }
             catch (Exception err)
             {
@@ -304,7 +230,7 @@ namespace Predial10
                         string observacion = dataGridView1.Rows[i].Cells[12].Value.ToString();
 
                         
-                        Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdf, logoempresa2, observacion);
+                        Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdf,  observacion);
 
                         string fecha = crearPDF._templatePDF.fechaEmisionCFDI;
                         string metodo = crearPDF._templatePDF.metodoPago;

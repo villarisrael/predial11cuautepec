@@ -14,7 +14,7 @@ namespace Predial10.Resources.CODE
         public PrinterSettings prtSettings;
         public PrintDocument prtDoc;
         public System.Drawing.Font prtFont;
-        private Graphics lienzo;
+       
         public Collection<lineaimprimir> lineas;
         private int lineaActual = 0;
         internal System.Windows.Forms.PrintPreviewDialog prtprev;

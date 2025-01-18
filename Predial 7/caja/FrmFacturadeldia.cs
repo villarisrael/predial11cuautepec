@@ -251,7 +251,7 @@ namespace Predial10.caja
 
                     String cadenapdfGen = (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\facturasPublicoPredial\\" + Date + "\\FACTURA" + seriefactura + numerofactura + ".PDF").Trim();
 
-                    Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdfGen, logoempresa2, txtObservaciones.Text, "4.0");
+                    Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdfGen,  txtObservaciones.Text, "4.0");
 
 
                     DataTable empresat = new DataTable();

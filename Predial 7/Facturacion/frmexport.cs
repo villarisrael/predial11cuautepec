@@ -39,8 +39,8 @@ namespace Predial10.Facturacion
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
-            predialchicoDataSetTableAdapters.vusuarioTableAdapter x = new predialchicoDataSetTableAdapters.vusuarioTableAdapter();
-            predialchicoDataSet.vusuarioDataTable y = new predialchicoDataSet.vusuarioDataTable();
+            DataSet1TableAdapters.vusuarioTableAdapter x = new DataSet1TableAdapters.vusuarioTableAdapter();
+            DataSet1.vusuarioDataTable y = new DataSet1.vusuarioDataTable();
             try
             {
 

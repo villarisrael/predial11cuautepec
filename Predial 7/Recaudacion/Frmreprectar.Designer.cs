@@ -33,8 +33,6 @@
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.fechafin = new DevComponents.Editors.DateTimeAdv.MonthCalendarAdv();
             this.fechaini = new DevComponents.Editors.DateTimeAdv.MonthCalendarAdv();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-         //   this.Rptingtar1 = new Predial10.Reportes.Rptingtar();
             this.btngenerarreporte = new DevComponents.DotNetBar.ButtonX();
             this.SuspendLayout();
             // 
@@ -77,12 +75,11 @@
             this.reflectionLabel1.Size = new System.Drawing.Size(171, 38);
             this.reflectionLabel1.TabIndex = 7;
             this.reflectionLabel1.Text = "<b><font size=\"+6\"><i></i><font color=\"#B02B2C\">Rango a imprimir</font></font></b" +
-                ">";
+    ">";
             this.reflectionLabel1.Click += new System.EventHandler(this.reflectionLabel1_Click);
             // 
             // fechafin
             // 
-            this.fechafin.AnnuallyMarkedDates = new System.DateTime[0];
             this.fechafin.AutoSize = true;
             // 
             // 
@@ -105,8 +102,6 @@
             this.fechafin.ContainerControlProcessDialogKey = true;
             this.fechafin.DisplayMonth = new System.DateTime(2013, 3, 1, 0, 0, 0, 0);
             this.fechafin.Location = new System.Drawing.Point(590, 24);
-            this.fechafin.MarkedDates = new System.DateTime[0];
-            this.fechafin.MonthlyMarkedDates = new System.DateTime[0];
             this.fechafin.Name = "fechafin";
             // 
             // 
@@ -118,12 +113,10 @@
             this.fechafin.Size = new System.Drawing.Size(170, 131);
             this.fechafin.TabIndex = 6;
             this.fechafin.Text = "monthCalendarAdv2";
-            this.fechafin.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.fechafin.ItemClick += new System.EventHandler(this.fechafin_ItemClick);
             // 
             // fechaini
             // 
-            this.fechaini.AnnuallyMarkedDates = new System.DateTime[0];
             this.fechaini.AutoSize = true;
             // 
             // 
@@ -146,8 +139,6 @@
             this.fechaini.ContainerControlProcessDialogKey = true;
             this.fechaini.DisplayMonth = new System.DateTime(2013, 3, 1, 0, 0, 0, 0);
             this.fechaini.Location = new System.Drawing.Point(201, 24);
-            this.fechaini.MarkedDates = new System.DateTime[0];
-            this.fechaini.MonthlyMarkedDates = new System.DateTime[0];
             this.fechaini.Name = "fechaini";
             // 
             // 
@@ -159,34 +150,17 @@
             this.fechaini.Size = new System.Drawing.Size(170, 131);
             this.fechaini.TabIndex = 5;
             this.fechaini.Text = "monthCalendarAdv1";
-            this.fechaini.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.fechaini.ItemClick += new System.EventHandler(this.fechaini_ItemClick);
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(-10, 193);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(798, 388);
-            this.crystalReportViewer1.TabIndex = 10;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // btngenerarreporte
             // 
             this.btngenerarreporte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btngenerarreporte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btngenerarreporte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btngenerarreporte.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btngenerarreporte.Location = new System.Drawing.Point(2, 161);
             this.btngenerarreporte.Name = "btngenerarreporte";
-            this.btngenerarreporte.Size = new System.Drawing.Size(786, 26);
+            this.btngenerarreporte.Size = new System.Drawing.Size(782, 26);
             this.btngenerarreporte.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btngenerarreporte.TabIndex = 11;
             this.btngenerarreporte.Text = "Generar Reporte";
@@ -196,9 +170,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 593);
+            this.ClientSize = new System.Drawing.Size(796, 196);
             this.Controls.Add(this.btngenerarreporte);
-            this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.reflectionLabel1);
@@ -220,7 +193,6 @@
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
         private DevComponents.Editors.DateTimeAdv.MonthCalendarAdv fechafin;
         private DevComponents.Editors.DateTimeAdv.MonthCalendarAdv fechaini;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private DevComponents.DotNetBar.ButtonX btngenerarreporte;
        // private Rptingtar Rptingtar1;
 

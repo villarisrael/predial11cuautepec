@@ -80,8 +80,8 @@
             this.CMBFORMADEPAGO = new System.Windows.Forms.ComboBox();
             this.fpagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.predialchicoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.predialchicoDataSet = new Predial10.predialchicoDataSet();
-            this.fpagoTableAdapter = new Predial10.predialchicoDataSetTableAdapters.fpagoTableAdapter();
+            this.predialchicoDataSet = new Predial10.DataSet1();
+            this.fpagoTableAdapter = new Predial10.DataSet1TableAdapters.fpagoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DTGdetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fpagoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.predialchicoDataSetBindingSource)).BeginInit();
@@ -787,8 +787,10 @@
         private DevComponents.DotNetBar.LabelX labelX8;
         private System.Windows.Forms.ComboBox CMBFORMADEPAGO;
         private System.Windows.Forms.BindingSource predialchicoDataSetBindingSource;
-        private predialchicoDataSet predialchicoDataSet;
+        private DataSet1 predialchicoDataSet;
+        private DataSet1TableAdapters.fpagoTableAdapter fpagoTableAdapter;
         private System.Windows.Forms.BindingSource fpagoBindingSource;
-        private predialchicoDataSetTableAdapters.fpagoTableAdapter fpagoTableAdapter;
+
+        
     }
 }

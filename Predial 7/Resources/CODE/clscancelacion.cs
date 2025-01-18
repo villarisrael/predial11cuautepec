@@ -12,11 +12,11 @@ namespace Predial10.Resources.CODE
     class clscancelacion
     {
         DataTable TBL_Consulta2 = new DataTable();
-        string OFICINA = "";
-        string CAJA = "";
+       
         string TCAJA = "";
-        string serie = "";
+       
         string Fecha_Inicial = "";
+
         string Fecha_Final = "";
         string Clave_Catastral = "";
         ArchivoSql archivox = new ArchivoSql();

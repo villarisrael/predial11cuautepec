@@ -1,0 +1,1018 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84B5E2C5-CF91-4BAA-A041-F661096164D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Predial10</RootNamespace>
+    <AssemblyName>Predial 10</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\Users\Dell\Desktop\Instalador_Mixquiahuala\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>163E08D5C264B97F4D0011C5E115ED0B60A56D2C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Predial10_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Catalogo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Librerias\Catalogo.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.0.0.3, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.0.0.3, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.3, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=6.1.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.1.2\lib\net35\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net35\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net35\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MultiFacturasSDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Librerias\MultiFacturasSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.8.8\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4058.19167, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Librerias\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoSistema\FrmAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccesoSistema\FrmAcceso.Designer.cs">
+      <DependentUpon>FrmAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="caja\AperturaCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caja\AperturaCaja.Designer.cs">
+      <DependentUpon>AperturaCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="caja\caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caja\caja.Designer.cs">
+      <DependentUpon>caja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="caja\CierreCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caja\CierreCaja.Designer.cs">
+      <DependentUpon>CierreCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="caja\ClsColoresReporte.cs" />
+    <Compile Include="caja\DatosFiscales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caja\DatosFiscales.Designer.cs">
+      <DependentUpon>DatosFiscales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="caja\frmbuscausuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caja\frmbuscausuario.Designer.cs">
+      <DependentUpon>frmbuscausuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="caja\FrmFacturadeldia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caja\FrmFacturadeldia.Designer.cs">
+      <DependentUpon>FrmFacturadeldia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="caja\Listarecibos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caja\Listarecibos.Designer.cs">
+      <DependentUpon>Listarecibos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="caja\ReciboEsclavo.cs" />
+    <Compile Include="caja\VariablesCajas.cs" />
+    <Compile Include="CancelacrFacturas_V4\CancelarFacturas_v4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelacrFacturas_V4\CancelarFacturas_v4.Designer.cs">
+      <DependentUpon>CancelarFacturas_v4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Catalogos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Catalogos.Designer.cs">
+      <DependentUpon>Catalogos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\frmcaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmcaja.designer.cs">
+      <DependentUpon>frmcaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Frmcalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frmcalles.designer.cs">
+      <DependentUpon>Frmcalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Frmcmndd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frmcmndd.designer.cs">
+      <DependentUpon>Frmcmndd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Frmcol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frmcol.designer.cs">
+      <DependentUpon>Frmcol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\frmconceptoscxc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmconceptoscxc.designer.cs">
+      <DependentUpon>frmconceptoscxc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\frmestadopredio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmestadopredio.designer.cs">
+      <DependentUpon>frmestadopredio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Frmfrac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frmfrac.designer.cs">
+      <DependentUpon>Frmfrac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\frmgiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmgiro.designer.cs">
+      <DependentUpon>frmgiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Frmmuni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frmmuni.designer.cs">
+      <DependentUpon>Frmmuni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\frmnivelsocioe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmnivelsocioe.designer.cs">
+      <DependentUpon>frmnivelsocioe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\frmoficinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmoficinas.designer.cs">
+      <DependentUpon>frmoficinas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\frmregiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmregiones.designer.cs">
+      <DependentUpon>frmregiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Frmsector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frmsector.designer.cs">
+      <DependentUpon>Frmsector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="configuracion\confempresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configuracion\confempresas.Designer.cs">
+      <DependentUpon>confempresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="configuracion\frmaccesos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configuracion\frmaccesos.Designer.cs">
+      <DependentUpon>frmaccesos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="configuracion\frmcalculadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configuracion\frmcalculadora.Designer.cs">
+      <DependentUpon>frmcalculadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="configuracion\frmconfigurar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configuracion\frmconfigurar.designer.cs">
+      <DependentUpon>frmconfigurar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="configuracion\frmusuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configuracion\frmusuario.designer.cs">
+      <DependentUpon>frmusuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contratos.Designer.cs">
+      <DependentUpon>Contratos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frmrptadeudo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\frmrptadeudo.Designer.cs">
+      <DependentUpon>frmrptadeudo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frmciere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\frmciere.Designer.cs">
+      <DependentUpon>frmciere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frmexport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\frmexport.Designer.cs">
+      <DependentUpon>frmexport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frmfacrec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\frmfacrec.Designer.cs">
+      <DependentUpon>frmfacrec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\repcomunidades.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>repcomunidades.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Facturacion_V4\ClsFactura_v4.cs" />
+    <Compile Include="Facturacion_V4\DecodificadorSAT.cs" />
+    <Compile Include="frmlistadofacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmlistadofacturas.Designer.cs">
+      <DependentUpon>frmlistadofacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PadronUsuarios\BajaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PadronUsuarios\BajaUsuario.designer.cs">
+      <DependentUpon>BajaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PadronUsuarios\BuscarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PadronUsuarios\BuscarUsuario.Designer.cs">
+      <DependentUpon>BuscarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PadronUsuarios\CambioTarifa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PadronUsuarios\CambioTarifa.Designer.cs">
+      <DependentUpon>CambioTarifa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PadronUsuarios\CambioValorCatastral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PadronUsuarios\CambioValorCatastral.Designer.cs">
+      <DependentUpon>CambioValorCatastral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PadronUsuarios\Frmreppreagr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PadronUsuarios\Frmreppreagr.Designer.cs">
+      <DependentUpon>Frmreppreagr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PadronUsuarios\Rptpreagrtar.cs">
+      <DependentUpon>Rptpreagrtar.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PadronUsuarios\frmexpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PadronUsuarios\frmexpediente.Designer.cs">
+      <DependentUpon>frmexpediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PadronUsuarios\frmreportcomp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PadronUsuarios\frmreportcomp.Designer.cs">
+      <DependentUpon>frmreportcomp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PadronUsuarios\Rptcomtar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rptcomtar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PadronUsuarios\Traslado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PadronUsuarios\Traslado.Designer.cs">
+      <DependentUpon>Traslado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="predialchicoDataSet.cs">
+      <DependentUpon>predialchicoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recaudacion\FrmIngranuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recaudacion\FrmIngranuales.Designer.cs">
+      <DependentUpon>FrmIngranuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recaudacion\reportexRubrosITSharp.cs" />
+    <Compile Include="Recaudacion\rubros.cs">
+      <DependentUpon>rubros.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Recaudacion\frmrecaudacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recaudacion\frmrecaudacion.Designer.cs">
+      <DependentUpon>frmrecaudacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recaudacion\frmreprecaudacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recaudacion\frmreprecaudacion.Designer.cs">
+      <DependentUpon>frmreprecaudacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recaudacion\recaudacion1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recaudacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Recaudacion\ReporteAnuales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteAnuales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Aviso.cs">
+      <DependentUpon>Aviso.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\Rptingcom.cs">
+      <DependentUpon>Rptingcom.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\frmaviso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmaviso.Designer.cs">
+      <DependentUpon>frmaviso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recaudacion\Frmreprectar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recaudacion\Frmreprectar.Designer.cs">
+      <DependentUpon>Frmreprectar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmrequerimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrequerimiento.Designer.cs">
+      <DependentUpon>frmrequerimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\repcomunidades.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>repcomunidades.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Requerimiento.cs">
+      <DependentUpon>Requerimiento.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\Rptingtar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rptingtar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Saldo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Saldo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmlistado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmlistado.Designer.cs">
+      <DependentUpon>frmlistado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\listado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\CODE\AccNumberFormat.cs" />
+    <Compile Include="Resources\CODE\clsbimestre.cs" />
+    <Compile Include="Resources\CODE\clscancelacion.cs" />
+    <Compile Include="Resources\CODE\clsconv.cs" />
+    <Compile Include="Resources\CODE\ClsFactura.cs" />
+    <Compile Include="Resources\CODE\Clspago.cs" />
+    <Compile Include="Resources\CODE\clsperiodo.cs" />
+    <Compile Include="Resources\CODE\clsrecargo.cs" />
+    <Compile Include="Resources\CODE\Conexion a BD.cs" />
+    <Compile Include="Resources\CODE\ArchivoSql.cs" />
+    <Compile Include="Resources\CODE\Generador.cs" />
+    <Compile Include="Resources\CODE\imprimirnet.cs" />
+    <Compile Include="Resources\CODE\lineaimprimir.cs" />
+    <Compile Include="Resources\CODE\recargo.cs" />
+    <Compile Include="Resources\CODE\Seguridad.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSCancelar_v4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccesoSistema\FrmAcceso.resx">
+      <DependentUpon>FrmAcceso.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caja\AperturaCaja.resx">
+      <DependentUpon>AperturaCaja.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caja\caja.resx">
+      <DependentUpon>caja.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caja\CierreCaja.resx">
+      <DependentUpon>CierreCaja.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caja\DatosFiscales.resx">
+      <DependentUpon>DatosFiscales.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caja\frmbuscausuario.resx">
+      <DependentUpon>frmbuscausuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caja\FrmFacturadeldia.resx">
+      <DependentUpon>FrmFacturadeldia.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caja\Listarecibos.resx">
+      <DependentUpon>Listarecibos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelacrFacturas_V4\CancelarFacturas_v4.resx">
+      <DependentUpon>CancelarFacturas_v4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Catalogos.resx">
+      <DependentUpon>Catalogos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmcaja.resx">
+      <DependentUpon>frmcaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frmcalles.resx">
+      <DependentUpon>Frmcalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frmcmndd.resx">
+      <DependentUpon>Frmcmndd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frmcol.resx">
+      <DependentUpon>Frmcol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmconceptoscxc.resx">
+      <DependentUpon>frmconceptoscxc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmestadopredio.resx">
+      <DependentUpon>frmestadopredio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frmfrac.resx">
+      <DependentUpon>Frmfrac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmgiro.resx">
+      <DependentUpon>frmgiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frmmuni.resx">
+      <DependentUpon>Frmmuni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmnivelsocioe.resx">
+      <DependentUpon>frmnivelsocioe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmoficinas.resx">
+      <DependentUpon>frmoficinas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmregiones.resx">
+      <DependentUpon>frmregiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frmsector.resx">
+      <DependentUpon>Frmsector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configuracion\confempresas.resx">
+      <DependentUpon>confempresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configuracion\frmaccesos.resx">
+      <DependentUpon>frmaccesos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configuracion\frmcalculadora.resx">
+      <DependentUpon>frmcalculadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configuracion\frmconfigurar.resx">
+      <DependentUpon>frmconfigurar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configuracion\frmusuario.resx">
+      <DependentUpon>frmusuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contratos.resx">
+      <DependentUpon>Contratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frmrptadeudo.resx">
+      <DependentUpon>frmrptadeudo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frmciere.resx">
+      <DependentUpon>frmciere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frmexport.resx">
+      <DependentUpon>frmexport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\repcomunidades.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>repcomunidades.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmlistadofacturas.resx">
+      <DependentUpon>frmlistadofacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PadronUsuarios\BajaUsuario.resx">
+      <DependentUpon>BajaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PadronUsuarios\BuscarUsuario.resx">
+      <DependentUpon>BuscarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PadronUsuarios\CambioTarifa.resx">
+      <DependentUpon>CambioTarifa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PadronUsuarios\CambioValorCatastral.resx">
+      <DependentUpon>CambioValorCatastral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PadronUsuarios\Frmreppreagr.resx">
+      <DependentUpon>Frmreppreagr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PadronUsuarios\Rptpreagrtar.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rptpreagrtar.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PadronUsuarios\frmexpediente.resx">
+      <DependentUpon>frmexpediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PadronUsuarios\frmreportcomp.resx">
+      <DependentUpon>frmreportcomp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PadronUsuarios\Rptcomtar.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rptcomtar.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PadronUsuarios\Traslado.resx">
+      <DependentUpon>Traslado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Recaudacion\FrmIngranuales.resx">
+      <DependentUpon>FrmIngranuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recaudacion\rubros.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rubros.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recaudacion\frmrecaudacion.resx">
+      <DependentUpon>frmrecaudacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recaudacion\frmreprecaudacion.resx">
+      <DependentUpon>frmreprecaudacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recaudacion\recaudacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>recaudacion1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recaudacion\ReporteAnuales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteAnuales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Aviso.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Aviso.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rptingcom.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rptingcom.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmaviso.resx">
+      <DependentUpon>frmaviso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recaudacion\Frmreprectar.resx">
+      <DependentUpon>Frmreprectar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrequerimiento.resx">
+      <DependentUpon>frmrequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\repcomunidades.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>repcomunidades.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Requerimiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Requerimiento.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rptingtar.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rptingtar.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Saldo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Saldo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmlistado.resx">
+      <DependentUpon>frmlistado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\listado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="predialchicoDataSet.xsc">
+      <DependentUpon>predialchicoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="predialchicoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="predialchicoDataSet.xss">
+      <DependentUpon>predialchicoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\WSCancelar_v4\index.wsdl" />
+    <None Include="Web References\WSCancelar_v4\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSCancelar_v4\respuesta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSCancelar_v4\respuestaCCancelar.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACTUALIZAR.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %2827%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verify.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listado1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cierre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACTUALIZAR1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %2827%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saldo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verify1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REQUERIMIENTO.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aviso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SACVE2.jpg" />
+    <None Include="Resources\p7.png" />
+    <None Include="Resources\Logo predial.png" />
+    <None Include="Resources\expediente.jpg" />
+    <None Include="Resources\Images\ad16.png" />
+    <Content Include="Icon2.ico" />
+    <None Include="Resources\1388310199_49626.ico" />
+    <None Include="Resources\1388310365_49627.ico" />
+    <None Include="Resources\1388310493_49627.ico" />
+    <None Include="Resources\1388310580_ticket1-.png" />
+    <None Include="Resources\1389189135_list.png" />
+    <None Include="Resources\images %281%29.jpg" />
+    <None Include="Resources\images %281%291.jpg" />
+    <Content Include="Librerias\Catalogo.dll" />
+    <Content Include="Librerias\MultiFacturasSDK.dll" />
+    <Content Include="Librerias\MySql.Data.dll" />
+    <Content Include="Librerias\ThoughtWorks.QRCode.dll" />
+    <Content Include="icon1.ico" />
+    <Content Include="Resources\001_06.gif" />
+    <Content Include="Resources\1395816985_trash.png" />
+    <None Include="Resources\buscar1.png" />
+    <None Include="Resources\1425651283_Emblem-Money-64.png" />
+    <None Include="Resources\1425651283_Emblem-Money-641.png" />
+    <None Include="Resources\cnr_update.png" />
+    <None Include="Resources\if_invoice_54323.png" />
+    <None Include="Resources\if_00-ELASTOFONT-STORE-READY_invoice_2703075.png" />
+    <None Include="Resources\if_issue_54324.png" />
+    <None Include="Resources\cancel_invoice_2703075.ico" />
+    <Content Include="Resources\Images\1388310580_ticket1-.png" />
+    <Content Include="Resources\Images\add.png" />
+    <None Include="Resources\Images\administrator.png" />
+    <Content Include="Resources\Images\AperturaCaja.png" />
+    <Content Include="Resources\Images\BajaDefinitiva.png" />
+    <Content Include="Resources\Images\BorrarUsuario.png" />
+    <Content Include="Resources\Images\CajaDinero.png" />
+    <Content Include="Resources\Images\calculate.png" />
+    <None Include="Resources\Images\calculator.png" />
+    <Content Include="Resources\Images\CambioTarifa.png" />
+    <Content Include="Resources\Images\CambioValor.png" />
+    <Content Include="Resources\Images\Cancel.png" />
+    <Content Include="Resources\Images\CierreCaja.png" />
+    <Content Include="Resources\Images\Config_print.png" />
+    <Content Include="Resources\Images\Consulta.png" />
+    <None Include="Resources\Images\DeleteRed.png" />
+    <None Include="Resources\Images\disable.png" />
+    <Content Include="Resources\Images\Edit.png" />
+    <Content Include="Resources\Images\EditarContacto.png" />
+    <Content Include="Resources\Images\erase.png" />
+    <None Include="Resources\Images\none.png" />
+    <None Include="Resources\Images\none16.png" />
+    <None Include="Resources\Images\gtk-edit.png" />
+    <Content Include="Resources\Images\Factura.png" />
+    <Content Include="Resources\Images\GenerarFactura.png" />
+    <Content Include="Resources\Images\Generar_Factura.png" />
+    <Content Include="Resources\Images\minilogo.jpg" />
+    <Content Include="Resources\Images\NuevoPredio.png" />
+    <Content Include="Resources\Images\ok.png" />
+    <Content Include="Resources\Images\p7splash.png" />
+    <Content Include="Resources\Images\print.png" />
+    <Content Include="Resources\Images\RestaurarConsulta.png" />
+    <Content Include="Resources\Images\save.png" />
+    <None Include="Resources\Images\titulo.png" />
+    <Content Include="Resources\Images\TrasladoDominio.png" />
+    <Content Include="Resources\Images\Visualizar.png" />
+    <None Include="Resources\requeri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://pac1.multifacturas.com/cancelacion2022/index.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSCancelar_v4\</RelPath>
+      <UpdateFromURL>http://pac1.multifacturas.com/cancelacion2022/index.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Predial_10_WSCancelar_v4_Cancelar_cfdi_4_0_SAT</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Reportes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

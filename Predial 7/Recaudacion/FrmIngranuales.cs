@@ -30,78 +30,64 @@ namespace Predial10.Recaudacion
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            predialchicoDataSet data = new predialchicoDataSet();
-            data.EnforceConstraints = false;
-            predialchicoDataSetTableAdapters.reciboesclavoTableAdapter es = new predialchicoDataSetTableAdapters.reciboesclavoTableAdapter();
-            predialchicoDataSetTableAdapters.usuarioTableAdapter us = new predialchicoDataSetTableAdapters.usuarioTableAdapter();
 
-            us.Fill(data.usuario);
+            string Encabezado1 = "", encabezado2 = "";
+            if (!chkprimer.Checked && !chksegundo.Checked && !chktercero.Checked && !chkcuarto.Checked && !chkanual.Checked)
+            {
+                MessageBox.Show("Seleccione al menos un período.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
             try
             {
-                reporte.Load("./reportes/ReporteAnuales.rpt");
-                reporte.SetDataSource(data);
-                reporte.Subreports[0].SetDataSource(data);
-            }
-            catch (Exception c)
-            {
-            }
-              DateTime dt1;
-              DateTime dt2;
-              DateTime dt3;
-              DateTime dt4;
-            
-            try
-            {
+                DateTime dt1 = DateTime.MinValue;
+                DateTime dt2 = DateTime.MinValue;
+
                 if (chkprimer.Checked)
                 {
-                    dt1 = new DateTime(DateTime.Now.Year ,1, 1, 4, 0, 0);
-                    dt2 = new DateTime(DateTime.Now.Year, 3, 31, 4, 0, 0);
-                    dt3 = new DateTime(DateTime.Now.Year-1, 1, 1, 4, 0, 0);
-                    dt4 = new DateTime(DateTime.Now.Year-1, 3, 31, 4, 0, 0);
-                    es.Fillbyperiodos(data.reciboesclavo, dt1 ,dt2,dt3,dt4);
+                    dt1 = new DateTime(Int32.Parse(cmnperiodo.Text) ,1, 1, 4, 0, 0);
+                    dt2 = new DateTime(Int32.Parse(cmnperiodo.Text), 3, 31, 23, 59, 0);
 
-                    reporte.DataDefinition.FormulaFields["ENCABEZADO"].Text = "'PRIMER TRIMESTRE  " + DateTime.Now.Year + " '";
+
+
+                    Encabezado1 = "'PRIMER TRIMESTRE  " +cmnperiodo.Text + " '";
                 }
                 if (chksegundo.Checked)
                 {
-                    dt1 = new DateTime(DateTime.Now.Year, 4, 1, 4, 0, 0);
-                    dt2 = new DateTime(DateTime.Now.Year, 6, 30, 4, 0, 0);
-                    dt3 = new DateTime(DateTime.Now.Year - 1, 4, 1, 4, 0, 0);
-                    dt4 = new DateTime(DateTime.Now.Year - 1, 6, 30, 4, 0, 0);
-                    es.Fillbyperiodos(data.reciboesclavo, dt1, dt2, dt3, dt4);
-                    reporte.DataDefinition.FormulaFields["ENCABEZADO"].Text = "'SEGUNDO TRIMESTRE " + DateTime.Now.Year + " '";
+                    dt1 = new DateTime(Int32.Parse(cmnperiodo.Text), 4, 1, 4, 0, 0);
+                    dt2 = new DateTime(Int32.Parse(cmnperiodo.Text), 6, 30, 23, 59, 0);
+
+                    Encabezado1 = "'SEGUNDO TRIMESTRE " + cmnperiodo.Text + " '";
                 }
                 if (chktercero.Checked)
                 {
-                    dt1 = new DateTime(DateTime.Now.Year, 7, 1, 4, 0, 0);
-                    dt2 = new DateTime(DateTime.Now.Year, 9, 30, 4, 0, 0);
-                    dt3 = new DateTime(DateTime.Now.Year - 1, 7, 1, 4, 0, 0);
-                    dt4 = new DateTime(DateTime.Now.Year - 1, 9, 30, 4, 0, 0);
-                    es.Fillbyperiodos(data.reciboesclavo, dt1, dt2, dt3, dt4);
-                    reporte.DataDefinition.FormulaFields["ENCABEZADO"].Text = "'TERCER TRIMESTRE " + DateTime.Now.Year + " '";
+                    dt1 = new DateTime(Int32.Parse(cmnperiodo.Text), 7, 1, 4, 0, 0);
+                    dt2 = new DateTime(Int32.Parse(cmnperiodo.Text), 9, 30, 23, 59, 0);
+
+                    Encabezado1 = "'TERCER TRIMESTRE " + cmnperiodo.Text + " '";
 
                 }
                 if (chkcuarto.Checked)
                 {
-                    dt1 = new DateTime(DateTime.Now.Year, 10, 1, 4, 0, 0);
-                    dt2 = new DateTime(DateTime.Now.Year, 12, 31, 4, 0, 0);
-                    dt3 = new DateTime(DateTime.Now.Year - 1, 10, 1, 4, 0, 0);
-                    dt4 = new DateTime(DateTime.Now.Year - 1, 12, 31, 4, 0, 0);
-                    es.Fillbyperiodos(data.reciboesclavo, dt1, dt2, dt3, dt4);
-                    reporte.DataDefinition.FormulaFields["ENCABEZADO"].Text = "'CUARTO TRIMESTRE "+ DateTime.Now.Year + " '";
+                    dt1 = new DateTime(Int32.Parse(cmnperiodo.Text), 10, 1, 4, 0, 0);
+                    dt2 = new DateTime(Int32.Parse(cmnperiodo.Text), 12, 31,23, 59, 0);
+
+                    Encabezado1 = "'CUARTO TRIMESTRE "+ cmnperiodo.Text + " '";
                 }
 
                 if (chkanual.Checked)
                 {
-                    dt1 = new DateTime(DateTime.Now.Year, 1, 1, 4, 0, 0);
-                    dt2 = new DateTime(DateTime.Now.Year, 12, 31, 4, 0, 0);
+                    dt1 = new DateTime(Int32.Parse(cmnperiodo.Text), 1, 1, 4, 0, 0);
+                    dt2 = new DateTime(Int32.Parse(cmnperiodo.Text), 12, 31, 23, 59, 0);
 
-                    es.FillByfecha(data.reciboesclavo, dt1, dt2);
-                    reporte.DataDefinition.FormulaFields["ENCABEZADO"].Text = "'TODO EL AÑO " + DateTime.Now.Year + " '";
+                    Encabezado1 = "'TODO EL AÑO " + cmnperiodo.Text + " '";
                     
                 }
-                
-                CrystalReportViewer1.ReportSource = reporte;
+                string fechainicio = dt1.ToString("yyyy/MM/dd");
+
+                ReporteTrimestralcs repo = new  ReporteTrimestralcs();
+                repo.CrearReporte(fechainicio , dt2.ToString("yyyy/MM/dd"), Encabezado1, encabezado2);
             }
 
             catch (Exception x)
@@ -113,6 +99,13 @@ namespace Predial10.Recaudacion
             
         }
 
-        
+        private void FrmIngranuales_Load_1(object sender, EventArgs e)
+        {
+            for (int i=DateTime.Now.Year; i> DateTime.Now.Year-5; i--)
+            {
+                cmnperiodo.Items.Add(i);
+            }
+            cmnperiodo.SelectedIndex = 0;
+        }
     }
 }

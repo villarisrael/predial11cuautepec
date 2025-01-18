@@ -40,9 +40,9 @@
             this.txtUsuario = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lblPassword = new DevComponents.DotNetBar.LabelX();
             this.lblUsuario = new DevComponents.DotNetBar.LabelX();
-            this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
-            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
+            this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,9 +65,9 @@
             // 
             // 
             // 
+            this.groupPanel1.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderBottomWidth = 1;
             this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
@@ -157,7 +157,7 @@
             this.lblNumeroSerie.Name = "lblNumeroSerie";
             this.lblNumeroSerie.Size = new System.Drawing.Size(170, 13);
             this.lblNumeroSerie.TabIndex = 1;
-            this.lblNumeroSerie.Text = "AÑO DE PRODUCCION 2017";
+            this.lblNumeroSerie.Text = "AÑO DE PRODUCCION 2024";
             // 
             // groupPanel2
             // 
@@ -254,18 +254,14 @@
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario:";
             // 
-            // btnAceptar
+            // pictureBox1
             // 
-            this.btnAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
-            this.btnAceptar.Location = new System.Drawing.Point(59, 341);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(86, 30);
-            this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAceptar.TabIndex = 2;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(49, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(323, 106);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -280,14 +276,18 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // pictureBox1
+            // btnAceptar
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(49, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(323, 106);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.btnAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.Location = new System.Drawing.Point(59, 341);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(86, 30);
+            this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnAceptar.TabIndex = 2;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // FrmAcceso
             // 

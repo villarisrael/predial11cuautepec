@@ -76,11 +76,25 @@ namespace Predial10.Resources.CODE
 
         public static DataTable Consulta(string SQL)
         {
-            string Comando = SQL;
-            Adaptador = new MySqlDataAdapter(Comando, CadenaDeConexion);
-            MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(Adaptador);
             DataTable table = new DataTable();
-            Adaptador.Fill(table);
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(CadenaDeConexion))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(SQL, conn))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(table);
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error en la consulta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             return table;
         }
         public static DataTable Consultas(string SQL1)

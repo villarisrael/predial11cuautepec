@@ -20,7 +20,7 @@ namespace Predial10.configuracion
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'predialchicoDataSet.formatorecibo' table. You can move, or remove it, as needed.
-            this.formatoreciboTableAdapter1.Fill(this.predialchicoDataSet.formatorecibo);
+            this.formatoreciboTableAdapter.Fill(this.predialchicoDataSet.formatorecibo);
            
             
 
@@ -47,7 +47,7 @@ namespace Predial10.configuracion
                 txtletra.Text = fontDialog1.Font.Name;
                 Ditamano.Value = fontDialog1.Font.Size;
             }
-            catch ( Exception c)
+            catch ( Exception )
             {
                 MessageBox.Show("Tu tipo de letra no es valida, selecciona otra");
             }
@@ -69,7 +69,7 @@ namespace Predial10.configuracion
                 Predial10.Properties.Settings.Default.avance_de_linea_detalle_recibo = iiavance.Value;
                 //Predial10.Properties.Settings.Default.cobroexpressConnectionString = txtcadena.Text ;
                 //  this.empresaTableAdapter.Update(cobroexpressDataSet.empresa);
-                this.formatoreciboTableAdapter1.Update(predialchicoDataSet.formatorecibo);
+                this.formatoreciboTableAdapter.Adapter.Update(predialchicoDataSet.formatorecibo);
 
                 Predial10.Properties.Settings.Default.Save();
             }

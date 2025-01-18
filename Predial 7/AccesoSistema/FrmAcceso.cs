@@ -21,6 +21,7 @@ namespace Predial10.AccesoSistema
         public string Usuario;
         DataTable TBL_Consulta = new DataTable();
 
+       public  string UsuarioAutenticado = string.Empty;
         public FrmAcceso()
         {
             Thread t = new Thread(new ThreadStart(SplashScreen));
@@ -28,6 +29,12 @@ namespace Predial10.AccesoSistema
             Thread.Sleep(5000); 
             InitializeComponent();
             t.Abort();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = FormWindowState.Normal;
+            this.TopMost = true;
+
+
+
         }
 
         private void FrmAcceso_Load(object sender, EventArgs e)
@@ -73,15 +80,19 @@ namespace Predial10.AccesoSistema
 
                    
 
+                    
                     if (UsuarioEncripatado == Usuario && PasswordEncriptado == Password && Status == "True")
                     {
-                        string IDUSU = Conexion_a_BD.obtenercampo("SELECT IDUSER from letras_p WHERE User='" + UsuarioEncripatado +  "';");
+                        string IDUSU = Conexion_a_BD.obtenercampo("SELECT IDUSER from letras_p WHERE User='" + UsuarioEncripatado + "';");
                         Predial10.Principal programa = new Predial10.Principal();
 
-                        Determinamenu(IDUSU,programa );
+                        Determinamenu(IDUSU, programa);
                         programa.usuario = txtUsuario.Text;
-                       programa.ShowDialog ();
-                        this.Visible = false;
+                        this.UsuarioAutenticado = programa.usuario;
+                        // Configura el resultado como OK si la autenticación fue exitosa
+                        this.DialogResult = DialogResult.OK;
+                        this.Close(); // Cierra el formulario de acceso
+
                     }
                     else
                     {

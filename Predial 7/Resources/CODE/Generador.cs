@@ -14,6 +14,8 @@ using System.Globalization;
 using System.Windows.Forms;
 using System.Collections;
 using cobroexprexx2020;
+using Predial10.caja;
+using Predial10.Resources.CODE;
 
 namespace Generador
 {
@@ -135,7 +137,7 @@ namespace Generador
         public DocumentoPDF _templatePDF; //Objeto que contendra la información del documento pdf
         XmlDocument xDoc; // Objeto para abrir el archivo xml
 
-        public CreaPDF(string rutaXML, string rutaPDF, System.Drawing.Image logo, string Observacion, string versionCFDI = "")
+        public CreaPDF(string rutaXML, string rutaPDF,  string Observacion, string versionCFDI = "")
         {
             try
             {
@@ -161,9 +163,30 @@ namespace Generador
 
                 ////Abrimos el documento
                 _documento.Open();
+                DataTable DatosEmpresa = new DataTable();
+                String CNomEmp = "";
+                String CDirEmp = "";
+                String CColEmp = "";
+                String CCodEmp = "";
+                String CProEmp = "";
 
+                String CPobEmp = "";
+                String CCnifEmp = "";
 
-                AgregarLogo(logo);
+                DatosEmpresa = Conexion_a_BD.Consultasql("*", "empresa", "CODEMP");
+
+                CNomEmp = DatosEmpresa.Rows[0]["CNOMBRE"].ToString();
+                CDirEmp = DatosEmpresa.Rows[0]["CDOMICILIO"].ToString();
+                CColEmp = DatosEmpresa.Rows[0]["CCOLONIA"].ToString();
+                CPobEmp = DatosEmpresa.Rows[0]["CPOBLACION"].ToString();
+                CProEmp = DatosEmpresa.Rows[0]["CPROVINCIA"].ToString();
+
+                CCodEmp = DatosEmpresa.Rows[0]["CCODPOS"].ToString();
+                CCnifEmp = DatosEmpresa.Rows[0]["CNIF"].ToString();
+                byte[] logoempresa = (byte[])DatosEmpresa.Rows[0]["logo"];
+                //System.Drawing.Image logoempresa2 = byteArrayToImage(logoempresa);
+                iTextSharp.text.Image LogoEmpresa = iTextSharp.text.Image.GetInstance(logoempresa);
+                AgregarLogo(LogoEmpresa);
                 AgregarCuadro();
                 AgregarDatosEmisor();
                 AgregarDatosFactura();
@@ -616,12 +639,12 @@ private void ObtenerNodoImpuestos()
 
         #region Escribir datos en el .pdf
 
-        private void AgregarLogo(System.Drawing.Image logoEmpresa)
+        private void AgregarLogo(iTextSharp.text.Image logoEmpresa)
         {
             if (logoEmpresa == null)
                 return;
             //Agrego la imagen al documento
-            Image imagen = Image.GetInstance(logoEmpresa, BaseColor.BLACK);
+            Image imagen = logoEmpresa;
             imagen.ScaleToFit(140, 100);
             imagen.Alignment = Element.ALIGN_RIGHT;
             Chunk logo = new Chunk(imagen, 1, -75);
@@ -640,7 +663,7 @@ private void ObtenerNodoImpuestos()
             //_cb.RestoreState();
 
             //Agrego cuadro al documento
-            _cb.SetColorStroke(new BaseColor(173, 60, 49)); //Color de la linea
+            _cb.SetColorStroke(new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color); //Color de la linea
 
             _cb.SetColorFill(BaseColor.WHITE); // Color del relleno
             _cb.SetLineWidth(3.5f); //Tamano de la linea
@@ -1345,55 +1368,59 @@ private void ObtenerNodoImpuestos()
             tablaProductosTitulos.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT;
             tablaProductosTitulos.LockedWidth = true;
 
-
-            PdfPCell celda0 = new PdfPCell(new Phrase("CLAVE: ", new Font(Font.FontFamily.HELVETICA, 6, Font.BOLD)));
-            celda0.BackgroundColor = new iTextSharp.text.BaseColor(113, 168, 62);
+            iTextSharp.text.Font _FuenteConceptos7W = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8, iTextSharp.text.Font.BOLD, BaseColor.WHITE);
+            PdfPCell celda0 = new PdfPCell(new Phrase("CLAVE: ", _FuenteConceptos7W));
+            celda0.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             tablaProductosTitulos.AddCell(celda0);
 
-            PdfPCell celda1 = new PdfPCell(new Phrase("NO. IDENTIFICACION", new Font(Font.FontFamily.HELVETICA, 6, Font.BOLD)));
-            celda1.BackgroundColor = new iTextSharp.text.BaseColor(113, 168, 62);
+            PdfPCell celda1 = new PdfPCell(new Phrase("NO. IDENTIFICACION", _FuenteConceptos7W));
+            celda1.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             tablaProductosTitulos.AddCell(celda1);
 
-            PdfPCell celda2 = new PdfPCell(new Phrase("CANTIDAD", new Font(Font.FontFamily.HELVETICA, 6, Font.BOLD)));
-            celda2.BackgroundColor = new iTextSharp.text.BaseColor(113, 168, 62);
+            PdfPCell celda2 = new PdfPCell(new Phrase("CANTIDAD", _FuenteConceptos7W));
+            celda2.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             tablaProductosTitulos.AddCell(celda2);
 
-            PdfPCell celda3 = new PdfPCell(new Phrase("CLAVE UNIDAD", new Font(Font.FontFamily.HELVETICA, 6, Font.BOLD)));
-            celda3.BackgroundColor = new iTextSharp.text.BaseColor(113, 168, 62);
+            PdfPCell celda3 = new PdfPCell(new Phrase("CLAVE UNIDAD", _FuenteConceptos7W));
+            celda3.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             tablaProductosTitulos.AddCell(celda3);
 
-            PdfPCell celda4 = new PdfPCell(new Phrase("DESCRIPCION", new Font(Font.FontFamily.HELVETICA, 6, Font.BOLD)));
-            celda4.BackgroundColor = new iTextSharp.text.BaseColor(113, 168, 62);
+            PdfPCell celda4 = new PdfPCell(new Phrase("DESCRIPCION", _FuenteConceptos7W));
+            celda4.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             tablaProductosTitulos.AddCell(celda4);
 
-            PdfPCell celda5 = new PdfPCell(new Phrase("VALOR UNITARIO", new Font(Font.FontFamily.HELVETICA, 6, Font.BOLD)));
-            celda5.BackgroundColor = new iTextSharp.text.BaseColor(113, 168, 62);
+            PdfPCell celda5 = new PdfPCell(new Phrase("VALOR UNITARIO", _FuenteConceptos7W));
+            celda5.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             tablaProductosTitulos.AddCell(celda5);
 
-            PdfPCell celda6 = new PdfPCell(new Phrase("DESCUENTO", new Font(Font.FontFamily.HELVETICA, 6, Font.BOLD)));
-            celda6.BackgroundColor = new iTextSharp.text.BaseColor(113, 168, 62);
+            PdfPCell celda6 = new PdfPCell(new Phrase("DESCUENTO", _FuenteConceptos7W));
+            celda6.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             tablaProductosTitulos.AddCell(celda6);
 
-            PdfPCell celda7 = new PdfPCell(new Phrase("IMPORTE", new Font(Font.FontFamily.HELVETICA, 6, Font.BOLD)));
-            celda7.BackgroundColor = new iTextSharp.text.BaseColor(113, 168, 62);
+            PdfPCell celda7 = new PdfPCell(new Phrase("IMPORTE", _FuenteConceptos7W));
+            celda7.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             tablaProductosTitulos.AddCell(celda7);
 
 
+            PdfPCell celdaTitulos = new PdfPCell(tablaProductosTitulos);
+            tablaProductosPrincipal.AddCell(celdaTitulos);
 
-            float[] tamanoColumnasProductos = { 60f, 60F, 50f, 70f, 170f, 75f, 60f, 75f };
-            PdfPTable tablaProductos = new PdfPTable(tamanoColumnas);
-            //tablaProductos.SpacingBefore = 1;
-            //tablaProductos.DefaultCell.Border = Rectangle.NO_BORDER;
-            tablaProductos.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT;
-            tablaProductos.DefaultCell.BorderWidthLeft = 0.1f;
-            tablaProductos.DefaultCell.BorderWidthRight = 0.0f;
-            tablaProductos.DefaultCell.BorderWidthBottom = 0.0f;
-            tablaProductos.DefaultCell.BorderWidthTop = 0.0f;
-            tablaProductos.SetTotalWidth(tamanoColumnas);
-            tablaProductos.HorizontalAlignment = Element.ALIGN_LEFT;
-            tablaProductos.LockedWidth = true;
             foreach (ProductoCFD p in _templatePDF.productos)
             {
+
+                float[] tamanoColumnasProductos = { 60f, 60F, 50f, 70f, 170f, 75f, 60f, 75f };
+                PdfPTable tablaProductos = new PdfPTable(tamanoColumnas);
+                //tablaProductos.SpacingBefore = 1;
+                //tablaProductos.DefaultCell.Border = Rectangle.NO_BORDER;
+                tablaProductos.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT;
+                tablaProductos.DefaultCell.BorderWidthLeft = 0.1f;
+                tablaProductos.DefaultCell.BorderWidthRight = 0.0f;
+                tablaProductos.DefaultCell.BorderWidthBottom = 0.0f;
+                tablaProductos.DefaultCell.BorderWidthTop = 0.0f;
+                tablaProductos.SetTotalWidth(tamanoColumnas);
+                tablaProductos.HorizontalAlignment = Element.ALIGN_LEFT;
+                tablaProductos.LockedWidth = true;
+
                 tablaProductos.AddCell(new Phrase(p.ClaveProducto, new Font(Font.FontFamily.HELVETICA, 6)));
                 tablaProductos.AddCell(new Phrase(p.id, new Font(Font.FontFamily.HELVETICA, 6)));
                 tablaProductos.AddCell(new Phrase(p.cantidad, new Font(Font.FontFamily.HELVETICA, 6)));
@@ -1416,15 +1443,14 @@ private void ObtenerNodoImpuestos()
 
                 //tablaProductos.AddCell(new Phrase(p.descuento, new Font(Font.FontFamily.HELVETICA, 8)));
 
-                
+              
+                tablaProductosPrincipal.AddCell(tablaProductos);
             }
 
 
-            PdfPCell celdaTitulos = new PdfPCell(tablaProductosTitulos);
-            tablaProductosPrincipal.AddCell(celdaTitulos);
-            PdfPCell celdaProductos = new PdfPCell(tablaProductos);
-            celdaProductos.MinimumHeight = 300;
-            tablaProductosPrincipal.AddCell(celdaProductos);
+          
+           
+        
             _documento.Add(tablaProductosPrincipal);
         }
 
@@ -1628,30 +1654,30 @@ private void ObtenerNodoImpuestos()
             //}
 
             //Add paging to footer
-            {
-                cb.BeginText();
-                cb.SetFontAndSize(bf, 9);
-                cb.SetTextMatrix(document.PageSize.GetRight(70), document.PageSize.GetBottom(30));
-                //cb.MoveText(500,30);
-                //cb.ShowText("Este comprobante es una representación impresa de un CFDI");
-                cb.ShowText(text);
-                cb.EndText();
-                float len = bf.GetWidthPoint(text, 9);
-                cb.AddTemplate(footerTemplate, document.PageSize.GetRight(70) + len, document.PageSize.GetBottom(30));
+            //{
+            //    cb.BeginText();
+            //    cb.SetFontAndSize(bf, 9);
+            //    cb.SetTextMatrix(document.PageSize.GetRight(70), document.PageSize.GetBottom(30));
+            //    //cb.MoveText(500,30);
+            //    //cb.ShowText("Este comprobante es una representación impresa de un CFDI");
+            //    cb.ShowText(text);
+            //    cb.EndText();
+            //    float len = bf.GetWidthPoint(text, 9);
+            //    cb.AddTemplate(footerTemplate, document.PageSize.GetRight(70) + len, document.PageSize.GetBottom(30));
 
-                float[] anchoColumasTablaTotales = { 600f };
-                PdfPTable tabla = new PdfPTable(anchoColumasTablaTotales);
-                tabla.DefaultCell.Border = Rectangle.NO_BORDER;
-                tabla.SetTotalWidth(anchoColumasTablaTotales);
-                tabla.HorizontalAlignment = Element.ALIGN_CENTER;
-                tabla.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
-                tabla.LockedWidth = true;
+            //    float[] anchoColumasTablaTotales = { 600f };
+            //    PdfPTable tabla = new PdfPTable(anchoColumasTablaTotales);
+            //    tabla.DefaultCell.Border = Rectangle.NO_BORDER;
+            //    tabla.SetTotalWidth(anchoColumasTablaTotales);
+            //    tabla.HorizontalAlignment = Element.ALIGN_CENTER;
+            //    tabla.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            //    tabla.LockedWidth = true;
                 
-                tabla.AddCell(new Phrase("Este documento es una representación impresa de un CFDI 4.0", new Font(Font.FontFamily.HELVETICA, 10)));
+            //    tabla.AddCell(new Phrase("Este documento es una representación impresa de un CFDI 4.0", new Font(Font.FontFamily.HELVETICA, 10)));
                
-                tabla.WriteSelectedRows(0, -1, 5, document.PageSize.GetBottom(40), writer.DirectContent);
+            //    tabla.WriteSelectedRows(0, -1, 5, document.PageSize.GetBottom(40), writer.DirectContent);
 
-            }
+            //}
 
 
 

@@ -5,12 +5,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iTextSharp.text;
+
 
 namespace Predial10.caja
 {
     public class ClsColoresReporte
     {
-        public CMYKColor color { get; set; }
+        public BaseColor color { get; set; }
 
         public ClsColoresReporte(string _color)
         {
@@ -51,6 +53,10 @@ namespace Predial10.caja
             if (_color == "Blanco")
             {
                 color = ConvertRgbToCmyk(255, 255, 255);
+            }
+            if (_color == "Morena")
+            {
+                color = ConvertRgbToCmyk(88,24,69);
             }
         }
 

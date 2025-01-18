@@ -38,7 +38,7 @@ namespace Predial10
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.predialchicoDataSet = new Predial10.predialchicoDataSet();
+            this.predialchicoDataSet = new Predial10.DataSet1();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.labelX24 = new DevComponents.DotNetBar.LabelX();
             this.DTraslado = new DevComponents.Editors.DoubleInput();
@@ -79,9 +79,9 @@ namespace Predial10
             this.dtgTarifas = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.tarifasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.tarifasTableAdapter = new Predial10.predialchicoDataSetTableAdapters.tarifasTableAdapter();
-            this.empresaTableAdapter = new Predial10.predialchicoDataSetTableAdapters.empresaTableAdapter();
-            this.tableAdapterManager = new Predial10.predialchicoDataSetTableAdapters.TableAdapterManager();
+            this.tarifasTableAdapter = new Predial10.DataSet1TableAdapters.tarifasTableAdapter();
+            this.empresaTableAdapter = new Predial10.DataSet1TableAdapters.empresaTableAdapter();
+            this.tableAdapterManager = new Predial10.DataSet1TableAdapters.TableAdapterManager();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.predialchicoDataSet)).BeginInit();
@@ -836,16 +836,16 @@ namespace Predial10
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.detalleTableAdapter = null;
-            this.empresaTableAdapter = this.empresaTableAdapter;
-            this.tableAdapterManager.formatoreciboTableAdapter = null;
-            this.tableAdapterManager.fpagoTableAdapter = null;
-            this.tableAdapterManager.recibomaestroTableAdapter = null;
-            this.tableAdapterManager.tarifasTableAdapter = this.tarifasTableAdapter;
-            this.tableAdapterManager.tmpfacrecTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Predial10.predialchicoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.usuarioTableAdapter = null;
+            //this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            //this.tableAdapterManager.detallet = null;
+            //this.empresaTableAdapter = this.empresaTableAdapter;
+            //this.tableAdapterManager.formatoreciboTableAdapter = null;
+            //this.tableAdapterManager.fpagoTableAdapter = null;
+            //this.tableAdapterManager.recibomaestroTableAdapter = null;
+            //this.tableAdapterManager.tarifasTableAdapter = this.tarifasTableAdapter;
+            //this.tableAdapterManager.tmpfacrecTableAdapter = null;
+            //this.tableAdapterManager.UpdateOrder = Predial10.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            //this.tableAdapterManager.usuarioTableAdapter = null;
             // 
             // confempresas
             // 
@@ -933,11 +933,11 @@ namespace Predial10
         private DevComponents.DotNetBar.Controls.DataGridViewX dtgTarifas;
         private DevComponents.DotNetBar.LabelX labelX26;
         private DevComponents.DotNetBar.ButtonX btnactualizar;
-        private predialchicoDataSet predialchicoDataSet;
+        private DataSet1 predialchicoDataSet;
         private System.Windows.Forms.BindingSource tarifasBindingSource;
-        private predialchicoDataSetTableAdapters.tarifasTableAdapter tarifasTableAdapter;
+        private DataSet1TableAdapters.tarifasTableAdapter tarifasTableAdapter;
         private System.Windows.Forms.BindingSource empresaBindingSource;
-        private predialchicoDataSetTableAdapters.empresaTableAdapter empresaTableAdapter;
-        private predialchicoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private DataSet1TableAdapters.empresaTableAdapter empresaTableAdapter;
+        private DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

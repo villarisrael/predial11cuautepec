@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Predial10.Resources.CODE;
 using DevComponents.AdvTree;
+using Predial10.DataSet1TableAdapters;
 
 namespace Predial10
 {
@@ -22,6 +23,9 @@ namespace Predial10
         DataTable TBL_Consulta2 = new DataTable();
         DataTable TBL_Consulta3 = new DataTable();
         DataTable TBL_Consultadetalle = new DataTable();
+        DataSet1 predialchicoDataSet = new DataSet1();
+
+
          Pago pago = new Pago();
        public string OFICINA = "";
        public string CAJA = "";
@@ -55,8 +59,10 @@ namespace Predial10
 
         private void frmcaja_Load(object sender, EventArgs e)
         {
+            // TODO: esta l�nea de c�digo carga datos en la tabla 'dataSet1.vusuario' Puede moverla o quitarla seg�n sea necesario.
+         //   this.vusuarioTableAdapter.Fill(this.dataSet1.vusuario);
             // TODO: This line of code loads data into the 'predialchicoDataSet.detalle' table. You can move, or remove it, as needed.
-            this.detalleTableAdapter.Fill(this.predialchicoDataSet.detalle);
+
             Conexion_a_BD.Conectar();
 
             TBL_Consulta3 = Conexion_a_BD.Consultasql("NOMBRE, DESCRIPCION, Maquina", "croape INNER JOIN oficinas on oficinas.COD_OFI= croape.COD_OFI INNER JOIN cajas on cajas.ID_CAJA= croape.CAJA WHERE MAQUINA= '" + System.Environment.MachineName.ToString() + "' AND FEC_APE='" + DateTime.Now.ToString("yyyy-MM-dd") + "'");
@@ -173,8 +179,9 @@ namespace Predial10
                     btnbuscar1_Click(sender, e);                   
                 }
 
-                
-                vusuarioTableAdapter.FillBycuenta(this.predialchicoDataSet.vusuario, txtclave.Text);
+                string clave = txtclave.Text;
+                DataSet1TableAdapters.vusuarioTableAdapter VTA = new vusuarioTableAdapter();
+                VTA.FillBycuenta(this.predialchicoDataSet.vusuario, clave );
 
                 try
                 {
@@ -203,11 +210,14 @@ namespace Predial10
                     caja.VariablesCajas.NoExt = txtnumext.Text;
                     caja.VariablesCajas.Colonia = txtcolonia.Text;
                     caja.VariablesCajas.Comunidad = txtcomunidad.Text;
+
+                    BTNCALCULAR_Click(sender, EventArgs.Empty);
+                    btnGuardar.Enabled = true;
                     
                 }
                 catch (Exception excepciond)
                 {
-                    MessageBox.Show("No se encuentra esa cuenta, verifique de nuevo.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se encuentra esa cuenta, verifique de nuevo.", "Informaci n", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     error = true;
                 }
                 
@@ -217,7 +227,7 @@ namespace Predial10
                // MessageBox.Show(excepcion.Message,"Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             btnImprimir.Enabled = false;
-            btnGuardar.Enabled = false;
+           // btnGuardar.Enabled = false;
             btnDatosFiscales.Enabled = false;
         }
 
@@ -485,14 +495,14 @@ namespace Predial10
                 Node nodo = new Node();
                 nodo.Cells[0].Text = pago.periodos[i].periodo;
                 Cell celda = new Cell();
-                // añade el impuesto
+                // a ade el impuesto
                 DevComponents.DotNetBar.LabelX etiqueta = new DevComponents.DotNetBar.LabelX();
                 etiqueta.Text = String.Format(new AcctNumberFormat(), "{0:C2}", pago.periodos[i].Impuestobruto);
                 etiqueta.TextAlignment = StringAlignment.Far;
                 celda.HostedControl = etiqueta;
                 nodo.Cells.Add(celda);
 
-                // añade el impuesto bruto
+                // a ade el impuesto bruto
                 Cell celda1 = new Cell();
                 DevComponents.DotNetBar.LabelX etiqueta1 = new DevComponents.DotNetBar.LabelX();
                 etiqueta1.Text = String.Format(new AcctNumberFormat(), "{0:C2}", pago.periodos[i].ImpuestoNeto);
@@ -500,7 +510,7 @@ namespace Predial10
                 celda1.HostedControl = etiqueta1;
                 nodo.Cells.Add(celda1);
 
-                // añade el descuento al advtree
+                // a ade el descuento al advtree
 
                 Cell celda2 = new Cell();
                 DevComponents.DotNetBar.LabelX etiqueta2 = new DevComponents.DotNetBar.LabelX();
@@ -509,7 +519,7 @@ namespace Predial10
                 celda2.HostedControl = etiqueta2;
                 nodo.Cells.Add(celda2);
 
-                // añade el descuento en dinero
+                // a ade el descuento en dinero
                  descuentoimpuesto += pago.periodos[i].descuento;
                 Cell celda3 = new Cell();
                 DevComponents.DotNetBar.LabelX etiqueta3 = new DevComponents.DotNetBar.LabelX();
@@ -519,7 +529,7 @@ namespace Predial10
                 nodo.Cells.Add(celda3);
 
 
-                // AÑADE el tipo
+                // A ADE el tipo
 
                 Cell celda4 = new Cell();
                 DevComponents.DotNetBar.LabelX etiqueta4 = new DevComponents.DotNetBar.LabelX();
@@ -538,7 +548,7 @@ namespace Predial10
                 etiqueta4.TextAlignment = StringAlignment.Far;
                 celda4.HostedControl = etiqueta4;
                 nodo.Cells.Add(celda4);
-                // añade el recargo
+                // a ade el recargo
 
                 Cell celdarecargo = new Cell();
                 DevComponents.DotNetBar.LabelX etiquetarecargo = new DevComponents.DotNetBar.LabelX();
@@ -547,7 +557,7 @@ namespace Predial10
                 celdarecargo.HostedControl = etiquetarecargo;
                 nodo.Cells.Add(celdarecargo);
 
-                // añade el acumulado
+                // a ade el acumulado
                 Cell celda5 = new Cell();
                 DevComponents.DotNetBar.LabelX etiqueta5 = new DevComponents.DotNetBar.LabelX();
                 etiqueta5.Text = String.Format(new AcctNumberFormat(), "{0:C2}", pago.periodos[i].Acumulado);
@@ -699,7 +709,7 @@ namespace Predial10
              }
              btnImprimir.Enabled = true;
              btnDatosFiscales.Enabled = true;
-             predialchicoDataSet.recibomaestroRow registro = predialchicoDataSet.recibomaestro.NewrecibomaestroRow();
+             DataSet1.recibomaestroRow registro = predialchicoDataSet.recibomaestro.NewrecibomaestroRow();
 
              registro.Nombre = txtnombre.Text;
              registro.Direccion1 = txtcalle.Text;
@@ -739,7 +749,7 @@ namespace Predial10
              ultimofolio = ultimofolioimpreso() + 1;
              registro.folio = ultimofolio;
 
-             predialchicoDataSetTableAdapters.recibomaestroTableAdapter x = new predialchicoDataSetTableAdapters.recibomaestroTableAdapter();
+             DataSet1TableAdapters.recibomaestroTableAdapter x = new DataSet1TableAdapters.recibomaestroTableAdapter();
 
              try
              {
@@ -772,7 +782,7 @@ namespace Predial10
                          }
                          catch (Exception err)
                          {
-                             MessageBox.Show(err.Message);
+                        //     MessageBox.Show(err.Message);
                          }
 
                      }
@@ -800,7 +810,7 @@ namespace Predial10
              string multi = Conexion_a_BD.obtenercampo("use predialchico;select multicajas from cajas where cod_ofi ='" + OFICINA + "' and id_caja='" + CAJA + "'");
              if (multi == "1")
              {
-                 predialchicoDataSetTableAdapters.empresaTableAdapter empRESA = new predialchicoDataSetTableAdapters.empresaTableAdapter();
+                 DataSet1TableAdapters.empresaTableAdapter empRESA = new DataSet1TableAdapters.empresaTableAdapter();
               
                  empRESA.UpdateQuery(ultimofolio);
                  ultimofolioimpreso();
@@ -855,13 +865,13 @@ namespace Predial10
                    }
                      catch (Exception ex)
                      {
-                         MessageBox.Show(ex.Message);
+                        // MessageBox.Show(ex.Message);
 
                      }
                  }
                  Conexion_a_BD.Desconectar();
              }
-             MessageBox.Show("Registro guardado", "Imformación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             MessageBox.Show("Registro guardado", "Imformaci n", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
              //Actualiza la fecha del utimo pago en la tabla usuarios
              try
@@ -932,7 +942,7 @@ namespace Predial10
                  string multi = Conexion_a_BD.obtenercampo("select multicajas from cajas where cod_ofi ='" + OFICINA + "' and id_caja='" + CAJA + "'");
                  if (multi == "1")
                  {
-                     predialchicoDataSetTableAdapters.empresaTableAdapter emp = new predialchicoDataSetTableAdapters.empresaTableAdapter();
+                     DataSet1TableAdapters.empresaTableAdapter emp = new DataSet1TableAdapters.empresaTableAdapter();
                      int ultimofolio = Convert.ToInt32(txtEditFolio.Text);
                      emp.UpdateQuery(ultimofolio);
                      ultimofolioimpreso();
@@ -970,7 +980,7 @@ namespace Predial10
                  string multi = Conexion_a_BD.obtenercampo("select multicajas from cajas where cod_ofi ='" + OFICINA + "' and id_caja='" + CAJA + "'");
                  if (multi == "1")
                  {
-                     predialchicoDataSetTableAdapters.empresaTableAdapter emp = new predialchicoDataSetTableAdapters.empresaTableAdapter();
+                     DataSet1TableAdapters.empresaTableAdapter emp = new DataSet1TableAdapters.empresaTableAdapter();
                      emp.Fill(predialchicoDataSet.empresa);
                      DataRow rowempresa;
                      rowempresa = predialchicoDataSet.Tables["empresa"].Rows[0];
@@ -1014,15 +1024,29 @@ namespace Predial10
              imprimirnet imp = new imprimirnet();
              imp.prtDoc.PrinterSettings = imp2.prtSettings;
 
-             predialchicoDataSetTableAdapters.recibomaestroTableAdapter recibo = new predialchicoDataSetTableAdapters.recibomaestroTableAdapter();
-             recibo.FillByfolio(predialchicoDataSet.recibomaestro, Convert.ToInt32(lblfolio.Text),serie);
-             DataRow rowrecibo;
-             rowrecibo = predialchicoDataSet.Tables["recibomaestro"].Rows[0];
+            string query = " select * from recibomaestro where folio="+ lblfolio.Text + " and serie='" + serie +"'";
 
-             predialchicoDataSetTableAdapters.formatoreciboTableAdapter consulta = new predialchicoDataSetTableAdapters.formatoreciboTableAdapter();
-             consulta.Fill(predialchicoDataSet.formatorecibo);
-             lineaimprimir.alineacion ALI = lineaimprimir.alineacion.Izquierda;
-             foreach (DataRow row in predialchicoDataSet.Tables["formatorecibo"].Rows)
+            // Llamar al m�todo Consulta de Conexion_a_BD
+            DataTable result = Conexion_a_BD.Consulta(query);
+            DataRow rowrecibo;
+            // Procesar los resultados
+           
+              
+             rowrecibo = result.Rows[0];
+
+
+            string Queryf = "select * from formatorecibo";
+            // Llamar al m�todo Consulta de Conexion_a_BD
+            DataTable resultformato = Conexion_a_BD.Consulta(Queryf);
+           
+
+
+
+
+
+
+            lineaimprimir.alineacion ALI = lineaimprimir.alineacion.Izquierda;
+             foreach (DataRow row in resultformato.Rows)
              {
 
                  string alinea = row["Alineacion"].ToString();
@@ -1088,16 +1112,19 @@ namespace Predial10
 
              }
 
-             
-             // va el cuerpor del recibo
-             predialchicoDataSetTableAdapters.esclavodetalleTableAdapter reciboesclavo = new predialchicoDataSetTableAdapters.esclavodetalleTableAdapter();
-             reciboesclavo.FillByrecibo(predialchicoDataSet.esclavodetalle, Convert.ToInt32(lblfolio.Text),serie);
+            string queryd = "select * from esclavodetalle where recibo= " + lblfolio.Text + " and serie='" + serie + "'";
+            // Llamar al m�todo Consulta de Conexion_a_BD
+            DataTable resultdetalle = Conexion_a_BD.Consulta(queryd);
 
+
+
+
+          
              int linea = Predial10.Properties.Settings.Default.linea_inicial_de_detalle_de_recibo;
              int columnaimporte = Predial10.Properties.Settings.Default.columna_de_importe;
              int columnaConcepto = Predial10.Properties.Settings.Default.columna_de_concepto;
 
-             foreach (DataRow rowdetalle in predialchicoDataSet.Tables["esclavodetalle"].Rows)
+             foreach (DataRow rowdetalle in resultdetalle.Rows)
              {
                  string mensaje = "";
                  int cordx, cordy, cordconcepto = 0;
@@ -1218,7 +1245,7 @@ namespace Predial10
              }
              catch (Exception err)
              {
-                 MessageBox.Show("Quite el signo de pesos($) para poder continuar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 MessageBox.Show("Quite el signo de pesos($) para poder continuar", "Informaci n", MessageBoxButtons.OK, MessageBoxIcon.Information);
              }
 
          }
@@ -1328,7 +1355,7 @@ namespace Predial10
 
             if (Dtfinal.Text == "")
             {
-                MessageBox.Show("Se cambiará la fecha final, para poder guardar el recibo, si ingresa conceptos pertenecientes a predial, ajustar la fecha final", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se cambiar  la fecha final, para poder guardar el recibo, si ingresa conceptos pertenecientes a predial, ajustar la fecha final", "Informaci n", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dtfinal.Value = DTinicio.Value;
             }
 

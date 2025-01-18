@@ -35,14 +35,9 @@ namespace Predial10.Recaudacion
         public double efectivo = 0;
         string SQL = "";
         string SQL1 = "";
-        string SQLDescuentos = "";
+    
         Decimal totalGeneral = 0.0M;
-        Decimal totalBruto = 0.0M;
-        Decimal totalNeto = 0.0M;
-        Decimal AcumuDescuento = 0.0M;
-        Decimal CTNeto, CTBruto = 0.00M;
-        
-
+      
         public frmrecaudacion()
         {
             InitializeComponent();
@@ -239,12 +234,14 @@ namespace Predial10.Recaudacion
             //Declarar formatos de letras
 
             iTextSharp.text.Font _FuenteTitulos10 = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
             iTextSharp.text.Font _FuenteTitulos10NB = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
             iTextSharp.text.Font _FuenteContenido9B = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 9, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+            iTextSharp.text.Font _FuenteContenido6 = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 6, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
             iTextSharp.text.Font _FuenteSellos5 = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 5, iTextSharp.text.Font.ITALIC, BaseColor.BLACK);
             iTextSharp.text.Font _FuenteConceptos9W = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 9, iTextSharp.text.Font.BOLD, BaseColor.WHITE);
             iTextSharp.text.Font _FuenteFolio15B = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 15, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-            iTextSharp.text.Font _FuenteNormal7B = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 9, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+            iTextSharp.text.Font _FuenteNormal7B = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 7, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
             iTextSharp.text.Font _Color = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10, iTextSharp.text.Font.BOLD, new BaseColor (0,0,117));
 
 

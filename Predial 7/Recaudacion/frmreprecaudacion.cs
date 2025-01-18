@@ -29,32 +29,32 @@ namespace Predial10.Recaudacion
         {
          
 
-            predialchicoDataSet data = new predialchicoDataSet();
+            DataSet1 data = new DataSet1();
             data.EnforceConstraints = false;
-            predialchicoDataSetTableAdapters.empresaTableAdapter x = new predialchicoDataSetTableAdapters.empresaTableAdapter();
+            DataSet1TableAdapters.empresaTableAdapter x = new DataSet1TableAdapters.empresaTableAdapter();
             x.Fill(data.empresa);
               if (tipo != "Rubros")
                  {
-                        predialchicoDataSetTableAdapters.recibomaestroTableAdapter   j = new predialchicoDataSetTableAdapters.recibomaestroTableAdapter ();
+                        DataSet1TableAdapters.recibomaestroTableAdapter   j = new DataSet1TableAdapters.recibomaestroTableAdapter ();
                         try
                         {
-                            j.FillBy(data.recibomaestro );
+                            j.Fill(data.recibomaestro );
 
                         }
                         catch (Exception algo)
                         {
                         }
 
-                        predialchicoDataSetTableAdapters.esclavodetalleTableAdapter  k = new predialchicoDataSetTableAdapters.esclavodetalleTableAdapter()  ;
+                        DataSet1TableAdapters.esclavodetalleTableAdapter  k = new DataSet1TableAdapters.esclavodetalleTableAdapter()  ;
                         try
                         {
-                            k.Fill(data.esclavodetalle );
+                            k.FillBy(data.esclavodetalle );
 
                         }
                         catch (Exception algo)
                         {
                         }
-                        predialchicoDataSetTableAdapters.fpagoTableAdapter  l = new predialchicoDataSetTableAdapters.fpagoTableAdapter ();
+                        DataSet1TableAdapters.fpagoTableAdapter  l = new DataSet1TableAdapters.fpagoTableAdapter ();
                         try
                         {
                             l.Fill(data.fpago );
@@ -75,27 +75,27 @@ namespace Predial10.Recaudacion
          
             if (tipo == "Rubros")
             {
-                predialchicoDataSetTableAdapters.recibomaestroTableAdapter j = new predialchicoDataSetTableAdapters.recibomaestroTableAdapter();
+                DataSet1TableAdapters.recibomaestroTableAdapter j = new DataSet1TableAdapters.recibomaestroTableAdapter();
                 try
                 {
-                    j.FillBy(data.recibomaestro);
+                    j.Fill(data.recibomaestro);
 
                 }
                 catch (Exception algo)
                 {
                 }
 
-                predialchicoDataSetTableAdapters.esclavodetalleTableAdapter k = new predialchicoDataSetTableAdapters.esclavodetalleTableAdapter();
+                DataSet1TableAdapters.esclavodetalleTableAdapter k = new DataSet1TableAdapters.esclavodetalleTableAdapter();
                 try
                 {
-                    k.Fill(data.esclavodetalle);
+                    k.FillBy(data.esclavodetalle);
 
                 }
                 catch (Exception algo)
                 {
                 }
                
-                  predialchicoDataSetTableAdapters.temesclavoTableAdapter l = new predialchicoDataSetTableAdapters.temesclavoTableAdapter();
+                  DataSet1TableAdapters.temesclavoTableAdapter l = new DataSet1TableAdapters.temesclavoTableAdapter();
                   
                  try
                 {

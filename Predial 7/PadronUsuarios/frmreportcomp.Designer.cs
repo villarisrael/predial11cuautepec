@@ -1,4 +1,4 @@
-using Predial10.bin.Debug.Reportes;
+
 
 namespace Predial10.PadronUsuarios
 {

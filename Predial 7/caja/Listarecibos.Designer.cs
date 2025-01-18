@@ -70,7 +70,7 @@ namespace Predial10.caja
             this.fechafinalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Facturado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recibomaestroBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.predialchicoDataSet = new Predial10.predialchicoDataSet();
+            this.predialchicoDataSet = new Predial10.DataSet1();
             this.Maestro = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.advDetalles = new DevComponents.AdvTree.AdvTree();
@@ -98,7 +98,7 @@ namespace Predial10.caja
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.iifinal = new DevComponents.Editors.IntegerInput();
             this.iiinicio = new DevComponents.Editors.IntegerInput();
-            this.recibomaestroTableAdapter = new Predial10.predialchicoDataSetTableAdapters.recibomaestroTableAdapter();
+            this.recibomaestroTableAdapter = new Predial10.DataSet1TableAdapters.recibomaestroTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.superTabrecibos)).BeginInit();
             this.superTabrecibos.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
@@ -875,8 +875,8 @@ namespace Predial10.caja
         private System.Windows.Forms.ToolStripButton btncancelarrecibo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource recibomaestroBindingSource;
-        private predialchicoDataSet predialchicoDataSet;
-        private predialchicoDataSetTableAdapters.recibomaestroTableAdapter recibomaestroTableAdapter;
+        private DataSet1 predialchicoDataSet;
+        private DataSet1TableAdapters.recibomaestroTableAdapter recibomaestroTableAdapter;
         private DevComponents.AdvTree.AdvTree advDetalles;
         private DevComponents.AdvTree.Node node1;
         private DevComponents.AdvTree.NodeConnector nodeConnector2;

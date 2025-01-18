@@ -5,13 +5,6 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Predial10", "Predial 7\Predial10.csproj", "{84B5E2C5-CF91-4BAA-A041-F661096164D6}"
 EndProject
-Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "SetupPredial10", "SetupPredial10\SetupPredial10.isproj", "{3A6B1E3A-24FD-46F0-8852-34C3E671430E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{84B5E2C5-CF91-4BAA-A041-F661096164D6} = {84B5E2C5-CF91-4BAA-A041-F661096164D6}
-	EndProjectSection
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupPredial10New", "SetupPredial10New\SetupPredial10New.vdproj", "{F578ED3C-707E-42B9-85C6-96FD754B05CB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|x86 = CD_ROM|x86
@@ -31,27 +24,12 @@ Global
 		{84B5E2C5-CF91-4BAA-A041-F661096164D6}.Release|x86.Build.0 = Release|x86
 		{84B5E2C5-CF91-4BAA-A041-F661096164D6}.SingleImage|x86.ActiveCfg = Release|x86
 		{84B5E2C5-CF91-4BAA-A041-F661096164D6}.SingleImage|x86.Build.0 = Release|x86
-		{3A6B1E3A-24FD-46F0-8852-34C3E671430E}.CD_ROM|x86.ActiveCfg = CD_ROM
-		{3A6B1E3A-24FD-46F0-8852-34C3E671430E}.CD_ROM|x86.Build.0 = CD_ROM
-		{3A6B1E3A-24FD-46F0-8852-34C3E671430E}.Debug|x86.ActiveCfg = DVD-5
-		{3A6B1E3A-24FD-46F0-8852-34C3E671430E}.Debug|x86.Build.0 = DVD-5
-		{3A6B1E3A-24FD-46F0-8852-34C3E671430E}.DVD-5|x86.ActiveCfg = DVD-5
-		{3A6B1E3A-24FD-46F0-8852-34C3E671430E}.DVD-5|x86.Build.0 = DVD-5
-		{3A6B1E3A-24FD-46F0-8852-34C3E671430E}.Release|x86.ActiveCfg = SingleImage
-		{3A6B1E3A-24FD-46F0-8852-34C3E671430E}.Release|x86.Build.0 = SingleImage
-		{3A6B1E3A-24FD-46F0-8852-34C3E671430E}.SingleImage|x86.ActiveCfg = SingleImage
-		{3A6B1E3A-24FD-46F0-8852-34C3E671430E}.SingleImage|x86.Build.0 = SingleImage
-		{F578ED3C-707E-42B9-85C6-96FD754B05CB}.CD_ROM|x86.ActiveCfg = Debug
-		{F578ED3C-707E-42B9-85C6-96FD754B05CB}.Debug|x86.ActiveCfg = Debug
-		{F578ED3C-707E-42B9-85C6-96FD754B05CB}.DVD-5|x86.ActiveCfg = Debug
-		{F578ED3C-707E-42B9-85C6-96FD754B05CB}.Release|x86.ActiveCfg = Release
-		{F578ED3C-707E-42B9-85C6-96FD754B05CB}.SingleImage|x86.ActiveCfg = Debug
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1C68DDEC-02E4-4409-8428-C3424E6A0AA6}
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {1C68DDEC-02E4-4409-8428-C3424E6A0AA6}
 	EndGlobalSection
 EndGlobal

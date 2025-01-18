@@ -20,13 +20,13 @@ namespace Predial10.Facturacion
 
         private void frmrepcomunidades_Load(object sender, EventArgs e)
         {
-            predialchicoDataSet data = new predialchicoDataSet();
+            DataSet1 data = new DataSet1();         
             data.EnforceConstraints = false;
-            predialchicoDataSetTableAdapters.empresaTableAdapter x = new predialchicoDataSetTableAdapters.empresaTableAdapter();
+            DataSet1TableAdapters.empresaTableAdapter x = new DataSet1TableAdapters.empresaTableAdapter();
             x.Fill(data.empresa);
          
            
-            predialchicoDataSetTableAdapters.vusuarioTableAdapter  l = new predialchicoDataSetTableAdapters.vusuarioTableAdapter ();
+            DataSet1TableAdapters.vusuarioTableAdapter  l = new DataSet1TableAdapters.vusuarioTableAdapter ();
             try
             {
                 l.Fill(data.vusuario );

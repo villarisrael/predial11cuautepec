@@ -428,14 +428,10 @@ namespace Predial10.caja
                     fs.Write(info, 0, info.Length);
                     fs.Close();
 
-                    //Obtener Logo de la BD
-                    byte[] logoempresa = Conexion_a_BD.obtenerimagen("select logo from empresa");
-
-                    System.Drawing.Image logoempresa2 = byteArrayToImage(logoempresa);
-
+                
 
                     //Factura de cliente con ItextSharp
-                    Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdf, logoempresa2, txtObservaciones.Text, "4.0");
+                    Generador.CreaPDF crearPDF = new Generador.CreaPDF(cadenaxml, cadenapdf,  txtObservaciones.Text, "4.0");
 
 
                     //System.Drawing.Image imagen = factu.qrdatos(cadenaxml);

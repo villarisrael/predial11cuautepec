@@ -2,6 +2,7 @@
 using iTextSharp.text.pdf;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
+using Predial10.caja;
 using Predial10.Resources.CODE;
 using System;
 using System.Collections.Generic;
@@ -234,7 +235,7 @@ namespace Predial10.Recaudacion
             CelConceptos.Rowspan = 2;
             CelConceptos.VerticalAlignment = Element.ALIGN_LEFT;
             CelConceptos.HorizontalAlignment = 0; //0=Left, 1=Centre, 2=Right       
-            CelConceptos.BackgroundColor = new iTextSharp.text.BaseColor(141, 67, 40);
+            CelConceptos.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             CelConceptos.Border = 3;
             TabConceptos.AddCell(CelConceptos);
 
@@ -242,7 +243,7 @@ namespace Predial10.Recaudacion
             CelConceptos.Rowspan = 2;
             CelConceptos.VerticalAlignment = Element.ALIGN_LEFT;
             CelConceptos.HorizontalAlignment = 0; //0=Left, 1=Centre, 2=Right
-            CelConceptos.BackgroundColor = new iTextSharp.text.BaseColor(141, 67, 40);
+            CelConceptos.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             CelConceptos.Border = 3;
             TabConceptos.AddCell(CelConceptos);
 
@@ -250,7 +251,7 @@ namespace Predial10.Recaudacion
             CelConceptos.Rowspan = 2;
             CelConceptos.VerticalAlignment = Element.ALIGN_LEFT;
             CelConceptos.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right       
-            CelConceptos.BackgroundColor = new iTextSharp.text.BaseColor(141, 67, 40);
+            CelConceptos.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             CelConceptos.Border = 3;
             TabConceptos.AddCell(CelConceptos);
 
@@ -258,7 +259,7 @@ namespace Predial10.Recaudacion
             CelConceptos.Rowspan = 2;
             CelConceptos.VerticalAlignment = Element.ALIGN_LEFT;
             CelConceptos.HorizontalAlignment = 2; //0=Left, 1=Centre, 2=Right       
-            CelConceptos.BackgroundColor = new iTextSharp.text.BaseColor(141, 67, 40);
+            CelConceptos.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             CelConceptos.Border = 3;
             TabConceptos.AddCell(CelConceptos);
 
@@ -266,7 +267,7 @@ namespace Predial10.Recaudacion
             CelConceptos.Rowspan = 2;
             CelConceptos.VerticalAlignment = Element.ALIGN_LEFT;
             CelConceptos.HorizontalAlignment = 2; //0=Left, 1=Centre, 2=Right       
-            CelConceptos.BackgroundColor = new iTextSharp.text.BaseColor(141, 67, 40);
+            CelConceptos.BackgroundColor = new ClsColoresReporte(Predial10.Properties.Settings.Default.colorfactura).color;
             CelConceptos.Border = 3;
             TabConceptos.AddCell(CelConceptos);
 

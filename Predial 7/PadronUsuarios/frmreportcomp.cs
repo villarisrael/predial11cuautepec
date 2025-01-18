@@ -20,11 +20,11 @@ namespace Predial10.PadronUsuarios
 
         private void frmreportcomp_Load(object sender, EventArgs e)
         {
-            predialchicoDataSet data = new predialchicoDataSet();
+            DataSet1 data = new DataSet1();
             data.EnforceConstraints = false;
-            predialchicoDataSetTableAdapters.empresaTableAdapter x = new predialchicoDataSetTableAdapters.empresaTableAdapter();
+            DataSet1TableAdapters.empresaTableAdapter x = new DataSet1TableAdapters.empresaTableAdapter();
             x.Fill(data.empresa);
-            predialchicoDataSetTableAdapters.vusuarioTableAdapter j = new predialchicoDataSetTableAdapters.vusuarioTableAdapter();
+            DataSet1TableAdapters.vusuarioTableAdapter j = new DataSet1TableAdapters.vusuarioTableAdapter();
             try
             {
                 j.Fill(data.vusuario);

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Predial10</RootNamespace>
     <AssemblyName>Predial 10</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -35,7 +35,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -85,20 +85,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Librerias\Catalogo.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.0.0.3, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.0.0.3, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.3, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus, Version=6.1.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.6.1.2\lib\net35\EPPlus.dll</HintPath>
@@ -117,10 +112,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Librerias\MultiFacturasSDK.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.8.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.8.7\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -149,18 +148,6 @@
     </Compile>
     <Compile Include="AccesoSistema\FrmAcceso.Designer.cs">
       <DependentUpon>FrmAcceso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="bin\Debug\Reportes\ReporteAnuales.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReporteAnuales.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="bin\Debug\Reportes\Rptcomtar.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Rptcomtar.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="caja\AperturaCaja.cs">
       <SubType>Form</SubType>
@@ -198,6 +185,15 @@
     </Compile>
     <Compile Include="caja\FrmFacturadeldia.Designer.cs">
       <DependentUpon>FrmFacturadeldia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset1.cs">
+      <DependentUpon>Dataset1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Recaudacion\FrmResumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recaudacion\FrmResumen.Designer.cs">
+      <DependentUpon>FrmResumen.cs</DependentUpon>
     </Compile>
     <Compile Include="caja\Listarecibos.cs">
       <SubType>Form</SubType>
@@ -333,6 +329,11 @@
     <Compile Include="Contratos.Designer.cs">
       <DependentUpon>Contratos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dataset1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Facturacion\frmrptadeudo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -431,14 +432,6 @@
     <Compile Include="PadronUsuarios\Traslado.Designer.cs">
       <DependentUpon>Traslado.cs</DependentUpon>
     </Compile>
-    <Compile Include="predialchicoDataSet.cs">
-      <DependentUpon>predialchicoDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="predialchicoDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>predialchicoDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -453,13 +446,9 @@
     <Compile Include="Recaudacion\FrmIngranuales.Designer.cs">
       <DependentUpon>FrmIngranuales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Recaudacion\ReporteRacudacionXtarifa.cs" />
+    <Compile Include="Recaudacion\ReporteTrimestralcs.cs" />
     <Compile Include="Recaudacion\reportexRubrosITSharp.cs" />
-    <Compile Include="Recaudacion\rubros.cs">
-      <DependentUpon>rubros.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Recaudacion\frmrecaudacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -472,30 +461,14 @@
     <Compile Include="Recaudacion\frmreprecaudacion.Designer.cs">
       <DependentUpon>frmreprecaudacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Recaudacion\recaudacion1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>recaudacion.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Recaudacion\ReporteAnuales.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReporteAnuales.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Recaudacion\Resumen.cs" />
     <Compile Include="Reportes\Aviso.cs">
       <DependentUpon>Aviso.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Reportes\Rptingcom.cs">
-      <DependentUpon>Rptingcom.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <Compile Include="Reportes\RepAdeudoComu.cs" />
     <Compile Include="Reportes\frmaviso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -514,23 +487,11 @@
     <Compile Include="Reportes\frmrequerimiento.Designer.cs">
       <DependentUpon>frmrequerimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\repcomunidades.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>repcomunidades.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reportes\Requerimiento.cs">
       <DependentUpon>Requerimiento.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Reportes\Rptingtar.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Rptingtar.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\Saldo.cs">
       <AutoGen>True</AutoGen>
@@ -581,14 +542,6 @@
       <DependentUpon>FrmAcceso.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="bin\Debug\Reportes\ReporteAnuales.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReporteAnuales.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="bin\Debug\Reportes\Rptcomtar.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rptcomtar.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="caja\AperturaCaja.resx">
       <DependentUpon>AperturaCaja.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -612,6 +565,9 @@
     <EmbeddedResource Include="caja\FrmFacturadeldia.resx">
       <DependentUpon>FrmFacturadeldia.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recaudacion\FrmResumen.resx">
+      <DependentUpon>FrmResumen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="caja\Listarecibos.resx">
       <DependentUpon>Listarecibos.cs</DependentUpon>
@@ -743,31 +699,15 @@
     <EmbeddedResource Include="Recaudacion\FrmIngranuales.resx">
       <DependentUpon>FrmIngranuales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Recaudacion\rubros.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rubros.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Recaudacion\frmrecaudacion.resx">
       <DependentUpon>frmrecaudacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recaudacion\frmreprecaudacion.resx">
       <DependentUpon>frmreprecaudacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Recaudacion\recaudacion.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>recaudacion1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Recaudacion\ReporteAnuales.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReporteAnuales.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Aviso.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Aviso.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Rptingcom.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rptingcom.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmaviso.resx">
       <DependentUpon>frmaviso.cs</DependentUpon>
@@ -778,17 +718,9 @@
     <EmbeddedResource Include="Reportes\frmrequerimiento.resx">
       <DependentUpon>frmrequerimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\repcomunidades.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>repcomunidades.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Requerimiento.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Requerimiento.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Rptingtar.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rptingtar.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Saldo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -807,18 +739,18 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
-    <None Include="predialchicoDataSet.xsc">
-      <DependentUpon>predialchicoDataSet.xsd</DependentUpon>
+    <None Include="Dataset1.xsc">
+      <DependentUpon>Dataset1.xsd</DependentUpon>
     </None>
-    <None Include="predialchicoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
+    <None Include="Dataset1.xsd">
       <SubType>Designer</SubType>
-      <LastGenOutput>predialchicoDataSet1.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dataset1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="predialchicoDataSet.xss">
-      <DependentUpon>predialchicoDataSet.xsd</DependentUpon>
+    <None Include="Dataset1.xss">
+      <DependentUpon>Dataset1.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -829,6 +761,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\splash.webp" />
     <None Include="Web References\WSCancelar_v4\index.wsdl" />
     <None Include="Web References\WSCancelar_v4\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -943,6 +876,7 @@
     <None Include="Resources\aviso.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\splash.jpg" />
     <None Include="Resources\SACVE2.jpg" />
     <None Include="Resources\p7.png" />
     <None Include="Resources\Logo predial.png" />
@@ -971,6 +905,7 @@
     <None Include="Resources\if_00-ELASTOFONT-STORE-READY_invoice_2703075.png" />
     <None Include="Resources\if_issue_54324.png" />
     <None Include="Resources\cancel_invoice_2703075.ico" />
+    <None Include="Resources\banner11.png" />
     <Content Include="Resources\Images\1388310580_ticket1-.png" />
     <Content Include="Resources\Images\add.png" />
     <None Include="Resources\Images\administrator.png" />
@@ -1022,15 +957,18 @@
       <CachedSettingsPropName>Predial_10_WSCancelar_v4_Cancelar_cfdi_4_0_SAT</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Reportes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
   </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

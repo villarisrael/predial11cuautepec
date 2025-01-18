@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcaja));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.txtcomunidad = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.vusuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.predialchicoDataSet = new Predial10.predialchicoDataSet();
             this.txtnumext = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtcolonia = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtcalle = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -88,21 +88,6 @@
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
             this.divalorfiscal = new DevComponents.Editors.DoubleInput();
             this.Calculo = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.lblperiodo = new DevComponents.DotNetBar.LabelX();
-            this.labelX21 = new DevComponents.DotNetBar.LabelX();
-            this.advdesgloze = new DevComponents.AdvTree.AdvTree();
-            this.columnHeader1 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader2 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader3 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader4 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader5 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader6 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnrecargo = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader7 = new DevComponents.AdvTree.ColumnHeader();
-            this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
-            this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
-            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupPanel5 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
@@ -118,6 +103,21 @@
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.DIporcentajuedescuento = new DevComponents.Editors.DoubleInput();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.lblperiodo = new DevComponents.DotNetBar.LabelX();
+            this.labelX21 = new DevComponents.DotNetBar.LabelX();
+            this.advdesgloze = new DevComponents.AdvTree.AdvTree();
+            this.columnHeader1 = new DevComponents.AdvTree.ColumnHeader();
+            this.columnHeader2 = new DevComponents.AdvTree.ColumnHeader();
+            this.columnHeader3 = new DevComponents.AdvTree.ColumnHeader();
+            this.columnHeader4 = new DevComponents.AdvTree.ColumnHeader();
+            this.columnHeader5 = new DevComponents.AdvTree.ColumnHeader();
+            this.columnHeader6 = new DevComponents.AdvTree.ColumnHeader();
+            this.columnrecargo = new DevComponents.AdvTree.ColumnHeader();
+            this.columnHeader7 = new DevComponents.AdvTree.ColumnHeader();
+            this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
+            this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
+            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.grpfolio = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -144,16 +144,15 @@
             this.ImporteSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidadsat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clavesat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioTableAdapter = new Predial10.predialchicoDataSetTableAdapters.usuarioTableAdapter();
-            this.vusuarioTableAdapter = new Predial10.predialchicoDataSetTableAdapters.vusuarioTableAdapter();
             this.btnagregar = new System.Windows.Forms.Button();
             this.cmbconcepto = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.detalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.detalleTableAdapter = new Predial10.predialchicoDataSetTableAdapters.detalleTableAdapter();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new Predial10.DataSet1();
+            this.vusuarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vusuarioTableAdapter = new Predial10.DataSet1TableAdapters.vusuarioTableAdapter();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vusuarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.predialchicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
@@ -167,19 +166,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.DIporcentaje)).BeginInit();
             this.groupPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.divalorfiscal)).BeginInit();
-            this.superTabControlPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.advdesgloze)).BeginInit();
             this.superTabControlPanel3.SuspendLayout();
             this.groupPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.didescuentoreca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IIperiodosdescontados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DIporcentajuedescuento)).BeginInit();
+            this.superTabControlPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advdesgloze)).BeginInit();
             this.grpfolio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DTpartidas1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vusuarioBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel2
@@ -237,22 +238,12 @@
             this.txtcomunidad.Border.Class = "TextBoxBorder";
             this.txtcomunidad.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtcomunidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcomunidad.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.vusuarioBindingSource, "colonia", true));
-            this.txtcomunidad.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vusuarioBindingSource, "colonia", true));
+            this.txtcomunidad.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.vusuarioBindingSource1, "comunidad", true));
+            this.txtcomunidad.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vusuarioBindingSource1, "comunidad", true));
             this.txtcomunidad.Location = new System.Drawing.Point(281, 65);
             this.txtcomunidad.Name = "txtcomunidad";
             this.txtcomunidad.Size = new System.Drawing.Size(229, 20);
             this.txtcomunidad.TabIndex = 6;
-            // 
-            // vusuarioBindingSource
-            // 
-            this.vusuarioBindingSource.DataMember = "vusuario";
-            this.vusuarioBindingSource.DataSource = this.predialchicoDataSet;
-            // 
-            // predialchicoDataSet
-            // 
-            this.predialchicoDataSet.DataSetName = "predialchicoDataSet";
-            this.predialchicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtnumext
             // 
@@ -262,8 +253,8 @@
             this.txtnumext.Border.Class = "TextBoxBorder";
             this.txtnumext.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtnumext.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtnumext.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.vusuarioBindingSource, "numext", true));
-            this.txtnumext.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vusuarioBindingSource, "numext", true));
+            this.txtnumext.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.vusuarioBindingSource1, "numext", true));
+            this.txtnumext.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vusuarioBindingSource1, "numext", true));
             this.txtnumext.Location = new System.Drawing.Point(360, 45);
             this.txtnumext.Name = "txtnumext";
             this.txtnumext.Size = new System.Drawing.Size(42, 20);
@@ -277,8 +268,6 @@
             this.txtcolonia.Border.Class = "TextBoxBorder";
             this.txtcolonia.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtcolonia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcolonia.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.vusuarioBindingSource, "colonia", true));
-            this.txtcolonia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vusuarioBindingSource, "colonia", true));
             this.txtcolonia.Location = new System.Drawing.Point(4, 65);
             this.txtcolonia.Name = "txtcolonia";
             this.txtcolonia.Size = new System.Drawing.Size(272, 20);
@@ -292,8 +281,8 @@
             this.txtcalle.Border.Class = "TextBoxBorder";
             this.txtcalle.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtcalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcalle.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.vusuarioBindingSource, "Calle", true));
-            this.txtcalle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vusuarioBindingSource, "Calle", true));
+            this.txtcalle.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.vusuarioBindingSource1, "Calle", true));
+            this.txtcalle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vusuarioBindingSource1, "Calle", true));
             this.txtcalle.Location = new System.Drawing.Point(4, 45);
             this.txtcalle.Name = "txtcalle";
             this.txtcalle.Size = new System.Drawing.Size(353, 20);
@@ -307,8 +296,8 @@
             this.txtnombre.Border.Class = "TextBoxBorder";
             this.txtnombre.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtnombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtnombre.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.vusuarioBindingSource, "Nombre", true));
-            this.txtnombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vusuarioBindingSource, "Nombre", true));
+            this.txtnombre.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.vusuarioBindingSource1, "Nombre", true));
+            this.txtnombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vusuarioBindingSource1, "Nombre", true));
             this.txtnombre.Location = new System.Drawing.Point(4, 24);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(514, 20);
@@ -387,7 +376,6 @@
             // 
             // BTNCALCULAR
             // 
-            this.BTNCALCULAR.Enabled = false;
             this.BTNCALCULAR.Image = ((System.Drawing.Image)(resources.GetObject("BTNCALCULAR.Image")));
             this.BTNCALCULAR.Name = "BTNCALCULAR";
             this.BTNCALCULAR.Tooltip = "Calcular";
@@ -526,8 +514,8 @@
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.Controls.Add(this.superTabControlPanel1);
-            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Location = new System.Drawing.Point(6, 202);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
@@ -657,6 +645,7 @@
             this.DTinicio.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.DTinicio.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.DTinicio.ButtonDropDown.Visible = true;
+            this.DTinicio.Enabled = false;
             this.DTinicio.IsPopupCalendarOpen = false;
             this.DTinicio.Location = new System.Drawing.Point(182, 32);
             // 
@@ -1027,144 +1016,13 @@
             this.Calculo.Name = "Calculo";
             this.Calculo.Text = "Calcular";
             // 
-            // superTabControlPanel2
-            // 
-            this.superTabControlPanel2.Controls.Add(this.lblperiodo);
-            this.superTabControlPanel2.Controls.Add(this.labelX21);
-            this.superTabControlPanel2.Controls.Add(this.advdesgloze);
-            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
-            this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(750, 203);
-            this.superTabControlPanel2.TabIndex = 0;
-            this.superTabControlPanel2.TabItem = this.superTabItem2;
-            // 
-            // lblperiodo
-            // 
-            this.lblperiodo.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.lblperiodo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblperiodo.Location = new System.Drawing.Point(66, 3);
-            this.lblperiodo.Name = "lblperiodo";
-            this.lblperiodo.Size = new System.Drawing.Size(36, 18);
-            this.lblperiodo.TabIndex = 24;
-            this.lblperiodo.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX21
-            // 
-            this.labelX21.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX21.Location = new System.Drawing.Point(6, 3);
-            this.labelX21.Name = "labelX21";
-            this.labelX21.Size = new System.Drawing.Size(50, 18);
-            this.labelX21.TabIndex = 23;
-            this.labelX21.Text = "Periodos..";
-            // 
-            // advdesgloze
-            // 
-            this.advdesgloze.AccessibleRole = System.Windows.Forms.AccessibleRole.Outline;
-            this.advdesgloze.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.advdesgloze.BackgroundStyle.Class = "TreeBorderKey";
-            this.advdesgloze.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.advdesgloze.Columns.Add(this.columnHeader1);
-            this.advdesgloze.Columns.Add(this.columnHeader2);
-            this.advdesgloze.Columns.Add(this.columnHeader3);
-            this.advdesgloze.Columns.Add(this.columnHeader4);
-            this.advdesgloze.Columns.Add(this.columnHeader5);
-            this.advdesgloze.Columns.Add(this.columnHeader6);
-            this.advdesgloze.Columns.Add(this.columnrecargo);
-            this.advdesgloze.Columns.Add(this.columnHeader7);
-            this.advdesgloze.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.advdesgloze.Location = new System.Drawing.Point(3, 20);
-            this.advdesgloze.Name = "advdesgloze";
-            this.advdesgloze.NodesConnector = this.nodeConnector1;
-            this.advdesgloze.NodeStyle = this.elementStyle1;
-            this.advdesgloze.PathSeparator = ";";
-            this.advdesgloze.Size = new System.Drawing.Size(747, 145);
-            this.advdesgloze.Styles.Add(this.elementStyle1);
-            this.advdesgloze.TabIndex = 1;
-            this.advdesgloze.Text = "advTree1";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Name = "columnHeader1";
-            this.columnHeader1.Text = "Periodo";
-            this.columnHeader1.Width.Absolute = 60;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Name = "columnHeader2";
-            this.columnHeader2.Text = "Impuesto Bruto";
-            this.columnHeader2.Width.Absolute = 100;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Name = "columnHeader3";
-            this.columnHeader3.Text = "Impuesto Neto";
-            this.columnHeader3.Width.Absolute = 100;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Name = "columnHeader4";
-            this.columnHeader4.Text = "Descto %";
-            this.columnHeader4.Width.Absolute = 70;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Name = "columnHeader5";
-            this.columnHeader5.Text = "Descto $";
-            this.columnHeader5.Width.Absolute = 70;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Name = "columnHeader6";
-            this.columnHeader6.Text = "Tipo";
-            this.columnHeader6.Width.Absolute = 70;
-            // 
-            // columnrecargo
-            // 
-            this.columnrecargo.Name = "columnrecargo";
-            this.columnrecargo.Text = "Recargo";
-            this.columnrecargo.Width.Absolute = 75;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Name = "columnHeader7";
-            this.columnHeader7.Text = "Acumulado";
-            this.columnHeader7.Width.Absolute = 90;
-            // 
-            // nodeConnector1
-            // 
-            this.nodeConnector1.LineColor = System.Drawing.SystemColors.ControlText;
-            // 
-            // elementStyle1
-            // 
-            this.elementStyle1.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.elementStyle1.Name = "elementStyle1";
-            this.elementStyle1.TextColor = System.Drawing.SystemColors.ControlText;
-            // 
-            // superTabItem2
-            // 
-            this.superTabItem2.AttachedControl = this.superTabControlPanel2;
-            this.superTabItem2.GlobalItem = false;
-            this.superTabItem2.Name = "superTabItem2";
-            this.superTabItem2.Text = "Desglozar";
-            // 
             // superTabControlPanel3
             // 
             this.superTabControlPanel3.Controls.Add(this.groupPanel5);
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 25);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(750, 203);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(750, 178);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.superTabItem1;
             // 
@@ -1390,6 +1248,137 @@
             this.superTabItem1.GlobalItem = false;
             this.superTabItem1.Name = "superTabItem1";
             this.superTabItem1.Text = "Descuento";
+            // 
+            // superTabControlPanel2
+            // 
+            this.superTabControlPanel2.Controls.Add(this.lblperiodo);
+            this.superTabControlPanel2.Controls.Add(this.labelX21);
+            this.superTabControlPanel2.Controls.Add(this.advdesgloze);
+            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel2.Name = "superTabControlPanel2";
+            this.superTabControlPanel2.Size = new System.Drawing.Size(750, 178);
+            this.superTabControlPanel2.TabIndex = 0;
+            this.superTabControlPanel2.TabItem = this.superTabItem2;
+            // 
+            // lblperiodo
+            // 
+            this.lblperiodo.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lblperiodo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblperiodo.Location = new System.Drawing.Point(66, 3);
+            this.lblperiodo.Name = "lblperiodo";
+            this.lblperiodo.Size = new System.Drawing.Size(36, 18);
+            this.lblperiodo.TabIndex = 24;
+            this.lblperiodo.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX21
+            // 
+            this.labelX21.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX21.Location = new System.Drawing.Point(6, 3);
+            this.labelX21.Name = "labelX21";
+            this.labelX21.Size = new System.Drawing.Size(50, 18);
+            this.labelX21.TabIndex = 23;
+            this.labelX21.Text = "Periodos..";
+            // 
+            // advdesgloze
+            // 
+            this.advdesgloze.AccessibleRole = System.Windows.Forms.AccessibleRole.Outline;
+            this.advdesgloze.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.advdesgloze.BackgroundStyle.Class = "TreeBorderKey";
+            this.advdesgloze.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.advdesgloze.Columns.Add(this.columnHeader1);
+            this.advdesgloze.Columns.Add(this.columnHeader2);
+            this.advdesgloze.Columns.Add(this.columnHeader3);
+            this.advdesgloze.Columns.Add(this.columnHeader4);
+            this.advdesgloze.Columns.Add(this.columnHeader5);
+            this.advdesgloze.Columns.Add(this.columnHeader6);
+            this.advdesgloze.Columns.Add(this.columnrecargo);
+            this.advdesgloze.Columns.Add(this.columnHeader7);
+            this.advdesgloze.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.advdesgloze.Location = new System.Drawing.Point(3, 20);
+            this.advdesgloze.Name = "advdesgloze";
+            this.advdesgloze.NodesConnector = this.nodeConnector1;
+            this.advdesgloze.NodeStyle = this.elementStyle1;
+            this.advdesgloze.PathSeparator = ";";
+            this.advdesgloze.Size = new System.Drawing.Size(747, 145);
+            this.advdesgloze.Styles.Add(this.elementStyle1);
+            this.advdesgloze.TabIndex = 1;
+            this.advdesgloze.Text = "advTree1";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Name = "columnHeader1";
+            this.columnHeader1.Text = "Periodo";
+            this.columnHeader1.Width.Absolute = 60;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Name = "columnHeader2";
+            this.columnHeader2.Text = "Impuesto Bruto";
+            this.columnHeader2.Width.Absolute = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Name = "columnHeader3";
+            this.columnHeader3.Text = "Impuesto Neto";
+            this.columnHeader3.Width.Absolute = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Name = "columnHeader4";
+            this.columnHeader4.Text = "Descto %";
+            this.columnHeader4.Width.Absolute = 70;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Name = "columnHeader5";
+            this.columnHeader5.Text = "Descto $";
+            this.columnHeader5.Width.Absolute = 70;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Name = "columnHeader6";
+            this.columnHeader6.Text = "Tipo";
+            this.columnHeader6.Width.Absolute = 70;
+            // 
+            // columnrecargo
+            // 
+            this.columnrecargo.Name = "columnrecargo";
+            this.columnrecargo.Text = "Recargo";
+            this.columnrecargo.Width.Absolute = 75;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Name = "columnHeader7";
+            this.columnHeader7.Text = "Acumulado";
+            this.columnHeader7.Width.Absolute = 90;
+            // 
+            // nodeConnector1
+            // 
+            this.nodeConnector1.LineColor = System.Drawing.SystemColors.ControlText;
+            // 
+            // elementStyle1
+            // 
+            this.elementStyle1.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.elementStyle1.Name = "elementStyle1";
+            this.elementStyle1.TextColor = System.Drawing.SystemColors.ControlText;
+            // 
+            // superTabItem2
+            // 
+            this.superTabItem2.AttachedControl = this.superTabControlPanel2;
+            this.superTabItem2.GlobalItem = false;
+            this.superTabItem2.Name = "superTabItem2";
+            this.superTabItem2.Text = "Desglozar";
             // 
             // grpfolio
             // 
@@ -1730,14 +1719,14 @@
             this.DTpartidas1.AllowUserToAddRows = false;
             this.DTpartidas1.AllowUserToDeleteRows = false;
             this.DTpartidas1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DTpartidas1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DTpartidas1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DTpartidas1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DTpartidas1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Clave,
@@ -1747,17 +1736,26 @@
             this.ImporteSD,
             this.Unidadsat,
             this.Clavesat});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DTpartidas1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DTpartidas1.DefaultCellStyle = dataGridViewCellStyle9;
+            this.DTpartidas1.EnableHeadersVisualStyles = false;
             this.DTpartidas1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DTpartidas1.Location = new System.Drawing.Point(11, 450);
             this.DTpartidas1.Name = "DTpartidas1";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DTpartidas1.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.DTpartidas1.Size = new System.Drawing.Size(738, 110);
             this.DTpartidas1.TabIndex = 33;
             this.DTpartidas1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DTpartidas1_CellContentClick);
@@ -1782,20 +1780,20 @@
             // 
             // Importe
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Importe.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.Importe.DefaultCellStyle = dataGridViewCellStyle7;
             this.Importe.HeaderText = "Importe";
             this.Importe.Name = "Importe";
             this.Importe.Width = 120;
             // 
             // ImporteSD
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.ImporteSD.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.ImporteSD.DefaultCellStyle = dataGridViewCellStyle8;
             this.ImporteSD.HeaderText = "ImporteSD";
             this.ImporteSD.Name = "ImporteSD";
             // 
@@ -1808,19 +1806,6 @@
             // 
             this.Clavesat.HeaderText = "Clavesat";
             this.Clavesat.Name = "Clavesat";
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataMember = "usuario";
-            this.usuarioBindingSource.DataSource = this.predialchicoDataSet;
-            // 
-            // usuarioTableAdapter
-            // 
-            this.usuarioTableAdapter.ClearBeforeFill = true;
-            // 
-            // vusuarioTableAdapter
-            // 
-            this.vusuarioTableAdapter.ClearBeforeFill = true;
             // 
             // btnagregar
             // 
@@ -1846,14 +1831,19 @@
             this.cmbconcepto.TabIndex = 36;
             this.cmbconcepto.ValueMember = "Clave";
             // 
-            // detalleBindingSource
+            // dataSet1
             // 
-            this.detalleBindingSource.DataMember = "detalle";
-            this.detalleBindingSource.DataSource = this.predialchicoDataSet;
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // detalleTableAdapter
+            // vusuarioBindingSource1
             // 
-            this.detalleTableAdapter.ClearBeforeFill = true;
+            this.vusuarioBindingSource1.DataMember = "vusuario";
+            this.vusuarioBindingSource1.DataSource = this.dataSet1;
+            // 
+            // vusuarioTableAdapter
+            // 
+            this.vusuarioTableAdapter.ClearBeforeFill = true;
             // 
             // frmcaja
             // 
@@ -1882,7 +1872,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.caja_KeyDown);
             this.groupPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vusuarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.predialchicoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
@@ -1896,19 +1885,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.DIporcentaje)).EndInit();
             this.groupPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.divalorfiscal)).EndInit();
-            this.superTabControlPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.advdesgloze)).EndInit();
             this.superTabControlPanel3.ResumeLayout(false);
             this.groupPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.didescuentoreca)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IIperiodosdescontados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DIporcentajuedescuento)).EndInit();
+            this.superTabControlPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.advdesgloze)).EndInit();
             this.grpfolio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             this.groupPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DTpartidas1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vusuarioBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1950,11 +1941,9 @@
         private DevComponents.DotNetBar.SuperTabItem Calculo;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel2;
         private DevComponents.DotNetBar.SuperTabItem superTabItem2;
-        private predialchicoDataSet predialchicoDataSet;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
-        private predialchicoDataSetTableAdapters.usuarioTableAdapter usuarioTableAdapter;
+       
         private System.Windows.Forms.BindingSource vusuarioBindingSource;
-        private predialchicoDataSetTableAdapters.vusuarioTableAdapter vusuarioTableAdapter;
         private DevComponents.DotNetBar.Controls.TextBoxX txtcomunidad;
         private DevComponents.DotNetBar.Controls.TextBoxX txtnumext;
         private DevComponents.DotNetBar.Controls.GroupPanel grpfolio;
@@ -2023,7 +2012,7 @@
         private System.Windows.Forms.Button btnagregar;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbconcepto;
         private System.Windows.Forms.BindingSource detalleBindingSource;
-        private predialchicoDataSetTableAdapters.detalleTableAdapter detalleTableAdapter;
+       
         private DevComponents.DotNetBar.ButtonItem btnDatosFiscales;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
@@ -2032,5 +2021,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ImporteSD;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidadsat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clavesat;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource vusuarioBindingSource1;
+        private DataSet1TableAdapters.vusuarioTableAdapter vusuarioTableAdapter;
     }
 }

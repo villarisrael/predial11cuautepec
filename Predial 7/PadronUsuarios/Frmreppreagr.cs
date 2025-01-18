@@ -32,16 +32,16 @@ namespace Predial10.PadronUsuarios
             //filtromysql = " fecha>= '" + fechaini.SelectedDate.ToString("yyyy/MM/dd") + "' and fecha<='" + fechafin.SelectedDate.ToString("yyyy/MM/dd") + "'";
             encabezado1 = "DEL DIA : " + fechaini.SelectedDate.ToString("dd/MM/yyyy") + " AL DIA: " + fechafin.SelectedDate.ToString("dd/MM/yyyy");
 
-            predialchicoDataSet data = new predialchicoDataSet();
+            DataSet1 data = new DataSet1();
             data.EnforceConstraints = false;
-            predialchicoDataSetTableAdapters.empresaTableAdapter x = new predialchicoDataSetTableAdapters.empresaTableAdapter();
+            DataSet1TableAdapters.empresaTableAdapter x = new DataSet1TableAdapters.empresaTableAdapter();
             x.Fill(data.empresa);
 
           
 
             try
             {
-                predialchicoDataSetTableAdapters.vusuarioTableAdapter vusu = new predialchicoDataSetTableAdapters.vusuarioTableAdapter();
+                DataSet1TableAdapters.vusuarioTableAdapter vusu = new DataSet1TableAdapters.vusuarioTableAdapter();
                 vusu.Fill(data.vusuario);
             }
             catch (Exception algo4)
